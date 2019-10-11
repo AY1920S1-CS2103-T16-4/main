@@ -1,0 +1,570 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Developer Guide</title><link rel="stylesheet" href="./gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"></div><div id="content"><div class="sect1">
+<h2 id="developer-guide"><a class="link" href="#developer-guide">Developer Guide</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="target-user-profile"><a class="link" href="#target-user-profile">Target User Profile</a></h3>
+<div class="paragraph">
+<p>Youths and young adults in Singapore in the age range of 20-30 who are interested in keeping track of their spending.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="value-proposition"><a class="link" href="#value-proposition">Value Proposition</a></h3>
+<div class="paragraph">
+<p>A convenient financial tracker targeted at users who prefer typing over other inputs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user-stories"><a class="link" href="#user-stories">User Stories</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><u>Priority</u></th>
+<th class="tableblock halign-left valign-top"><u>As a&#8230;&#8203;</u></th>
+<th class="tableblock halign-left valign-top"><u>I want to…</u></th>
+<th class="tableblock halign-left valign-top"><u>So that I can…</u></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a forgetful user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I would want to ability to list all my expenses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So I can see all my expenses in one glance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a thrifty user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I would like to be able to add items to my wishlist and see the progress made for each of the wishlisted items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can see how much I&#8217;ve saved to each goal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student with limited income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I need a convenient way to keep track of my spending and my daily expenditure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can better review my finances.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student with almost regular spending habits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to record basic, recurring expenses (lunch, shopping, transport etc) easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that it is convenient for me to review and reflect on my expenditure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I would like a search function to quickly refer to certain records.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that it is convenient for me to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I would like a manual to refer to when I need help using the app.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can still use the app when I forget its syntax.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a new user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be informed when I submit invalid commands.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can learn from my mistakes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a long-time user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to search for a past expense. (How long ago should the record be?)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can don’t go crazy when doing taxes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a careless user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I might want to undo/modify/delete the amount/category/description entered by the specific expense in particular</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can easily amend any mistakes I made on CL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a detailed and careful user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I need to be able to add the details of the ideas into specific categories.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can stay organised.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a user with limited allowance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to set budgets for how much I want to spend in a week/month, according to different categories.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I do not overspend.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As someone who may wish to restart on a clean slate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I wish to have a function to clear or my keyed in data (schedule, current expenditure etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I would like to see my expenses and transactions separated according to different time periods (e.g. week, month, year)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can have a clearer overview of my expenditure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to customise how the UI looks (color, font, font size, set background feature etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that it looks more customised towards the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As an expert user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to set the time(s) that I would receive reminders to record my spending</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can do so at convenient times.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a college student with monthly spending on entertainment sites such as Netflix and Spotify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to have these expenses recorded automatically</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I do not have to record a recurring expense every month.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to differentiate my spendings and wish list items based on whether they are a need or a want</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can better plan my finances around what I should buy.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a forgetful user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to have a tooltip to pop up to remind me what inputs I should type in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that in the event that I forget the commands, I can still use them when the application reminds me.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a lazy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want my finances to be planned automatically rather than having to customize them myself</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so I don’t need to spend much time during the first setup and lose interest. I should be able to edit it whenever I want to.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As an expert user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to define/customise my own categories for expenses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can customize the software for myself.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a lazy and expert user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to define my own shortcuts to certain functionality myself (eg. spend mala ytd lunch 10.50), and extend/customize them from time to time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can complete commands with convenience and ease.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student with limited income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I need a visualizer to show my urgent wishlist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so I can see how much I have saved to each goal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student with limited income</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I need a visualizer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so I can see my expenses in proportion to my income at a glance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student who has difficulty planning his finances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to have an app help me calculate what to prioritize and how heavily I should prioritize to best meet my needs. I would like the app to have filters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so I can choose what category of spending to prioritize.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a user who do not have the habit of tracking my expenses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to receive some incentive/motivation when I track my expenses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I would continue tracking it in the long run.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a forgetful user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I need to have the ability to add notes to my wishlist detailing where I want to buy the product, link to buy the product etc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can easily refer to the wishlist whenever I forget about the details.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student facing problems with student debt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I need an app to help me plan my spending with respect to my loan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can work on paying off my loan eventually</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student trying to address his/her spending habits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I need an app that reminds me if I am spending too much</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can work on reducing my spending and improve my habits.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I would like to be able to import details for my wishlist using external files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I do not need to key each item in individually.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student who’s easily influenced</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want the app to provide me with painful reminders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I will be wrecked with guilt after indulging in stuff I do not need.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a lazy/busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I do not want to be required to write a description for my expense or income records every single time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can save time and record quickly.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="use-cases"><a class="link" href="#use-cases">Use Cases</a></h3>
+<div class="paragraph">
+<p>For all use cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>System: guiltTrip()</p>
+</li>
+<li>
+<p>Actor: User
+==== Use Case 01: View History</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="mss"><a class="link" href="#mss">MSS</a></h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view history of expenses for the past month.</p>
+</li>
+<li>
+<p>guiltTrip() shows the history of expenses for the past month.</p>
+</li>
+<li>
+<p>User requests to edit a specific expense in the list.</p>
+</li>
+<li>
+<p>guiltTrip() edits the expense.
+Use case ends.
+===== Extensions</p>
+</li>
+<li>
+<p>2a. The history is empty.
+Use case ends.</p>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>3a1. guiltTrip() shows an error message.
+Use case resumes at step 2
+==== Use Case 02: Add Expense</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="mss-2"><a class="link" href="#mss-2">MSS</a></h5>
+<div class="paragraph">
+<p>Use Case: user adds an expense</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User adds an expense.</p>
+</li>
+<li>
+<p>GuiltTrip creates an expense entry.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that the expense have been created.
+==== Use Case 03: Change the details of an existing Expense Entry</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="mss-3"><a class="link" href="#mss-3">MSS</a></h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Guilt Trip displays list of expenses.</p>
+</li>
+<li>
+<p>User decides to edit the description/ tag/ amount of an expense.</p>
+</li>
+<li>
+<p>GuiltTrip makes the requested modifications to expenditure entry.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that changes have been made.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="use-case-04-deletes-an-expenditure"><a class="link" href="#use-case-04-deletes-an-expenditure">Use Case 04: Deletes an expenditure</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User keys in command deleteExpense, followed by the index of the expense in the list</p>
+</li>
+<li>
+<p>GuiltTrip deletes the specified expense from the list.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that the expense has been deleted.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="use-case-05-add-a-recurring-expenditure"><a class="link" href="#use-case-05-add-a-recurring-expenditure">Use Case 05: Add a recurring expenditure</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User keys in command setAutoExpenditure, followed by the frequency he would want the expenditure to be, the description and amount of the expenditure.</p>
+</li>
+<li>
+<p>GuiltTrip creates an auto-expense entry.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that the auto-expense have been created.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="use-case-06-list-recurring-expenditures"><a class="link" href="#use-case-06-list-recurring-expenditures">Use Case 06: List recurring expenditures</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user types listAutoExpenditure.</p>
+</li>
+<li>
+<p>GuiltTrip lists all the current automatically recurring expenditures.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="use-case-07-edit-a-recurring-expenditure-item"><a class="link" href="#use-case-07-edit-a-recurring-expenditure-item">Use Case 07: Edit a recurring expenditure item</a></h4>
+<div class="paragraph">
+<p>Format: editAutoExpenditure: &lt;index&gt; [--freq &lt;frequency&gt;] [--desc &lt;description&gt;] [--amt &lt;expenditure&gt;]<br>
+Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>editAutoExpenditure 1 --freq month</p>
+</li>
+<li>
+<p>editAutoExpenditure 1 --desc spotify family --amt 14.99</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>deleteAutoExpenditure: deletes a current automatically recurring expenditure at the given index.<br>
+Format: deleteAutoExpenditure &lt;index&gt;</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="use-case-08-add-a-new-budget-for-expenditure"><a class="link" href="#use-case-08-add-a-new-budget-for-expenditure">Use Case 08: Add a new budget for expenditure</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User adds a budget</p>
+</li>
+<li>
+<p>GuiltTrip creates a
+addBudget: adds a new budget for expenditure with a certain tag, if applicable. Period: day/week/month<br>
+Format: addBudget --desc &lt;description&gt; --amt &lt;budget&gt; --period &lt;period&gt; [--tag &lt;tag&gt;]<br>
+Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>addBudget --desc food budget --period day --amt 200 --tag food</p>
+</li>
+<li>
+<p>addBudget --desc entertainment budget --amt 300
+==== Use Case 09: List existing budgets</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>listBudget: lists all the current budgets the user has.<br>
+Format: listBudget</p>
+</div>
+<div class="paragraph">
+<p>editBudget: edits a current budget&#8217;s description, amount or tag (if applicable) at the given index.<br>
+Format: editBudget --index &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;budget&gt;] [--tag &lt;tag&gt;] <br>
+Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>editBudget 1 --desc fooooood budget</p>
+</li>
+<li>
+<p>editBudget 2 --desc lunch budget --amt 150</p>
+</li>
+<li>
+<p>editBudget 2 --tag fun</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>deleteBudget: deletes a current budget at the given index.<br>
+Format: deleteBudget &lt;index&gt;<br>
+Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>deleteBudget 2
+=== Non Functional Requirements</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Brownfield</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The final product should be a result of evolving/enhancing/morphing the given code base.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Typing Preferred</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The product should be targeting users who can type fast and prefer typing over other means of input.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Single User</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The product should be for a single user i.e. (not a multi-user product).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Incremental</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The product needs to be developed incrementally over the project duration.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Human Editable File &amp; no DBMS</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The software should not have a database management system and the data should be stored locally and should be in a human editable text file.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Object Oriented</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The software should follow the Object-oriented paradigm primarily.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Java Version</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Should work on any <a href="https://se-education.org/addressbook-level3/DeveloperGuide.html#mainstream-os">mainstream OS</a> as long as it has Java 11 or above installed.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Portable</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The software should work without requiring an installer.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>No Remote Server</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The software should not depend on your own remote server.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>External Software</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The use of third-party frameworks/libraries is allowed but only if they are free, open-source, and have permissive license terms, do not require any installation by the user of your software, do not violate other constraints.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Quality Requirements</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The software should be able to be used by a user who has never used an expenditure tracking app before</p>
+</li>
+<li>
+<p>The software should be able to work on different computers if distributed
+=== Glossary</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Category - Income, Expense, Wishlist, Budget<br>
+Entry - any item in a category<br>
+Tag - label(s) attached to an entry</p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-11 06:44:26 UTC</div></div></div></body></html>
