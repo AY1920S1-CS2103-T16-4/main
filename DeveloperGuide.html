@@ -2,12 +2,55 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">guitTrip()</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://ay1920s1-cs2103-t16-4.github.io/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"></div><div id="content"><div class="paragraph">
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-== Developer Guide</p>
+= AddressBook Level 3 - Developer Guide
+:site-section: DeveloperGuide
+:toc:
+:toc-title:
+:toc-placement: preamble
+:sectnums:
+:imagesDir: images
+:stylesDir: stylesheets
+:xrefstyle: full
+:experimental:
+:repoURL: <a href="https://github.com/AY1920S1-CS2103-T16-4/main" class="bare">https://github.com/AY1920S1-CS2103-T16-4/main</a></p>
 </div>
+<div class="paragraph">
+<p>By: <code>Team T16-04</code>      Since: <code>Aug 2019</code>      Licence: <code>MIT</code></p>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">Setting up</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="design"><a class="link" href="#design">Design</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="ArchitectureDiagram.png" alt="ArchitectureDiagram">
+</div>
+<div class="title">Figure 1. Architecture Diagram</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component</a></h3>
 <div class="exampleblock">
+<div class="title">Example 1. UI Diagram</div>
 <div class="content">
 <div class="paragraph">
-<p>= guiltTrip() - Developer Guide
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+== Developer Guide</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 780e96d431b081ae0de4d0a326ccfced3d304b3d
+= guiltTrip() - Developer Guide
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; c02ab6600907c091df79d84666367c8c13d126ef
 :site-section: DeveloperGuide
 :toc:
@@ -24,7 +67,7 @@
 <div class="content">
 <img src="LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 1. Structure of the Logic Component</div>
+<div class="title">Figure 2. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -56,16 +99,19 @@
 <div class="content">
 <img src="DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 2. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 3. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
-<div class="paragraph">
-<p>== Statistics component</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="statistics-component"><a class="link" href="#statistics-component">Statistics component</a></h2>
+<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
 <img src="StatisticsClass.png" alt="StatisticsClass">
 </div>
-<div class="title">Figure 3. Structure of the Statistics Component</div>
+<div class="title">Figure 4. Structure of the Statistics Component</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -86,12 +132,16 @@
 </li>
 </ol>
 </div>
+<div class="sect2">
+<h3 id="features"><a class="link" href="#features">Features</a></h3>
+<div class="sect3">
+<h4 id="data-presentation"><a class="link" href="#data-presentation">Data Presentation</a></h4>
+<div class="sect4">
+<h5 id="sort-command"><a class="link" href="#sort-command">Sort Command</a></h5>
+<div class="sect5">
+<h6 id="implementation"><a class="link" href="#implementation">Implementation</a></h6>
 <div class="paragraph">
-<p>=== Features
-==== Data Presentation
-===== Sort Command
-====== Implementation
-The sort command extends the Command class. It works on the SortedList by adding a Comparator to the List. By default, the EntryList is sorted by date.</p>
+<p>The sort command extends the Command class. It works on the SortedList by adding a Comparator to the List. By default, the EntryList is sorted by date.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -122,12 +172,16 @@ The sort command extends the Command class. It works on the SortedList by adding
 <div class="content">
 <img src="SortSequence.png" alt="SortSequence">
 </div>
-<div class="title">Figure 4. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="viewhistory-command"><a class="link" href="#viewhistory-command">ViewHistory Command</a></h5>
+<div class="sect5">
+<h6 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h6>
 <div class="paragraph">
-<p>===== ViewHistory Command
-====== Implementation
-The viewHistory command extends the Command class. It calls methods from the Statistics Manager which handles the calculation of the statistics and returns it to the user.</p>
+<p>The viewHistory command extends the Command class. It calls methods from the Statistics Manager which handles the calculation of the statistics and returns it to the user.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -158,58 +212,57 @@ The viewHistory command extends the Command class. It calls methods from the Sta
 <div class="content">
 <img src="viewHistorySequenceDiagram.png" alt="viewHistorySequenceDiagram">
 </div>
-<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>viewHistory typ/Expense</code> Command</div>
+<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>viewHistory typ/Expense</code> Command</div>
 </div>
-</div>
-</div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
 <p>By: <code>Team T16-04</code>      Since: <code>Aug 2019</code>      Licence: <code>MIT</code></p>
 </div>
-<div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">Setting up</a></h2>
-<div class="sectionbody">
+<div class="paragraph">
+<p>== Setting up</p>
+</div>
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
 </div>
+<div class="paragraph">
+<p>== Design</p>
 </div>
+<div id="Design-Architecture" class="paragraph">
+<p>=== Architecture</p>
 </div>
-<div class="sect1">
-<h2 id="design"><a class="link" href="#design">Design</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="ArchitectureDiagram.png" alt="ArchitectureDiagram">
 </div>
-<div class="title">Figure 6. Architecture Diagram</div>
+<div class="title">Figure 7. Architecture Diagram</div>
 </div>
+<div id="Design-Ui" class="paragraph">
+<p>=== UI component</p>
 </div>
-<div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 7. UI Diagram</div>
+<div class="title">Figure 8. UI Diagram</div>
 </div>
+<div id="Design-Logic" class="paragraph">
+<p>=== Logic component</p>
 </div>
-<div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 8. LogicDiagram</div>
+<div class="title">Figure 9. LogicDiagram</div>
 </div>
+<div id="Design-Model" class="paragraph">
+<p>=== Model component</p>
 </div>
-<div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 9. Structure of the Model Component</div>
+<div class="title">Figure 10. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103-T16-4/main/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -233,51 +286,59 @@ The viewHistory command extends the Command class. It calls methods from the Sta
 </li>
 </ul>
 </div>
+<div id="Design-Storage" class="paragraph">
+<p>=== Storage component</p>
 </div>
-<div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 10. Structure of the Storage Component</div>
+<div class="title">Figure 11. Structure of the Storage Component</div>
 </div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103-T16-4/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
+<div class="paragraph">
+<p>The <code>Storage</code></p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can save the Address Book data in json format and read it back.</p>
+</li>
+<li>
+<p>This includes instances of Entry subclasses(Expense, Income, Wish, AutoExpenditure, Budget, TrackerReminder, etc.)</p>
+</li>
+<li>
+<p>DateReminder data are stored in Entry data.
+== Implementation</p>
+</li>
+</ul>
 </div>
-<div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">Implementation</a></h2>
-<div class="sectionbody">
-
+<div class="paragraph">
+<p>== Documentation</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">Documentation</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
 </div>
+<div class="paragraph">
+<p>== Testing</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">Testing</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
 </div>
+<div class="paragraph">
+<p>== Dev Ops</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">Dev Ops</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
 </div>
+<div class="paragraph">
+<p>== Product Scope</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; c02ab6600907c091df79d84666367c8c13d126ef
 === Target User Profile</p>
@@ -285,17 +346,15 @@ The viewHistory command extends the Command class. It calls methods from the Sta
 <div class="paragraph">
 <p>Youths and young adults in Singapore in the age range of 20-30 who are interested in keeping track of their spending.</p>
 </div>
-<div class="sect2">
-<h3 id="value-proposition"><a class="link" href="#value-proposition">Value Proposition</a></h3>
+<div class="paragraph">
+<p>=== Value Proposition</p>
+</div>
 <div class="paragraph">
 <p>A convenient financial tracker targeted at users who prefer typing over other inputs.</p>
 </div>
+<div class="paragraph">
+<p>== User Stories</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
-<div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -500,11 +559,9 @@ The viewHistory command extends the Command class. It calls methods from the Sta
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>== Use Cases</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>For all use cases:</p>
 </div>
@@ -518,10 +575,12 @@ The viewHistory command extends the Command class. It calls methods from the Sta
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="use-case-01-view-history"><a class="link" href="#use-case-01-view-history">Use Case 01: View History</a></h3>
-<div class="sect3">
-<h4 id="mss"><a class="link" href="#mss">MSS</a></h4>
+<div class="paragraph">
+<p>=== Use Case 01: View History</p>
+</div>
+<div class="paragraph">
+<p>==== MSS</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -539,9 +598,9 @@ Use case ends.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>==== Extensions</p>
 </div>
-<div class="sect3">
-<h4 id="extensions"><a class="link" href="#extensions">Extensions</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -561,12 +620,12 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>=== Use Case 02: Add Expense</p>
 </div>
+<div class="paragraph">
+<p>==== MSS</p>
 </div>
-<div class="sect2">
-<h3 id="use-case-02-add-expense"><a class="link" href="#use-case-02-add-expense">Use Case 02: Add Expense</a></h3>
-<div class="sect3">
-<h4 id="mss-2"><a class="link" href="#mss-2">MSS</a></h4>
 <div class="paragraph">
 <p>Use Case: user adds an expense</p>
 </div>
@@ -583,12 +642,12 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>=== Use Case 03: Change the details of an existing Expense Entry</p>
 </div>
+<div class="paragraph">
+<p>==== MSS</p>
 </div>
-<div class="sect2">
-<h3 id="use-case-03-change-the-details-of-an-existing-expense-entry"><a class="link" href="#use-case-03-change-the-details-of-an-existing-expense-entry">Use Case 03: Change the details of an existing Expense Entry</a></h3>
-<div class="sect3">
-<h4 id="mss-3"><a class="link" href="#mss-3">MSS</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -605,10 +664,9 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>=== Use Case 04: Deletes an expenditure</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="use-case-04-deletes-an-expenditure"><a class="link" href="#use-case-04-deletes-an-expenditure">Use Case 04: Deletes an expenditure</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -622,9 +680,44 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>=== Use Case 05: Adds a Wish</p>
 </div>
-<div class="sect2">
-<h3 id="use-case-05-add-a-recurring-expenditure"><a class="link" href="#use-case-05-add-a-recurring-expenditure">Use Case 05: Add a recurring expenditure</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User adds a Wish.</p>
+</li>
+<li>
+<p>GuiltTrip creates a Wish.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that the wish have been created.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>=== Use Case 06: Converts Wish to Expenditure</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User keys in command purchaseWish, followed by the index of the expens wish in the list</p>
+</li>
+<li>
+<p>GuiltTrip deletes the specified wish from the list.</p>
+</li>
+<li>
+<p>GuiltTrip adds the corresponding expenditure to the expense list.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that the wish has been converted.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>=== Use Case 07: Add a recurring expenditure</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -638,9 +731,9 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>=== Use Case 08: List recurring expenditures</p>
 </div>
-<div class="sect2">
-<h3 id="use-case-06-list-recurring-expenditures"><a class="link" href="#use-case-06-list-recurring-expenditures">Use Case 06: List recurring expenditures</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -651,9 +744,9 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>=== Use Case 09: Edit a recurring expenditure item</p>
 </div>
-<div class="sect2">
-<h3 id="use-case-07-edit-a-recurring-expenditure-item"><a class="link" href="#use-case-07-edit-a-recurring-expenditure-item">Use Case 07: Edit a recurring expenditure item</a></h3>
 <div class="paragraph">
 <p>Format: editAutoExpenditure: &lt;index&gt; [--freq &lt;frequency&gt;] [--desc &lt;description&gt;] [--amt &lt;expenditure&gt;]<br>
 Examples:</p>
@@ -672,9 +765,9 @@ Examples:</p>
 <p>deleteAutoExpenditure: deletes a current automatically recurring expenditure at the given index.<br>
 Format: deleteAutoExpenditure &lt;index&gt;</p>
 </div>
+<div class="paragraph">
+<p>=== Use Case 10: Add a new budget for expenditure</p>
 </div>
-<div class="sect2">
-<h3 id="use-case-08-add-a-new-budget-for-expenditure"><a class="link" href="#use-case-08-add-a-new-budget-for-expenditure">Use Case 08: Add a new budget for expenditure</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -698,9 +791,9 @@ Examples:</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>=== Use Case 09: List existing budgets</p>
 </div>
-<div class="sect2">
-<h3 id="use-case-09-list-existing-budgets"><a class="link" href="#use-case-09-list-existing-budgets">Use Case 09: List existing budgets</a></h3>
 <div class="paragraph">
 <p>listBudget: lists all the current budgets the user has.<br>
 Format: listBudget</p>
@@ -735,12 +828,9 @@ Example:</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== Non Functional Requirements</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
-<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -858,11 +948,9 @@ Example:</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>== Glossary</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -877,4 +965,10 @@ Example:</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:15:48 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:42:54 UTC</div></div></div></body></html>
