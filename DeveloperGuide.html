@@ -1,24 +1,61 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Setting up</title><link rel="stylesheet" href="./gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>guiltTrip() - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">guitTrip()</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://ay1920s1-cs2103-t16-4.github.io/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"></div><div id="content"><div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-= AddressBook Level 3 - Developer Guide
-:site-section: DeveloperGuide
-:toc:
-:toc-title:
-:toc-placement: preamble
-:sectnums:
-:imagesDir: images
-:stylesDir: stylesheets
-:xrefstyle: full
-:experimental:
-:repoURL: <a href="https://github.com/AY1920S1-CS2103-T16-4/main" class="bare">https://github.com/AY1920S1-CS2103-T16-4/main</a></p>
-</div>
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">guitTrip()</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://ay1920s1-cs2103-t16-4.github.io/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>guiltTrip() - Developer Guide</h1></div><div id="content"><div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team T16-04</code>      Since: <code>Aug 2019</code>      Licence: <code>MIT</code></p>
 </div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#setting-up">1. Setting up</a></li>
+<li><a href="#design">2. Design</a>
+<ul class="sectlevel2">
+<li><a href="#Design-Architecture">2.1. Architecture</a></li>
+<li><a href="#Design-Ui">2.2. UI component</a></li>
+<li><a href="#Design-Logic">2.3. Logic component</a></li>
+<li><a href="#Design-Model">2.4. Model component</a></li>
+<li><a href="#Design-Storage">2.5. Storage component</a></li>
+<li><a href="#Design-Statistics">2.6. Statistics component</a></li>
+</ul>
+</li>
+<li><a href="#implementation">3. Implementation</a>
+<ul class="sectlevel2">
+<li><a href="#data-presentation-sort-command">3.1. Data Presentation: Sort Command</a></li>
+<li><a href="#viewhistory-command">3.2. ViewHistory Command</a></li>
+<li><a href="#toggle-panel-command">3.3. Toggle Panel Command</a></li>
+</ul>
+</li>
+<li><a href="#documentation">4. Documentation</a></li>
+<li><a href="#testing">5. Testing</a></li>
+<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#product-scope">Appendix A: Product Scope</a>
+<ul class="sectlevel2">
+<li><a href="#target-user-profile">A.1. Target User Profile</a></li>
+<li><a href="#value-proposition">A.2. Value Proposition</a></li>
+</ul>
+</li>
+<li><a href="#user-stories">Appendix B: User Stories</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-01-view-history">C.1. Use Case 01: View History</a></li>
+<li><a href="#use-case-02-add-expense">C.2. Use Case 02: Add Expense</a></li>
+<li><a href="#use-case-03-change-the-details-of-an-existing-expense-entry">C.3. Use Case 03: Change the details of an existing Expense Entry</a></li>
+<li><a href="#use-case-04-deletes-an-expenditure">C.4. Use Case 04: Deletes an expenditure</a></li>
+<li><a href="#use-case-05-adds-a-wish">C.5. Use Case 05: Adds a Wish</a></li>
+<li><a href="#use-case-06-converts-wish-to-expenditure">C.6. Use Case 06: Converts Wish to Expenditure</a></li>
+<li><a href="#use-case-07-add-a-recurring-expenditure">C.7. Use Case 07: Add a recurring expenditure</a></li>
+<li><a href="#use-case-08-list-recurring-expenditures">C.8. Use Case 08: List recurring expenditures</a></li>
+</ul>
+</li>
+<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
+<li><a href="#glossary">Appendix E: Glossary</a></li>
+</ul>
+</div>
+</div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">Setting up</a></h2>
+<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
@@ -26,52 +63,37 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">Design</a></h2>
+<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="ArchitectureDiagram.png" alt="ArchitectureDiagram">
+<img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
 </div>
 <div class="title">Figure 1. Architecture Diagram</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component</a></h3>
-<div class="exampleblock">
-<div class="title">Example 1. UI Diagram</div>
-<div class="content">
-<div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-== Developer Guide</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 780e96d431b081ae0de4d0a326ccfced3d304b3d
-= guiltTrip() - Developer Guide
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; c02ab6600907c091df79d84666367c8c13d126ef
-:site-section: DeveloperGuide
-:toc:
-:toc-title:
-:toc-placement: preamble
-:sectnums:
-:imagesDir: images
-:stylesDir: stylesheets
-:xrefstyle: full
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-== Logic component</p>
-</div>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 2. Structure of the Logic Component</div>
+<div class="title">Figure 2. UI Diagram</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 3. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="{repoURL}/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S1-CS2103-T16-4/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -97,21 +119,80 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
+<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 3. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
-</div>
-</div>
+<div class="title">Figure 4. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="statistics-component"><a class="link" href="#statistics-component">Statistics component</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="StatisticsClass.png" alt="StatisticsClass">
+<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 4. Structure of the Statistics Component</div>
+<div class="title">Figure 5. Structure of the Model Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103-T16-4/main/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores the Guilt Trip data.</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Entry&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
+</div>
+<div class="title">Figure 6. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103-T16-4/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can save the Address Book data in json format and read it back.</p>
+</li>
+<li>
+<p>This includes instances of Entry subclasses(Expense, Income, Wish, AutoExpenditure, Budget, TrackerReminder, etc.)</p>
+</li>
+<li>
+<p>DateReminder data are stored in Entry data.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Statistics"><a class="link" href="#Design-Statistics">2.6. Statistics component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/StatisticsClass.png" alt="StatisticsClass">
+</div>
+<div class="title">Figure 7. Structure of the Statistics Component</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -132,14 +213,19 @@
 </li>
 </ol>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes some details on how certain features are implemented.</p>
+</div>
 <div class="sect2">
-<h3 id="features"><a class="link" href="#features">Features</a></h3>
+<h3 id="data-presentation-sort-command"><a class="link" href="#data-presentation-sort-command">3.1. Data Presentation: Sort Command</a></h3>
 <div class="sect3">
-<h4 id="data-presentation"><a class="link" href="#data-presentation">Data Presentation</a></h4>
-<div class="sect4">
-<h5 id="sort-command"><a class="link" href="#sort-command">Sort Command</a></h5>
-<div class="sect5">
-<h6 id="implementation"><a class="link" href="#implementation">Implementation</a></h6>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The sort command extends the Command class. It works on the SortedList by adding a Comparator to the List. By default, the EntryList is sorted by date.</p>
 </div>
@@ -170,16 +256,16 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="SortSequence.png" alt="SortSequence">
+<img src="images/SortSequence.png" alt="SortSequence">
 </div>
-<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 8. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="viewhistory-command"><a class="link" href="#viewhistory-command">ViewHistory Command</a></h5>
-<div class="sect5">
-<h6 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h6>
+<div class="sect2">
+<h3 id="viewhistory-command"><a class="link" href="#viewhistory-command">3.2. ViewHistory Command</a></h3>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The viewHistory command extends the Command class. It calls methods from the Statistics Manager which handles the calculation of the statistics and returns it to the user.</p>
 </div>
@@ -210,151 +296,92 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="viewHistorySequenceDiagram.png" alt="viewHistorySequenceDiagram">
+<img src="images/viewHistorySequenceDiagram.png" alt="viewHistorySequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>viewHistory typ/Expense</code> Command</div>
+<div class="title">Figure 9. Interactions Inside the Logic Component for the <code>viewHistory typ/Expense</code> Command</div>
 </div>
-<div class="exampleblock">
-<div class="content">
+</div>
+</div>
+<div class="sect2">
+<h3 id="toggle-panel-command"><a class="link" href="#toggle-panel-command">3.3. Toggle Panel Command</a></h3>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.1. Implementation</a></h4>
 <div class="paragraph">
-<p>By: <code>Team T16-04</code>      Since: <code>Aug 2019</code>      Licence: <code>MIT</code></p>
-</div>
-<div class="paragraph">
-<p>== Setting up</p>
-</div>
-<div class="paragraph">
-<p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
-</div>
-<div class="paragraph">
-<p>== Design</p>
-</div>
-<div id="Design-Architecture" class="paragraph">
-<p>=== Architecture</p>
+<p>The following sequence diagram shows how the toggle panel command works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ArchitectureDiagram.png" alt="ArchitectureDiagram">
+<img src="images/ToggleSequenceDiagram.png" alt="ToggleSequenceDiagram">
 </div>
-<div class="title">Figure 7. Architecture Diagram</div>
 </div>
-<div id="Design-Ui" class="paragraph">
-<p>=== UI component</p>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="UiClassDiagram.png" alt="UiClassDiagram">
+<img src="images/ToggleActivityDiagram.png" alt="ToggleActivityDiagram">
 </div>
-<div class="title">Figure 8. UI Diagram</div>
 </div>
-<div id="Design-Logic" class="paragraph">
-<p>=== Logic component</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="LogicClassDiagram.png" alt="LogicClassDiagram">
-</div>
-<div class="title">Figure 9. LogicDiagram</div>
-</div>
-<div id="Design-Model" class="paragraph">
-<p>=== Model component</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="ModelClassDiagram.png" alt="ModelClassDiagram">
-</div>
-<div class="title">Figure 10. Structure of the Model Component</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.3.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Current method:</strong> Toggle the panels from within MainWindow class.</p>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103-T16-4/main/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p>Pros: Easy to implement.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code></p>
+<p>Cons: Might not be as OOP as other designs.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
-</li>
-<li>
-<p>stores the Guilt Trip data.</p>
-</li>
-<li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Entry&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
-</li>
-<li>
-<p>does not depend on any of the other three components.</p>
-</li>
-</ul>
 </div>
-<div id="Design-Storage" class="paragraph">
-<p>=== Storage component</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 11. Structure of the Storage Component</div>
 </div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103-T16-4/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Storage</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
-</li>
-<li>
-<p>can save the Address Book data in json format and read it back.</p>
-</li>
-<li>
-<p>This includes instances of Entry subclasses(Expense, Income, Wish, AutoExpenditure, Budget, TrackerReminder, etc.)</p>
-</li>
-<li>
-<p>DateReminder data are stored in Entry data.
-== Implementation</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>== Documentation</p>
-</div>
+<div class="sect1">
+<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
 </div>
-<div class="paragraph">
-<p>== Testing</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
 </div>
-<div class="paragraph">
-<p>== Dev Ops</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
 </div>
-<div class="paragraph">
-<p>== Product Scope</p>
 </div>
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; c02ab6600907c091df79d84666367c8c13d126ef
-=== Target User Profile</p>
 </div>
+<div class="sect1">
+<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="target-user-profile"><a class="link" href="#target-user-profile">A.1. Target User Profile</a></h3>
 <div class="paragraph">
 <p>Youths and young adults in Singapore in the age range of 20-30 who are interested in keeping track of their spending.</p>
 </div>
-<div class="paragraph">
-<p>=== Value Proposition</p>
 </div>
+<div class="sect2">
+<h3 id="value-proposition"><a class="link" href="#value-proposition">A.2. Value Proposition</a></h3>
 <div class="paragraph">
 <p>A convenient financial tracker targeted at users who prefer typing over other inputs.</p>
 </div>
-<div class="paragraph">
-<p>== User Stories</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -398,50 +425,44 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I would like a search function to quickly refer to certain records.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">So that it is convenient for me to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I would like a search function</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that it is convenient for me to find a previous record.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I would like a manual to refer to when I need help using the app.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can still use the app when I forget its syntax.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I would like a manual to refer to when I need help using the app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can still use the app when I forget the commands.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a new user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be informed when I submit invalid commands.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can learn from my mistakes.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">As a long-time user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to search for a past expense. (How long ago should the record be?)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can don’t go crazy when doing taxes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be informed when I submit invalid commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can input the correct command.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a careless user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I might want to undo/modify/delete the amount/category/description entered by the specific expense in particular</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can easily amend any mistakes I made on CL.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I might want to undo/modify/delete the fields of a specific expense</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can easily amend any mistakes I made.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a detailed and careful user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I need to be able to add the details of the ideas into specific categories.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I need to be able to add the details of the records into specific categories</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">So that I can stay organised.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a user with limited allowance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to set budgets for how much I want to spend in a week/month, according to different categories.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">So that I do not overspend.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to set budgets for how much I want to spend in a week/month, according to different categories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I can closely keep track of my spending.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As someone who may wish to restart on a clean slate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I wish to have a function to clear or my keyed in data (schedule, current expenditure etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I wish to be able to clear all of my data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So I can start afresh.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
@@ -559,9 +580,11 @@
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>== Use Cases</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>For all use cases:</p>
 </div>
@@ -575,12 +598,10 @@
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>=== Use Case 01: View History</p>
-</div>
-<div class="paragraph">
-<p>==== MSS</p>
-</div>
+<div class="sect2">
+<h3 id="use-case-01-view-history"><a class="link" href="#use-case-01-view-history">C.1. Use Case 01: View History</a></h3>
+<div class="sect3">
+<h4 id="mss"><a class="link" href="#mss">C.1.1. MSS</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -598,9 +619,9 @@ Use case ends.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>==== Extensions</p>
 </div>
+<div class="sect3">
+<h4 id="extensions"><a class="link" href="#extensions">C.1.2. Extensions</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -620,12 +641,12 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Use Case 02: Add Expense</p>
 </div>
-<div class="paragraph">
-<p>==== MSS</p>
 </div>
+<div class="sect2">
+<h3 id="use-case-02-add-expense"><a class="link" href="#use-case-02-add-expense">C.2. Use Case 02: Add Expense</a></h3>
+<div class="sect3">
+<h4 id="mss-2"><a class="link" href="#mss-2">C.2.1. MSS</a></h4>
 <div class="paragraph">
 <p>Use Case: user adds an expense</p>
 </div>
@@ -642,12 +663,12 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Use Case 03: Change the details of an existing Expense Entry</p>
 </div>
-<div class="paragraph">
-<p>==== MSS</p>
 </div>
+<div class="sect2">
+<h3 id="use-case-03-change-the-details-of-an-existing-expense-entry"><a class="link" href="#use-case-03-change-the-details-of-an-existing-expense-entry">C.3. Use Case 03: Change the details of an existing Expense Entry</a></h3>
+<div class="sect3">
+<h4 id="mss-3"><a class="link" href="#mss-3">C.3.1. MSS</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -664,9 +685,10 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Use Case 04: Deletes an expenditure</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="use-case-04-deletes-an-expenditure"><a class="link" href="#use-case-04-deletes-an-expenditure">C.4. Use Case 04: Deletes an expenditure</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -680,9 +702,9 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Use Case 05: Adds a Wish</p>
 </div>
+<div class="sect2">
+<h3 id="use-case-05-adds-a-wish"><a class="link" href="#use-case-05-adds-a-wish">C.5. Use Case 05: Adds a Wish</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -696,9 +718,9 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Use Case 06: Converts Wish to Expenditure</p>
 </div>
+<div class="sect2">
+<h3 id="use-case-06-converts-wish-to-expenditure"><a class="link" href="#use-case-06-converts-wish-to-expenditure">C.6. Use Case 06: Converts Wish to Expenditure</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -715,9 +737,9 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Use Case 07: Add a recurring expenditure</p>
 </div>
+<div class="sect2">
+<h3 id="use-case-07-add-a-recurring-expenditure"><a class="link" href="#use-case-07-add-a-recurring-expenditure">C.7. Use Case 07: Add a recurring expenditure</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -731,9 +753,9 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Use Case 08: List recurring expenditures</p>
 </div>
+<div class="sect2">
+<h3 id="use-case-08-list-recurring-expenditures"><a class="link" href="#use-case-08-list-recurring-expenditures">C.8. Use Case 08: List recurring expenditures</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -744,93 +766,12 @@ Use case resumes at step 2</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Use Case 09: Edit a recurring expenditure item</p>
 </div>
-<div class="paragraph">
-<p>Format: editAutoExpenditure: &lt;index&gt; [--freq &lt;frequency&gt;] [--desc &lt;description&gt;] [--amt &lt;expenditure&gt;]<br>
-Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>editAutoExpenditure 1 --freq month</p>
-</li>
-<li>
-<p>editAutoExpenditure 1 --desc spotify family --amt 14.99</p>
-</li>
-</ul>
 </div>
-<div class="paragraph">
-<p>deleteAutoExpenditure: deletes a current automatically recurring expenditure at the given index.<br>
-Format: deleteAutoExpenditure &lt;index&gt;</p>
-</div>
-<div class="paragraph">
-<p>=== Use Case 10: Add a new budget for expenditure</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User adds a budget</p>
-</li>
-<li>
-<p>GuiltTrip creates a
-addBudget: adds a new budget for expenditure with a certain tag, if applicable. Period: day/week/month<br>
-Format: addBudget --desc &lt;description&gt; --amt &lt;budget&gt; --period &lt;period&gt; [--tag &lt;tag&gt;]<br>
-Examples:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>addBudget --desc food budget --period day --amt 200 --tag food</p>
-</li>
-<li>
-<p>addBudget --desc entertainment budget --amt 300</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>=== Use Case 09: List existing budgets</p>
-</div>
-<div class="paragraph">
-<p>listBudget: lists all the current budgets the user has.<br>
-Format: listBudget</p>
-</div>
-<div class="paragraph">
-<p>editBudget: edits a current budget&#8217;s description, amount or tag (if applicable) at the given index.<br>
-Format: editBudget --index &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;budget&gt;] [--tag &lt;tag&gt;] <br>
-Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>editBudget 1 --desc fooooood budget</p>
-</li>
-<li>
-<p>editBudget 2 --desc lunch budget --amt 150</p>
-</li>
-<li>
-<p>editBudget 2 --tag fun</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>deleteBudget: deletes a current budget at the given index.<br>
-Format: deleteBudget &lt;index&gt;<br>
-Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>deleteBudget 2</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>== Non Functional Requirements</p>
-</div>
+<div class="sect1">
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -948,9 +889,11 @@ Example:</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>== Glossary</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -965,10 +908,4 @@ Example:</p>
 </ul>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:42:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 15:54:05 UTC</div></div></div></body></html>
