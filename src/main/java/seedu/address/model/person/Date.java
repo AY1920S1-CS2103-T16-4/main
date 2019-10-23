@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 
 import seedu.address.model.util.Frequency;
 
@@ -20,17 +21,26 @@ public class Date {
      * The first character of the address must not be a whitespace, otherwise " " (a
      * blank string) becomes a valid input.
      */
-    // public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
 
-    // public final String fullDate;
+    private static final DateTimeFormatter INPUTFORMATTER = new DateTimeFormatterBuilder()
+            .appendOptional(DateTimeFormatter.ofPattern("yyyy MM dd"))
+            .appendOptional(DateTimeFormatter.ofPattern("yyyy/MM/dd"))
+            .appendOptional(DateTimeFormatter.ofPattern("yyyy/MM/d"))
+            .appendOptional(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+            .appendOptional(DateTimeFormatter.ofPattern("yyyy-MM-d"))
+            .appendOptional(DateTimeFormatter.ofPattern("yyyy.MM.dd"))
+            .appendOptional(DateTimeFormatter.ofPattern("yyyy.MM.d"))
+            .appendOptional(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+            .appendOptional(DateTimeFormatter.ofPattern("d/MM/yyyy"))
+            .appendOptional(DateTimeFormatter.ofPattern("d-MM-yyyy"))
+            .appendOptional(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+            .appendOptional(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+            .appendOptional(DateTimeFormatter.ofPattern("d.MM.yyyy"))
+            .toFormatter();
+
+    private static final DateTimeFormatter OUTPUTFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private LocalDate date;
     private String fullTime;
-
-    /**
-     * Constructs a {@code Time}.
-     *
-     * @param time A valid time.
-     */
 
     /**
      * Converts String to LocalDate
@@ -39,10 +49,9 @@ public class Date {
      */
     public Date(String date) {
         requireNonNull(date);
-        // checkArgument(isValidDescription(desc), MESSAGE_CONSTRAINTS);
-        String[] stringDate = date.split(" ");
-        this.date = LocalDate.of(Integer.parseInt(stringDate[0]), Integer.parseInt(stringDate[1]),
-                Integer.parseInt(stringDate[2]));
+        //checkArgument(isValidDescription(desc), MESSAGE_CONSTRAINTS);
+        LocalDate ldt = LocalDate.parse(date, INPUTFORMATTER);
+        this.date = ldt;
         parseDate();
     }
 
@@ -54,8 +63,7 @@ public class Date {
     }
 
     private void parseDate() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
-        fullTime = date.format(formatter);
+        fullTime = date.format(OUTPUTFORMATTER);
     }
 
     /**
