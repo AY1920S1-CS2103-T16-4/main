@@ -25,11 +25,11 @@
 <li><a href="#data-presentation-sort-command">3.1. Data Presentation: Sort Command</a></li>
 <li><a href="#viewhistory-command">3.2. ViewHistory Command</a></li>
 <li><a href="#toggle-panel-command">3.3. Toggle Panel Command</a></li>
+<li><a href="#reminders">3.4. Reminders</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#testing">4. Testing</a></li>
+<li><a href="#dev-ops">5. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a>
 <ul class="sectlevel2">
 <li><a href="#target-user-profile">A.1. Target User Profile</a></li>
@@ -47,6 +47,8 @@
 <li><a href="#use-case-06-converts-wish-to-expenditure">C.6. Use Case 06: Converts Wish to Expenditure</a></li>
 <li><a href="#use-case-07-add-a-recurring-expenditure">C.7. Use Case 07: Add a recurring expenditure</a></li>
 <li><a href="#use-case-08-list-recurring-expenditures">C.8. Use Case 08: List recurring expenditures</a></li>
+<li><a href="#use-case-09-set-generalreminder">C.9. Use Case 09: Set GeneralReminder</a></li>
+<li><a href="#use-case-10-set-targetedreminder">C.10. Use Case 10: Set TargetedReminder</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
@@ -336,18 +338,52 @@
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="reminders"><a class="link" href="#reminders">3.4. Reminders</a></h3>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.4.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The Reminder mechanism is facilitated by the Reminder class. Each Reminder object consists of a Condition class object which represents a set of conditions to be met. When all conditions are met, the reminder is activated and its message is displayed under the Reminder Pannel. The following class diagram helps to show how the classes are related.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ReminderClassDiagram.png" alt="ReminderClassDiagram">
 </div>
 </div>
-<div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
-<div class="sectionbody">
+<div class="paragraph">
+<p>Different types of conditions are represented by subclassess which extend the Condition class.
+To create a reminder, the user calls the method createReminder(int&#8230;&#8203; indexes)
+where indexes are the indexes of conditions in the condition list.</p>
+</div>
+<div class="paragraph">
+<p>When an add/edit/delete command for any of the subclasses of Entry (Expense, Income, Wishes) is executed,
+the ConditionList object is updated to see if any conditions have been met.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ReminderSequenceDiagram.png" alt="ReminderSequenceDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.4.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Current method:</strong> Instance specific reminders are made known to the instance object, and the object is made known to the reminder. (i.e Such reminders trigger conditions are entirely based on a single Entry class object)</p>
+</div>
+<div class="paragraph">
+<p>Pros: Allows fast method of keeping track of instance specific reminders when object is edited/deleted and loaded form storage.
+Cons: Might not be as OOP as other designs.
+== Documentation</p>
+</div>
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">4. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -355,7 +391,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">5. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -767,6 +803,66 @@ Use case resumes at step 2</p>
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="use-case-09-set-generalreminder"><a class="link" href="#use-case-09-set-generalreminder">C.9. Use Case 09: Set GeneralReminder</a></h3>
+<div class="sect3">
+<h4 id="mss-4"><a class="link" href="#mss-4">C.9.1. MSS</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User adds a GeneralReminder, indicates the quota which if exceeded will activate the reminder, and the tags/ keywords that entries should have to be tracked;</p>
+</li>
+<li>
+<p>guiltTrip() notifies user that Reminder has been added.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extensions-2"><a class="link" href="#extensions-2">C.9.2. Extensions</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>1a. user does not indicate if he wants to track entries with keywords or tags.
+Reminder tracks all entries.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-10-set-targetedreminder"><a class="link" href="#use-case-10-set-targetedreminder">C.10. Use Case 10: Set TargetedReminder</a></h3>
+<div class="sect3">
+<h4 id="mss-5"><a class="link" href="#mss-5">C.10.1. MSS</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User adds a TargetedReminder, indicate the index of the entry to target and the period before the entry date to activate reminder.</p>
+</li>
+<li>
+<p>guiltTrip() notifies user that Reminder has been added.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extensions-3"><a class="link" href="#extensions-3">C.10.2. Extensions</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>1a. index out of bounds.
+Use case ends</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -908,4 +1004,4 @@ Use case resumes at step 2</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 16:05:03 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 08:04:34 UTC</div></div></div></body></html>
