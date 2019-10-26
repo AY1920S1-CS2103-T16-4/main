@@ -82,7 +82,38 @@
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 2. UI Diagram</div>
+<div class="title">Figure 2. Structure of UI component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="https://github.com/AY1920S1-CS2103-T16-4/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g. <code>CommandBox</code>, <code>ResultDisplay</code>, <code>EntryListPanel</code>,
+<code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+</li>
+<li>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that
+are in the <code>src/main/resources/view</code> folder. For example, the layout of the
+<a href="https://github.com/AY1920S1-CS2103-T16-4/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in
+<a href="https://github.com/AY1920S1-CS2103-T16-4/mainsrc/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Executes user commands using the <code>Logic</code> component.</p>
+</li>
+<li>
+<p>Listens for changes to <code>Model</code> data so that the <code>UI</code> can be updated with the modified data.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -569,8 +600,8 @@ Cons: Might not be as OOP as other designs.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a student who has difficulty planning his finances</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I want to have an app help me calculate what to prioritize and how heavily I should prioritize to best meet my needs. I would like the app to have filters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">so I can choose what category of spending to prioritize.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want the app to help me calculate what to prioritize and how heavily I should prioritize to best meet my needs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so I can prioritise what I should be spending my money on.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
@@ -588,7 +619,7 @@ Cons: Might not be as OOP as other designs.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a student facing problems with student debt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I need an app to help me plan my spending with respect to my loan</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can work on paying off my loan eventually</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can work on paying off my loan eventually.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
@@ -605,14 +636,14 @@ Cons: Might not be as OOP as other designs.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a student who’s easily influenced</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I want the app to provide me with painful reminders</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">So that I will be wrecked with guilt after indulging in stuff I do not need.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want the app to provide me with reminders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">So that I do not overindulge in things I do not need.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a lazy/busy student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I do not want to be required to write a description for my expense or income records every single time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can save time and record quickly.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can save time and record many expenses quickly.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1004,4 +1035,4 @@ Use case ends</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 16:27:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-26 08:54:23 UTC</div></div></div></body></html>
