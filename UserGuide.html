@@ -18,6 +18,7 @@
 <li><a href="#organization">3.3. Organization</a></li>
 <li><a href="#reminders">3.4. Reminders</a></li>
 <li><a href="#wishlist">3.5. WishList</a></li>
+<li><a href="#ui-features">3.6. UI features</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -100,10 +101,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>&lt;&gt;</code> are the parameters to be supplied by the user e.g. in <code>addExpense [--desc &lt;description&gt;]</code>, <code>&lt;description&gt;</code> is a parameter which can be used as <code>addExpense --desc deck mala</code>.</p>
+<p>Words in <code>&lt;&gt;</code> are the parameters to be supplied by the user e.g. in <code>addExpense [n/&lt;description&gt;]</code>, <code>&lt;description&gt;</code> is a parameter which can be used as <code>addExpense n/deck mala</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/mala at deck t/mala</code> or as <code>n/mala at deck</code>.</p>
 </li>
 </ul>
 </div>
@@ -233,7 +234,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Adds the amount to your total income. Inputs can be arranged in a different order. Description may be omitted from the income record.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addIncome [--desc &lt;description&gt;] --amt &lt;income amount&gt;</code></p>
+<p>Format: <code>addIncome [n/&lt;description&gt;] amt/&lt;income amount&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -241,10 +242,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>addIncome --amt 6000</code></p>
+<p><code>addIncome amt/6000</code></p>
 </li>
 <li>
-<p><code>addIncome --amt 1000 --desc year-end bonus!! :DD</code></p>
+<p><code>addIncome amt/1000 n/year-end bonus!! :DD</code></p>
 </li>
 </ul>
 </div>
@@ -255,7 +256,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Edits a current income record at the given index number.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editIncome &lt;index&gt; [--desc &lt;description&gt; --amt &lt;income amount&gt;] [--tag &lt;tag&gt;]</code></p>
+<p>Format: <code>editIncome &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;income amount&gt;] [t/&lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -263,10 +264,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>editIncome 1 --desc salary for feb</code></p>
+<p><code>editIncome 1 n/salary for feb</code></p>
 </li>
 <li>
-<p><code>editIncome 1 --desc february --amt 6500 --tag salary</code></p>
+<p><code>editIncome 1 n/february amt/650 t/salary</code></p>
 </li>
 </ul>
 </div>
@@ -376,26 +377,26 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-loan-code-addloan-code"><a class="link" href="#adding-a-loan-code-addloan-code">3.1.14. Adding a Loan : <code>addLoan</code></a></h4>
+<h4 id="adding-a-loan-code-addloan-code-coming-in-v2-0"><a class="link" href="#adding-a-loan-code-addloan-code-coming-in-v2-0">3.1.14. Adding a Loan : <code>addLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Adds a new loan with the given description, amount and interest (in percentage) and calculates the total outstanding amount based on the interest.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addLoan --desc &lt;description&gt; --amt &lt;loan amount&gt; --int &lt;interest&gt;</code></p>
+<p>Format: <code>addLoan  n/&lt;description&gt; amt/&lt;loan amount&gt; i/&lt;interest&gt;</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addLoan --desc student loan --amt 30000 --int 4.5</code></p>
+<p><code>addLoan n/student loan amt/30000 i/4.5</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-a-loan-code-listloan-code"><a class="link" href="#listing-a-loan-code-listloan-code">3.1.15. Listing a loan : <code>listLoan</code></a></h4>
+<h4 id="listing-a-loan-code-listloan-code-coming-in-v2-0"><a class="link" href="#listing-a-loan-code-listloan-code-coming-in-v2-0">3.1.15. Listing a loan : <code>listLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Lists all the loans that the user has.</p>
 </div>
@@ -407,12 +408,12 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-loan-code-editloan-code"><a class="link" href="#editing-a-loan-code-editloan-code">3.1.16. Editing a loan : <code>editLoan</code></a></h4>
+<h4 id="editing-a-loan-code-editloan-code-coming-in-v2-0"><a class="link" href="#editing-a-loan-code-editloan-code-coming-in-v2-0">3.1.16. Editing a loan : <code>editLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Edits a current loan&#8217;s description, loan amount, or both.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editLoan &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;loan amount&gt;] [--int &lt;interest&gt;]</code></p>
+<p>Format: <code>editLoan &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;loan amount&gt;] [i/&lt;interest&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -420,16 +421,16 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>editLoan 1 --desc nus tuition loan T.T</code></p>
+<p><code>editLoan 1 n/nus tuition loan T.T</code></p>
 </li>
 <li>
-<p><code>editLoan 1 --amt 25000 --int 4.45%</code></p>
+<p><code>editLoan 1 amt/25000 i/4.45%</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-loan-code-deleteloan-code"><a class="link" href="#deleting-a-loan-code-deleteloan-code">3.1.17. Deleting a loan : <code>deleteLoan</code></a></h4>
+<h4 id="deleting-a-loan-code-deleteloan-code-coming-in-v2-0"><a class="link" href="#deleting-a-loan-code-deleteloan-code-coming-in-v2-0">3.1.17. Deleting a loan : <code>deleteLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Deletes a current loan at the given index.</p>
 </div>
@@ -448,12 +449,12 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="paying-a-loan-code-payloan-code"><a class="link" href="#paying-a-loan-code-payloan-code">3.1.18. Paying a loan : <code>payLoan</code></a></h4>
+<h4 id="paying-a-loan-code-payloan-code-coming-in-v2-0"><a class="link" href="#paying-a-loan-code-payloan-code-coming-in-v2-0">3.1.18. Paying a loan : <code>payLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Reduces the loan amount for the loan at the given index after user pays for part of the loan.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>payLoan &lt;index&gt; &lt;amountPaid&gt;</code></p>
+<p>Format: <code>payLoan &lt;index&gt; amt/&lt;amountPaid&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -461,7 +462,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>payLoan 1 4000</code></p>
+<p><code>payLoan 1 amt/4000</code></p>
 </li>
 </ul>
 </div>
@@ -1047,6 +1048,80 @@ Format: <code>purchase &lt;index&gt;</code></p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="ui-features"><a class="link" href="#ui-features">3.6. UI features</a></h3>
+<div class="sect3">
+<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.6.1. Toggle Panel : <code>toggle</code></a></h4>
+<div class="paragraph">
+<p>Toggles visibility of the specified panel on the GUI. Only the following inputs are accepted:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>wishlist</code>/<code>wishes</code>/<code>wish</code>/<code>w</code> for wishlist panel,</p>
+</li>
+<li>
+<p><code>budgets</code>/<code>budget</code>/<code>b</code> for budget panel, and</p>
+</li>
+<li>
+<p><code>reminders</code>/<code>reminder</code>/<code>r</code> for reminders panel
+Format: <code>toggle &lt;panel_name&gt;</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>toggle wishlist</code></p>
+</li>
+<li>
+<p><code>toggle budget</code></p>
+</li>
+<li>
+<p><code>toggle r</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-fonts-code-listfont-code"><a class="link" href="#list-fonts-code-listfont-code">3.6.2. List Fonts : <code>listFont</code></a></h4>
+<div class="paragraph">
+<p>Lists all available fonts the user can switch to.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listFont</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>listFont</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.6.3. Change Font : <code>changeFont</code></a></h4>
+<div class="paragraph">
+<p>Changes the font used in application to the specified font. The input is case-sensitive. Only the following font names are accepted:
+"arial", "calibri", "cambria", "candara", "garamond", "georgia", "rockwell", "segoe UI", "serif", "verdana"</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>changeFont &lt;font_name&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>changeFont arial</code></p>
+</li>
+<li>
+<p><code>changeFont segoe UI</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1244,4 +1319,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 12:28:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 12:03:48 UTC</div></div></div></body></html>
