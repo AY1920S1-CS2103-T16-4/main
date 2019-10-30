@@ -18,7 +18,8 @@
 <li><a href="#organization">3.3. Organization</a></li>
 <li><a href="#reminders">3.4. Reminders</a></li>
 <li><a href="#wishlist">3.5. WishList</a></li>
-<li><a href="#ui-features">3.6. UI features</a></li>
+<li><a href="#undo-redo">3.6. Undo/ Redo</a></li>
+<li><a href="#ui-features">3.7. UI features</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -297,7 +298,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Adds a new budget for expenditure with a certain tag, if applicable. Period: day/week/month</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addBudget --desc &lt;description&gt; --amt &lt;budget&gt; --period &lt;period&gt; [--tag &lt;tag&gt;]</code></p>
+<p>Format: <code>addBudget cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [tg/&lt;tag&gt;]</code><br>
+Note: format for inputting period is &lt;number&gt;&lt;d/m/y&gt; where d/m/y stands for days / months / years respectively
+e.g. for a period input of 10 days, use 10d</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -305,10 +308,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>addBudget --desc food budget --period day --amt 200 --tag food</code></p>
+<p><code>addBudget cat/Food n/Nov Budget amt/50.00 d/2019 09 09 p/1m tg/food</code></p>
 </li>
 <li>
-<p><code>addBudget --desc entertainment budget --amt 300</code></p>
+<p><code>addBudget cat/Food n/Mala Budget amt/100.00 d/2019 09 10 p/50d</code></p>
 </li>
 </ul>
 </div>
@@ -338,7 +341,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Edits a current budget&#8217;s description, amount or tag (if applicable) at the given index.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editBudget --index &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;budget&gt;] [--tag &lt;tag&gt;]</code></p>
+<p>Format: <code>editBudget &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;budget&gt;] [tg/&lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -346,13 +349,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>editBudget 1 --desc fooooood budget</code></p>
+<p><code>editBudget 1 n/fooooood budget</code></p>
 </li>
 <li>
-<p><code>editBudget 2 --desc lunch budget --amt 150</code></p>
+<p><code>editBudget 2 n/lunch budget amt/150</code></p>
 </li>
 <li>
-<p><code>editBudget 2 --tag fun</code></p>
+<p><code>editBudget 2 tg/fun</code></p>
 </li>
 </ul>
 </div>
@@ -372,97 +375,6 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <ul>
 <li>
 <p><code>deleteBudget 2</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-a-loan-code-addloan-code-coming-in-v2-0"><a class="link" href="#adding-a-loan-code-addloan-code-coming-in-v2-0">3.1.14. Adding a Loan : <code>addLoan</code> [coming in v2.0]</a></h4>
-<div class="paragraph">
-<p>Adds a new loan with the given description, amount and interest (in percentage) and calculates the total outstanding amount based on the interest.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addLoan  n/&lt;description&gt; amt/&lt;loan amount&gt; i/&lt;interest&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>addLoan n/student loan amt/30000 i/4.5</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-a-loan-code-listloan-code-coming-in-v2-0"><a class="link" href="#listing-a-loan-code-listloan-code-coming-in-v2-0">3.1.15. Listing a loan : <code>listLoan</code> [coming in v2.0]</a></h4>
-<div class="paragraph">
-<p>Lists all the loans that the user has.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>listLoan</code></p>
-</div>
-<div class="paragraph">
-<p>Example: <code>listLoan</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-loan-code-editloan-code-coming-in-v2-0"><a class="link" href="#editing-a-loan-code-editloan-code-coming-in-v2-0">3.1.16. Editing a loan : <code>editLoan</code> [coming in v2.0]</a></h4>
-<div class="paragraph">
-<p>Edits a current loan&#8217;s description, loan amount, or both.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>editLoan &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;loan amount&gt;] [i/&lt;interest&gt;]</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>editLoan 1 n/nus tuition loan T.T</code></p>
-</li>
-<li>
-<p><code>editLoan 1 amt/25000 i/4.45%</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-loan-code-deleteloan-code-coming-in-v2-0"><a class="link" href="#deleting-a-loan-code-deleteloan-code-coming-in-v2-0">3.1.17. Deleting a loan : <code>deleteLoan</code> [coming in v2.0]</a></h4>
-<div class="paragraph">
-<p>Deletes a current loan at the given index.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deleteLoan &lt;index&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>deleteLoan 1</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="paying-a-loan-code-payloan-code-coming-in-v2-0"><a class="link" href="#paying-a-loan-code-payloan-code-coming-in-v2-0">3.1.18. Paying a loan : <code>payLoan</code> [coming in v2.0]</a></h4>
-<div class="paragraph">
-<p>Reduces the loan amount for the loan at the given index after user pays for part of the loan.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>payLoan &lt;index&gt; amt/&lt;amountPaid&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>payLoan 1 amt/4000</code></p>
 </li>
 </ul>
 </div>
@@ -1028,9 +940,64 @@ Format: <code>purchase &lt;index&gt;</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ui-features"><a class="link" href="#ui-features">3.6. UI features</a></h3>
+<h3 id="undo-redo"><a class="link" href="#undo-redo">3.6. Undo/ Redo</a></h3>
 <div class="sect3">
-<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.6.1. Toggle Panel : <code>toggle</code></a></h4>
+<h4 id="undo-previous-command-code-undo-code"><a class="link" href="#undo-previous-command-code-undo-code">3.6.1. Undo previous command : <code>undo</code></a></h4>
+<div class="paragraph">
+<p>Restores the finance tracker to the state before the previous undoable command was executed</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>undo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>delete 2</code><br>
+<code>undo</code> (reverses the <code>delete 2</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="redo-previously-undone-command-code-redo-code"><a class="link" href="#redo-previously-undone-command-code-redo-code">3.6.2. Redo previously undone command : <code>redo</code></a></h4>
+<div class="paragraph">
+<p>Reverses the most recent undone command</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>delete 2</code><br>
+<code>undo</code> (reverses the <code>delete 2</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ui-features"><a class="link" href="#ui-features">3.7. UI features</a></h3>
+<div class="sect3">
+<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.7.1. Toggle Panel : <code>toggle</code></a></h4>
 <div class="paragraph">
 <p>Toggles visibility of the specified panel on the GUI. Only the following inputs are accepted:</p>
 </div>
@@ -1066,7 +1033,7 @@ Format: <code>toggle &lt;panel_name&gt;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-fonts-code-listfont-code"><a class="link" href="#list-fonts-code-listfont-code">3.6.2. List Fonts : <code>listFont</code></a></h4>
+<h4 id="list-fonts-code-listfont-code"><a class="link" href="#list-fonts-code-listfont-code">3.7.2. List Fonts : <code>listFont</code></a></h4>
 <div class="paragraph">
 <p>Lists all available fonts the user can switch to.</p>
 </div>
@@ -1078,7 +1045,7 @@ Format: <code>toggle &lt;panel_name&gt;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.6.3. Change Font : <code>changeFont</code></a></h4>
+<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.7.3. Change Font : <code>changeFont</code></a></h4>
 <div class="paragraph">
 <p>Changes the font used in application to the specified font. The input is case-sensitive. Only the following font names are accepted:
 "arial", "calibri", "cambria", "candara", "garamond", "georgia", "rockwell", "segoe UI", "serif", "verdana"</p>
@@ -1298,4 +1265,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 13:36:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:44:48 UTC</div></div></div></body></html>
