@@ -114,40 +114,12 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect2">
 <h3 id="expenses-and-income"><a class="link" href="#expenses-and-income">3.1. Expenses and Income</a></h3>
 <div class="sect3">
-<h4 id="adding-a-expense-code-addexpense-code"><a class="link" href="#adding-a-expense-code-addexpense-code">3.1.1. Adding a expense: <code>addExpense</code></a></h4>
+<h4 id="adding-expense-code-add-code"><a class="link" href="#adding-expense-code-add-code">3.1.1. Adding Expense: <code>add</code></a></h4>
 <div class="paragraph">
-<p>Adds a new expenditure to your total/daily/weekly/monthly spending with current timestamp. Inputs can be arranged in a different order. Description and tag may be omitted from the expenditure record.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addExpense [--desc &lt;description&gt;] [--tag &lt;tag&gt;] --amt &lt;expenditure&gt;</code></p>
+<p>Adds a new expenditure to your total/daily/weekly/monthly spending with current timestamp. Inputs can be arranged in a different order.Tag may be omitted from the expenditure record. Category must already exist in the list of category.</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>addExpense --desc deck mala --tag food --amt 5.60</code></p>
-</li>
-<li>
-<p><code>addExpense --tag food --amt 5.60</code></p>
-</li>
-<li>
-<p><code>addExpense --amt 5.60 --cat food</code></p>
-</li>
-<li>
-<p><code>addExpense --amt 5.60</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-expense-code-editexpense-code"><a class="link" href="#editing-a-expense-code-editexpense-code">3.1.2. Editing a expense: <code>editExpense</code></a></h4>
-<div class="paragraph">
-<p>Edits a current expenditure with the given index number</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>editExpense &lt;index&gt; [--desc &lt;description&gt;] [--tag &lt;tag&gt;] [--amt &lt;expenditure&gt;]</code></p>
+<p>Format: <code>add typ/Expense cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [--tag &lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -155,21 +127,68 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>editExpense 1 --desc deck mala with friends</code></p>
+<p><code>add cat/Food typ/Expense n/Mala amt/5.50 d/2019 09 09 tg/food tg/indulgence</code></p>
 </li>
 <li>
-<p><code>editExpense 1 --tag mala --amt 5.33</code></p>
+<p><code>add cat/Travel typ/Expense n/Travel To Alaska amt/550000 d/2019 09 09</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-expense-code-deleteexpense-code"><a class="link" href="#deleting-a-expense-code-deleteexpense-code">3.1.3. Deleting a expense: <code>deleteExpense</code></a></h4>
+<h4 id="adding-income-code-add-code"><a class="link" href="#adding-income-code-add-code">3.1.2. Adding Income : <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds a new Income to your total/daily/weekly/monthly spending with current timestamp. Inputs can be arranged in a different order. Tag may be omitted from the expenditure record. . Category must already exist in the list of category.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add typ/Income cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [--tag &lt;tag&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add cat/Gifts typ/Income n/Durian amt/200.00 d/2019 09 09 tg/food</code></p>
+</li>
+<li>
+<p><code>add cat/Business typ/Income n/business Trip To Mars amt/20000.00 d/2019 09 09</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-expense-income-code-edit-code"><a class="link" href="#editing-a-expense-income-code-edit-code">3.1.3. Editing a expense/income: <code>edit</code></a></h4>
+<div class="paragraph">
+<p>Edits a current entry with the given index number. Category must already exist in the list of category.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [amt/ &lt;expenditure&gt;] [--tag &lt;tag&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 cat/Food n/deck mala with friends</code></p>
+</li>
+<li>
+<p><code>edit 3 cat/Business n/Selling Coding Services amt/0.01</code></p>
+</li>
+<li>
+<p><code>edit 5 tg/helpmykidneys</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-expense-income-code-delete-code"><a class="link" href="#deleting-a-expense-income-code-delete-code">3.1.4. Deleting a expense/income: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the recorded expenditure with the given index number.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>deleteExpense &lt;index&gt;</code></p>
+<p>Format: <code>delete &lt;index&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -177,13 +196,16 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>deleteExpense 2</code></p>
+<p><code>delete 2</code></p>
+</li>
+<li>
+<p><code>delete 4</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-autoexpenditure-code-addautoexpenditure-code"><a class="link" href="#adding-autoexpenditure-code-addautoexpenditure-code">3.1.4. Adding AutoExpenditure : <code>addAutoExpenditure</code></a></h4>
+<h4 id="adding-autoexpenditure-code-addautoexpenditure-code"><a class="link" href="#adding-autoexpenditure-code-addautoexpenditure-code">3.1.5. Adding AutoExpenditure : <code>addAutoExpenditure</code></a></h4>
 <div class="paragraph">
 <p>Adds an automatically recurring expenditure every day/week/month (frequency) with the given description and amount.</p>
 </div>
@@ -202,7 +224,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-autoexpenditure-code-listautoexpenditure-code"><a class="link" href="#listing-autoexpenditure-code-listautoexpenditure-code">3.1.5. Listing AutoExpenditure : <code>listAutoExpenditure</code></a></h4>
+<h4 id="listing-autoexpenditure-code-listautoexpenditure-code"><a class="link" href="#listing-autoexpenditure-code-listautoexpenditure-code">3.1.6. Listing AutoExpenditure : <code>listAutoExpenditure</code></a></h4>
 <div class="paragraph">
 <p>Lists all the current automatically recurring expenditures.</p>
 </div>
@@ -221,7 +243,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-autoexpenditure-code-deleteautoexpenditure-code"><a class="link" href="#deleting-autoexpenditure-code-deleteautoexpenditure-code">3.1.6. Deleting AutoExpenditure : <code>deleteAutoExpenditure</code></a></h4>
+<h4 id="deleting-autoexpenditure-code-deleteautoexpenditure-code"><a class="link" href="#deleting-autoexpenditure-code-deleteautoexpenditure-code">3.1.7. Deleting AutoExpenditure : <code>deleteAutoExpenditure</code></a></h4>
 <div class="paragraph">
 <p>Deletes a current automatically recurring expenditure at the given index.</p>
 </div>
@@ -230,70 +252,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-income-code-addincome-code"><a class="link" href="#adding-income-code-addincome-code">3.1.7. Adding Income : <code>addIncome</code></a></h4>
-<div class="paragraph">
-<p>Adds the amount to your total income. Inputs can be arranged in a different order. Description may be omitted from the income record.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addIncome [n/&lt;description&gt;] amt/&lt;income amount&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>addIncome amt/6000</code></p>
-</li>
-<li>
-<p><code>addIncome amt/1000 n/year-end bonus!! :DD</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-income-code-editincome-code"><a class="link" href="#editing-income-code-editincome-code">3.1.8. Editing Income : <code>editIncome</code></a></h4>
-<div class="paragraph">
-<p>Edits a current income record at the given index number.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>editIncome &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;income amount&gt;] [t/&lt;tag&gt;]</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>editIncome 1 n/salary for feb</code></p>
-</li>
-<li>
-<p><code>editIncome 1 n/february amt/650 t/salary</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-income-code-deleteincome-code"><a class="link" href="#deleting-income-code-deleteincome-code">3.1.9. Deleting Income : <code>deleteIncome</code></a></h4>
-<div class="paragraph">
-<p>Deletes the recorded income at the given index number.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deleteIncome &lt;index&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>deleteIncome 3</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-budget-addbudget"><a class="link" href="#adding-budget-addbudget">3.1.10. Adding Budget : 'addBudget`</a></h4>
+<h4 id="adding-budget-addbudget"><a class="link" href="#adding-budget-addbudget">3.1.8. Adding Budget : 'addBudget`</a></h4>
 <div class="paragraph">
 <p>Adds a new budget for expenditure with a certain tag, if applicable. Period: day/week/month</p>
 </div>
@@ -317,7 +276,7 @@ e.g. for a period input of 10 days, use 10d</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-budget-listbudget"><a class="link" href="#listing-budget-listbudget">3.1.11. Listing Budget : 'listBudget`</a></h4>
+<h4 id="listing-budget-listbudget"><a class="link" href="#listing-budget-listbudget">3.1.9. Listing Budget : 'listBudget`</a></h4>
 <div class="paragraph">
 <p>Lists all the current budgets the user has.</p>
 </div>
@@ -336,7 +295,7 @@ e.g. for a period input of 10 days, use 10d</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-budget-editbudget"><a class="link" href="#editing-budget-editbudget">3.1.12. Editing Budget : 'editBudget`</a></h4>
+<h4 id="editing-budget-editbudget"><a class="link" href="#editing-budget-editbudget">3.1.10. Editing Budget : 'editBudget`</a></h4>
 <div class="paragraph">
 <p>Edits a current budget&#8217;s description, amount or tag (if applicable) at the given index.</p>
 </div>
@@ -361,7 +320,7 @@ e.g. for a period input of 10 days, use 10d</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-budget-code-deletebudget-code"><a class="link" href="#deleting-budget-code-deletebudget-code">3.1.13. Deleting Budget : <code>deleteBudget</code></a></h4>
+<h4 id="deleting-budget-code-deletebudget-code"><a class="link" href="#deleting-budget-code-deletebudget-code">3.1.11. Deleting Budget : <code>deleteBudget</code></a></h4>
 <div class="paragraph">
 <p>Deletes a current budget at the given index.</p>
 </div>
@@ -379,16 +338,98 @@ e.g. for a period input of 10 days, use 10d</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">3.2. Statistics</a></h3>
 <div class="sect3">
-<h4 id="viewing-history-code-viewhistory-code"><a class="link" href="#viewing-history-code-viewhistory-code">3.2.1. Viewing History : <code>viewHistory</code></a></h4>
+<h4 id="adding-category-addcategory"><a class="link" href="#adding-category-addcategory">3.1.12. Adding Category : 'addCategory`</a></h4>
 <div class="paragraph">
-<p>View past expenditure/ income from startDate to endDate (if present). If startDate not present, lists from 1 month before endDate. If endDate not present, list to current time.</p>
+<p>Adds a new Category for either Income or Expense. The category added must not exist in the application.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>viewHistory&#8201;&#8212;&#8201;cat &lt;category&gt; [--period &lt;startDate&gt;, &lt;endDate&gt;]</code></p>
+<p>Format: <code>addCategory cat/&lt;Category&gt; n/&lt;CategoryName&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addCategory cat/Expense n/Transport</code></p>
+</li>
+<li>
+<p><code>addCategory cat/Income n/Lottery</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-category-editcategory"><a class="link" href="#editing-category-editcategory">3.1.13. Editing Category : 'editCategory`</a></h4>
+<div class="paragraph">
+<p>Edits a current category&#8217;s description.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editCategory typ/&lt;CategoryType&gt; cat/&lt;OldNameOfCategory&gt; n/&lt;NewNameOfCategory&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editCategory typ/Income cat/Business n/HotelManagement</code></p>
+</li>
+<li>
+<p><code>editCategory typ/Expense cat/Family n/Baby Planning</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-categories-listcategories"><a class="link" href="#listing-categories-listcategories">3.1.14. Listing Categories : 'listCategories`</a></h4>
+<div class="paragraph">
+<p>Lists all the current categories the user has.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listCategories</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listCategories</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-category-code-deletecategory-code"><a class="link" href="#deleting-category-code-deletecategory-code">3.1.15. Deleting Category : <code>deleteCategory</code></a></h4>
+<div class="paragraph">
+<p>Deletes a category from guiltTrip. The category that is deleted should not have any entries.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteCategory cat/&lt;CategoryType&gt; n/&lt;CategoryName&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteCategory cat/Income n/Business</code></p>
+</li>
+<li>
+<p><code>deleteCategory cat/Expense n/Food</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-loan-code-addloan-code-coming-in-v2-0"><a class="link" href="#adding-a-loan-code-addloan-code-coming-in-v2-0">3.1.16. Adding a Loan : <code>addLoan</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Adds a new loan with the given description, amount and interest (in percentage) and calculates the total outstanding amount based on the interest.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addLoan  n/&lt;description&gt; amt/&lt;loan amount&gt; i/&lt;interest&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -396,22 +437,140 @@ e.g. for a period input of 10 days, use 10d</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>viewHistory&#8201;&#8212;&#8201;cat expenditure</code></p>
-</li>
-<li>
-<p><code>viewHistory&#8201;&#8212;&#8201;cat expenditure --period 11/9/2019, 21/9/2019</code></p>
-</li>
-<li>
-<p><code>viewHistory&#8201;&#8212;&#8201;cat income --period 11/9/2019</code></p>
-</li>
-<li>
-<p><code>viewHistory&#8201;&#8212;&#8201;cat expenditure --period ,2 21/9/2019</code></p>
+<p><code>addLoan n/student loan amt/30000 i/4.5</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sorting-code-sort-code"><a class="link" href="#sorting-code-sort-code">3.2.2. Sorting : <code>sort</code></a></h4>
+<h4 id="listing-a-loan-code-listloan-code-coming-in-v2-0"><a class="link" href="#listing-a-loan-code-listloan-code-coming-in-v2-0">3.1.17. Listing a loan : <code>listLoan</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Lists all the loans that the user has.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listLoan</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>listLoan</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-loan-code-editloan-code-coming-in-v2-0"><a class="link" href="#editing-a-loan-code-editloan-code-coming-in-v2-0">3.1.18. Editing a loan : <code>editLoan</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Edits a current loan&#8217;s description, loan amount, or both.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editLoan &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;loan amount&gt;] [i/&lt;interest&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editLoan 1 n/nus tuition loan T.T</code></p>
+</li>
+<li>
+<p><code>editLoan 1 amt/25000 i/4.45%</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-loan-code-deleteloan-code-coming-in-v2-0"><a class="link" href="#deleting-a-loan-code-deleteloan-code-coming-in-v2-0">3.1.19. Deleting a loan : <code>deleteLoan</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Deletes a current loan at the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteLoan &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteLoan 1</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="paying-a-loan-code-payloan-code-coming-in-v2-0"><a class="link" href="#paying-a-loan-code-payloan-code-coming-in-v2-0">3.1.20. Paying a loan : <code>payLoan</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Reduces the loan amount for the loan at the given index after user pays for part of the loan.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>payLoan &lt;index&gt; amt/&lt;amountPaid&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>payLoan 1 amt/4000</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="statistics"><a class="link" href="#statistics">3.2. Statistics</a></h3>
+<div class="sect3">
+<h4 id="switching-to-statistics-view-code-switch-code"><a class="link" href="#switching-to-statistics-view-code-switch-code">3.2.1. Switching to Statistics View : <code>switch</code></a></h4>
+<div class="paragraph">
+<p>Switches between the entry view and the statistics summary.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>switch</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p><code>switch</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="switching-to-statistics-view-code-switchstats-code"><a class="link" href="#switching-to-statistics-view-code-switchstats-code">3.2.2. Switching to Statistics View : <code>switchStats</code></a></h4>
+<div class="paragraph">
+<p>Switches between the statistics table view and the statistics graph view.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>switchStats</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p><code>switchStats</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-statistics-code-viewstatistics-code"><a class="link" href="#viewing-statistics-code-viewstatistics-code">3.2.3. Viewing Statistics : <code>viewStatistics</code></a></h4>
+<div class="paragraph">
+<p>View past expenditure/ income by Month. If not present, will only show current Month.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>viewStatistics [p/&lt;Date&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewStatistics</code></p>
+</li>
+<li>
+<p><code>viewStatistics p/2019-09</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting-code-sort-code"><a class="link" href="#sorting-code-sort-code">3.2.4. Sorting : <code>sort</code></a></h4>
 <div class="paragraph">
 <p>Sorts the aforementioned list currently displayed according to SortType which can be <code>amount, time, description, tags and category</code> ,
 and SortSequence which can be in <code>ascending, descending</code> order.</p>
@@ -434,12 +593,12 @@ and SortSequence which can be in <code>ascending, descending</code> order.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-code-search-code"><a class="link" href="#search-code-search-code">3.2.3. Search : <code>search</code></a></h4>
+<h4 id="search-code-find-code"><a class="link" href="#search-code-find-code">3.2.5. Search : <code>find</code></a></h4>
 <div class="paragraph">
-<p>Search income/expenditure list/ wishlist for keyword/ tag.</p>
+<p>Search income/expenditure by Category,Description,Amount,Date or Tags. There must be at least one find parameter.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>Search [--cat &lt;category&gt;] --key &lt;keyword&gt; || --amt &lt;(== || &lt; || &gt; || &#8656; || &gt;=) amount&gt; || --tag &lt;tag&gt;</code></p>
+<p>Format: <code>find [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;expenditure&gt;] [d/&lt;date&gt;] [--tag &lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -447,22 +606,63 @@ and SortSequence which can be in <code>ascending, descending</code> order.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>search --cat expenditure --key book: lists each entry in expenditure with title containing keyword “book”.</code></p>
+<p><code>find cat/food n/mala: lists each entry in expenditure and income with title containing keyword “mala” and category of Food.</code></p>
 </li>
 <li>
-<p><code>search --cat wishlist --key monitor: lists each entry in expenditure with title containing keyword “monitor”</code></p>
+<p><code>find cat/business d/2019-09-09: lists each entry in expenditure and income with date of "2019-09-09" and category of business.</code></p>
 </li>
 <li>
-<p><code>search --key book: search everything in database with keyword “book”.</code></p>
+<p><code>find d/2019-09-09 tg/a tg/b: lists each entry in expenditure and income with date of "2019-09-09" and tags of a and b.</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="search-wish-code-findwish-code"><a class="link" href="#search-wish-code-findwish-code">3.2.6. Search Wish: <code>findWish</code></a></h4>
+<div class="paragraph">
+<p>Search Wish by Category,Description,Amount,Date or Tags. There must be at least one find parameter.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>findWish [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;expenditure&gt;] [d/&lt;date&gt;] [--tag &lt;tag&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findWish cat/food n/mala: lists each entry in Wish with title containing keyword “mala” and category of Food.</code></p>
 </li>
 <li>
-<p><code>search --cat expenditure --tag _CLOTHING: lists each entry in expenditure with tag _CLOTHING.</code></p>
+<p><code>findWish cat/business d/2019-09-09: lists each entry in Wish with date of "2019-09-09" and category of business.</code></p>
 </li>
 <li>
-<p><code>search --cat wishlist  --tag _BOOK: lists each entry in wishlist with tag _BOOK.</code></p>
+<p><code>findWish d/2019-09-09 tg/a tg/b: lists each entry in Wish with date of "2019-09-09" and tags of a and b.</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="search-budget-code-findbudget-code"><a class="link" href="#search-budget-code-findbudget-code">3.2.7. Search Budget: <code>findBudget</code></a></h4>
+<div class="paragraph">
+<p>Search Budget by Category,Description,Amount,Date or Tags. There must be at least one find parameter.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>findBudget [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;expenditure&gt;] [d/&lt;date&gt;] [--tag &lt;tag&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findBudget cat/food n/mala: lists each entry in Budget with title containing keyword “mala” and category of Food.</code></p>
 </li>
 <li>
-<p><code>search --cat expenditure --amt &gt;100: list each entry in expenditure over $100.</code></p>
+<p><code>findBudget cat/business d/2019-09-09: lists each entry in Budget with date of "2019-09-09" and category of business.</code></p>
+</li>
+<li>
+<p><code>findBudget d/2019-09-09 tg/a tg/b: lists each entry in Budget with date of "2019-09-09" and tags of a and b.</code></p>
 </li>
 </ul>
 </div>
@@ -1265,4 +1465,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 15:39:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 15:45:36 UTC</div></div></div></body></html>
