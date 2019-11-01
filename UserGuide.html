@@ -18,7 +18,7 @@
 <li><a href="#reminders">3.3. Reminders</a></li>
 <li><a href="#conditions">3.4. Conditions</a></li>
 <li><a href="#wishlist">3.5. WishList</a></li>
-<li><a href="#undo-redo">3.6. Undo/ Redo</a></li>
+<li><a href="#undo-redo">3.6. Undo/Redo</a></li>
 <li><a href="#ui-features">3.7. UI features</a></li>
 </ul>
 </li>
@@ -554,7 +554,7 @@ only.</p>
 <div class="sect3">
 <h4 id="sorting-code-sort-code"><a class="link" href="#sorting-code-sort-code">3.2.4. Sorting : <code>sort</code></a></h4>
 <div class="paragraph">
-<p>Sorts the aforementioned list currently displayed according to SortType which can be <code>amount</code>, <code>time</code>, <code>description</code>,
+<p>Sorts the aforementioned list currently displayed according to sort type which can be <code>amount</code>, <code>time</code>, <code>description</code>,
 <code>tags</code> and <code>category</code>,
 and SortSequence which can be in <code>ascending</code>, <code>descending</code> order.</p>
 </div>
@@ -749,7 +749,7 @@ The Condition Index refers to the index of the condition to add in the condition
 <p>Deletes the reminder that was at index in the list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>deleteExpenditureReminder &lt;index&gt;</code></p>
+<p>Format: <code>deleteReminder &lt;index&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example: <code>deleteReminder 3</code></p>
@@ -1045,27 +1045,24 @@ Format: <code>findWish &lt;keyword&gt;</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="purchase-wishlist-code-purchase-code"><a class="link" href="#purchase-wishlist-code-purchase-code">3.5.9. Purchase WishList : <code>purchase</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>To be implemented
-Purchases the item at the stated index from your current wishlist
-Format: <code>purchase &lt;index&gt;</code></p>
-</li>
-</ul>
+<h4 id="purchase-wishlist-code-purchase-code-coming-in-v2-0"><a class="link" href="#purchase-wishlist-code-purchase-code-coming-in-v2-0">3.5.9. Purchase WishList : <code>purchase</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Purchases the item at the stated index from your current wishlist</p>
 </div>
 <div class="paragraph">
-<p>Examples: <code>purchase 1</code></p>
+<p>Format: <code>purchase &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>purchase 1</code></p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo"><a class="link" href="#undo-redo">3.6. Undo/ Redo</a></h3>
+<h3 id="undo-redo"><a class="link" href="#undo-redo">3.6. Undo/Redo</a></h3>
 <div class="sect3">
 <h4 id="undo-previous-command-code-undo-code"><a class="link" href="#undo-previous-command-code-undo-code">3.6.1. Undo previous command : <code>undo</code></a></h4>
 <div class="paragraph">
-<p>Restores the finance tracker to the state before the previous undoable command was executed</p>
+<p>Restores the finance tracker to the state before the previous undoable command was executed.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>undo</code></p>
@@ -1091,7 +1088,7 @@ Format: <code>purchase &lt;index&gt;</code></p>
 <div class="sect3">
 <h4 id="redo-previously-undone-command-code-redo-code"><a class="link" href="#redo-previously-undone-command-code-redo-code">3.6.2. Redo previously undone command : <code>redo</code></a></h4>
 <div class="paragraph">
-<p>Reverses the most recent undone command</p>
+<p>Reverses the most recent undone command.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>redo</code></p>
@@ -1216,62 +1213,53 @@ do so.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Expenses and Income:</p>
+<p>Expenses, Income, Budget, Category:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>addExpense [--desc &lt;description&gt;] [--tag &lt;tag&gt;] --amt &lt;expenditure&gt;</p>
+<p>add typ/Expense cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>editExpense &lt;index&gt; [--desc &lt;description&gt;] [--tag &lt;tag] [--amt &lt;expenditure&gt;]</p>
+<p>add typ/Income cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>deleteExpense &lt;index&gt;</p>
+<p>edit &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [amt/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>addAutoExp f/monthly n/spotify amt/11.99 cat/Entertainment</p>
+<p>delete &lt;index&gt;</p>
 </li>
 <li>
-<p>editAutoExp 1 amt/5.99 n/spotify student</p>
+<p>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt; [tg/&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
+</li>
+<li>
+<p>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt; tg/&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
 </li>
 <li>
 <p>deleteAutoExp &lt;index&gt;</p>
 </li>
 <li>
-<p>addIncome [--desc &lt;description&gt;] --amt &lt;income amount&gt;</p>
-</li>
-<li>
-<p>editIncome &lt;index&gt; [--desc &lt;description&gt; --amt &lt;income amount&gt;] [--tag &lt;tag&gt;]</p>
-</li>
-<li>
-<p>deleteIncome &lt;index&gt;</p>
-</li>
-<li>
-<p>addBudget --desc &lt;description&gt; --amt &lt;budget&gt; --period &lt;period&gt; [--tag &lt;tag&gt;]</p>
+<p>addBudget cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [tg/&lt;tag&gt;]</p>
 </li>
 <li>
 <p>listBudget</p>
 </li>
 <li>
-<p>editBudget --index &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;budget&gt;] [--tag &lt;tag&gt;]</p>
+<p>editBudget &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;budget&gt;] [tg/&lt;tag&gt;]</p>
 </li>
 <li>
 <p>deleteBudget &lt;index&gt;</p>
 </li>
 <li>
-<p>addLoan --desc &lt;description&gt; --amt &lt;loan amount&gt; --int &lt;interest&gt;</p>
+<p>addCategory cat/&lt;category&gt; n/&lt;category name&gt;</p>
 </li>
 <li>
-<p>listLoan</p>
+<p>editCategory typ/&lt;category type&gt; cat/&lt;old category name&gt; n/&lt;new category name&gt;</p>
 </li>
 <li>
-<p>editLoan &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;loan amount&gt;] [--int &lt;interest&gt;]</p>
+<p>listCategory</p>
 </li>
 <li>
-<p>deleteLoan &lt;index&gt;</p>
-</li>
-<li>
-<p>payLoan &lt;index&gt; &lt;amountPaid&gt;</p>
+<p>deleteCategory cat/&lt;category type&gt; n/&lt;category name&gt;</p>
 </li>
 </ol>
 </div>
@@ -1281,38 +1269,25 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>viewHistory&#8201;&#8212;&#8201;cat &lt;category&gt; [--period &lt;startDate&gt;, &lt;endDate&gt;]</p>
+<p>switch</p>
 </li>
 <li>
-<p>sortTime order &lt;ascending || descending&gt;</p>
+<p>switchStats</p>
 </li>
 <li>
-<p>sortAmt order &lt;ascending || descending&gt;</p>
+<p>viewStatistics [p/&lt;date&gt;]</p>
 </li>
 <li>
-<p>Search [--cat &lt;category&gt;] --key &lt;keyword&gt; || --amt &lt;(== || &lt; || &gt; || &#8656; || &gt;=) amount&gt; || --tag</p>
-</li>
-</ol>
-</div>
+<p>sort typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
 </li>
 <li>
-<p>Organisation:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>createTag &lt;category name&gt;</p>
+<p>find [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amount&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>listTags &lt;keywords&gt; --regex &lt;regex&gt;</p>
+<p>findWish [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amt&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>renameTag &lt;oldname&gt; &lt;newname&gt;</p>
-</li>
-<li>
-<p>deleteTag &lt;name&gt; &#8592;h || --hard&gt;</p>
-</li>
-<li>
-<p>reset --before &lt;DD/MM/YYYY&gt; --after &lt;DD/MM/YYYY&gt;</p>
+<p>findBudget [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;expenditure&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</p>
 </li>
 </ol>
 </div>
@@ -1322,44 +1297,65 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>listExpenditureReminders</p>
+<p>addReminder n/&lt;Message&gt; i/&lt;Condition Index&gt; [tkr/&lt;Tracker Type&gt;] [amt/&lt;Quota&gt;]</p>
 </li>
 <li>
-<p>listWishlistReminders</p>
+<p>listActiveReminders</p>
 </li>
 <li>
-<p>setExpenditureReminderDate --index&lt;index&gt; --DateTime&lt;DateTime&gt;</p>
+<p>listAllReminders</p>
 </li>
 <li>
-<p>addExpenditureReminder --limit &lt;expenditureLimit&gt; --time &lt;time&gt; --type &lt;type&gt;</p>
-</li>
-<li>
-<p>addWishlistReminder --index &lt;index&gt; --percent [percentage]</p>
+<p>editReminder &lt;Reminder Index&gt; [n/&lt;Message&gt;] [i/&lt;Condition Index&gt;] [tkr/&lt;Tracker Type&gt;] [amt/&lt;Quota&gt;]</p>
 </li>
 <li>
 <p>deleteReminder &lt;index&gt;</p>
+</li>
+<li>
+<p>addToReminder &lt;Reminder Index&gt;, &lt;Condition Index&gt;</p>
+</li>
+<li>
+<p>removeFromReminder &lt;Reminder Index&gt;, &lt;Condition Index&gt;</p>
+</li>
+<li>
+<p>addClassCondition &lt;entryType&gt;</p>
+</li>
+<li>
+<p>addDateCondition &lt;Start Date&gt;, &lt;End Date&gt;</p>
+</li>
+<li>
+<p>addHasKeyWord &lt;keywords&gt;</p>
+</li>
+<li>
+<p>addQuotaCondition &lt;Quota&gt;</p>
+</li>
+<li>
+<p>addHasTagsConditions &lt;Tags&gt;</p>
+</li>
+<li>
+<p>deleteCondition &lt;Index&gt;</p>
+</li>
+<li>
+<p>replaceCondtion &lt;Index of Condition being Replaced&gt;, &lt;Index of Replacing Condition&gt;</p>
+</li>
+<li>
+<p>listConditions</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Wishlist</p>
+<p>Wishlist:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>addWishlist --name &lt;name&gt; --cat &lt;category&gt; --amt &lt;price&gt; --deadline &lt;date&gt;</p>
+<p>addWish n/&lt;Description&gt; cat/&lt;Category&gt; amt/&lt;Price&gt; d/&lt;Date&gt;</p>
 </li>
 <li>
-<p>deleteWishlist &lt;Index&gt;</p>
+<p>deleteWish &lt;index&gt;</p>
 </li>
 <li>
-<p>noteWishlist &lt;index&gt; &lt;note&gt;</p>
-</li>
-<li>
-<p>tag &lt;index&gt; &lt;high/ medium/ low&gt;</p>
-</li>
-<li>
-<p>viewWishlist</p>
+<p>editWishlist &lt;index&gt; [n/&lt;Description&gt;] [cat/&lt;Category&gt;] [amt/&lt;Price&gt;] [d/&lt;Date&gt;] [tg/&lt;Tag&gt;]</p>
 </li>
 <li>
 <p>sortWishlistTime &lt;ascending/ descending&gt;</p>
@@ -1368,19 +1364,45 @@ do so.</p>
 <p>sortWishlistPrice &lt;ascending/ descending&gt;</p>
 </li>
 <li>
-<p>sortWishlistName &lt;ascending/ descending&gt;</p>
+<p>sortWishlistName &lt;ascending/descending&gt;</p>
 </li>
 <li>
 <p>sortWishlistPriority &lt;ascending/descending&gt;</p>
 </li>
 <li>
-<p>search &lt;keyword&gt;</p>
+<p>findWish &lt;keyword&gt;</p>
 </li>
 <li>
 <p>purchase &lt;index&gt;</p>
 </li>
+</ol>
+</div>
+</li>
 <li>
-<p>importWishlist &lt;file path&gt;</p>
+<p>Undo and Redo:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>undo</p>
+</li>
+<li>
+<p>redo</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>UI features:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>toggle &lt;panel name&gt;</p>
+</li>
+<li>
+<p>listFont</p>
+</li>
+<li>
+<p>changeFont &lt;font name&gt;</p>
 </li>
 </ol>
 </div>
@@ -1388,4 +1410,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 03:38:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 03:53:17 UTC</div></div></div></body></html>
