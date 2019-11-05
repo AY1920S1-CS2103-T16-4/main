@@ -76,10 +76,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code>list</code> : lists all expenses and income</p>
 </li>
 <li>
-<p><code>addAutoExp f/monthly n/drinks amt/11.99 cat/Food</code> : adds a recurring expense that will generate every day.</p>
+<p><code>addAutoExp f/monthly n/drinks a/11.99 c/Food</code> : adds a recurring expense that will generate every day.</p>
 </li>
 <li>
-<p><code>add cat/Food typ/Expense n/Mala amt/5.50 d/2019 09 09 tg/food tg/indulgence</code> : adds the specified expense to your
+<p><code>add c/Food typ/Expense n/Mala a/5.50 d/2019 09 09 t/food t/indulgence</code> : adds the specified expense to your
 list of expenses</p>
 </li>
 <li>
@@ -113,7 +113,7 @@ list of expenses</p>
 a parameter which can be used as <code>n/mala at deck</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [tg/TAG]</code> can be used as <code>n/mala at deck tg/mala</code> or as <code>n/mala at deck</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/mala at deck t/mala</code> or as <code>n/mala at deck</code>.</p>
 </li>
 </ul>
 </div>
@@ -280,7 +280,7 @@ Inputs can be arranged in a different order. Tag may be omitted from the expendi
 in the list of categories. Amount must be larger than 0 and positive. Amount should also not be larger than 9999999.99.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add cat/&lt;category name&gt; typ/Expense n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
+<p>Format: <code>add typ/Expense c/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [t/&lt;tag&gt;]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -323,10 +323,10 @@ in the list of categories. Amount must be larger than 0 and positive. Amount sho
 <div class="ulist">
 <ul>
 <li>
-<p><code>add cat/Gifts typ/Expense n/Rubber Duck for Yee Jian amt/55 d/2019 11 09 tg/sanity check</code></p>
+<p><code>add c/Gifts typ/Expense n/Rubber Duck for Yee Jian a/55 d/2019 11 09 t/sanity check</code></p>
 </li>
 <li>
-<p><code>add cat/Travel typ/Expense n/Travel To Alaska amt/550000 d/2019 09 09</code></p>
+<p><code>add c/Travel typ/Expense n/Travel To Alaska a/550000 d/2019 09 09</code></p>
 </li>
 </ul>
 </div>
@@ -338,7 +338,7 @@ in the list of categories. Amount must be larger than 0 and positive. Amount sho
 Inputs can be arranged in a different order. Tag may be omitted from the expenditure record. Category must already exist in the list of category.  Amount must be larger than 0 and positive. Amount should also not be larger than 9999999.99.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add cat/&lt;category name&gt; typ/Income n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
+<p>Format: <code>add c/&lt;category name&gt; typ/Income n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [t/&lt;tag&gt;]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -381,10 +381,10 @@ Inputs can be arranged in a different order. Tag may be omitted from the expendi
 <div class="ulist">
 <ul>
 <li>
-<p><code>add cat/Gifts typ/Income n/Durian amt/200.00 d/2019 09 09 tg/food</code></p>
+<p><code>add c/Gifts typ/Income n/Durian a/200.00 d/2019 09 09 t/food</code></p>
 </li>
 <li>
-<p><code>add cat/Business typ/Income n/Business Trip To Mars amt/20000.00 d/2019 09 09</code></p>
+<p><code>add c/Business typ/Income n/business Trip To Mars a/20000.00 d/2019 09 09</code></p>
 </li>
 </ul>
 </div>
@@ -395,7 +395,7 @@ Inputs can be arranged in a different order. Tag may be omitted from the expendi
 <p>Edits a current entry with the given index number. You may edit one or more fields, but the category must already exist in the list of categories, whether it is Income Category or Expense Category.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [amt/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</code></p>
+<p>Format: <code>edit &lt;index&gt; [c/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [a/&lt;expenditure&gt;] [t/&lt;tag&gt;]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -427,13 +427,13 @@ key in the command  <code>edit 2 tg/irreversiblecatastrophicdestructiontomykidne
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 cat/Food n/deck mala with friends</code></p>
+<p><code>edit 1 c/Food n/deck mala with friends</code></p>
 </li>
 <li>
-<p><code>edit 3 cat/Business n/Selling Coding Services amt/0.01</code></p>
+<p><code>edit 3 c/Business n/Selling Coding Services a/0.01</code></p>
 </li>
 <li>
-<p><code>edit 5 tg/helpmykidneys</code></p>
+<p><code>edit 5 t/helpmykidneys</code></p>
 </li>
 </ul>
 </div>
@@ -493,8 +493,8 @@ key in the command  <code>delete 2</code>.</p>
 <p>Adds an automatically recurring expense every day/week/month (frequency) with the given description and amount.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt;
- [tg/&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
+<p>Format: <code>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt;
+ [t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>To list all categories, you can type <code>listCategories</code>.</p>
@@ -505,7 +505,7 @@ key in the command  <code>delete 2</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addAutoExp f/monthly n/spotify amt/11.99 cat/Entertainment</code></p>
+<p><code>addAutoExp f/monthly n/spotify a/11.99 c/Entertainment</code></p>
 </li>
 </ul>
 </div>
@@ -516,8 +516,8 @@ key in the command  <code>delete 2</code>.</p>
 <p>Edits an automatically recurring expense every day/week/month (frequency) with the given description and amount.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt;
- tg/&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
+<p>Format: <code>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt;
+ t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -525,7 +525,7 @@ key in the command  <code>delete 2</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>editAutoExp 1 amt/5.99 n/spotify student</code></p>
+<p><code>editAutoExp 1 a/5.99 n/spotify student</code></p>
 </li>
 </ul>
 </div>
@@ -555,7 +555,7 @@ A <code>--recursive</code> flag will be shipped in <code>v2.0</code>.</p>
 <p>Adds a new budget for expenditure with a certain tag, if applicable. Period: day/week/month</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addBudget cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [tg/&lt;tag&gt;]</code><br>
+<p>Format: <code>addBudget c/&lt;category&gt; n/&lt;description&gt; a/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [t/&lt;tag&gt;]</code><br>
 Note: format for inputting period is &lt;number&gt;&lt;d/m/y&gt; where d/m/y stands for days / months / years respectively
 e.g. for a period input of 10 days, use 10d</p>
 </div>
@@ -565,10 +565,10 @@ e.g. for a period input of 10 days, use 10d</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addBudget cat/Food n/Nov Budget amt/50.00 d/2019 09 09 p/1m tg/food</code></p>
+<p><code>addBudget c/Food n/Nov Budget a/50.00 d/2019 09 09 p/1m t/food</code></p>
 </li>
 <li>
-<p><code>addBudget cat/Food n/Mala Budget amt/100.00 d/2019 09 10 p/50d</code></p>
+<p><code>addBudget c/Food n/Mala Budget a/100.00 d/2019 09 10 p/50d</code></p>
 </li>
 </ul>
 </div>
@@ -591,7 +591,7 @@ e.g. for a period input of 10 days, use 10d</p>
 <p>Edits a current budget&#8217;s description, amount or tag (if applicable) at the given index.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editBudget &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;budget&gt;] [tg/&lt;tag&gt;]</code></p>
+<p>Format: <code>editBudget &lt;index&gt; [n/&lt;description&gt;] [a/&lt;budget&gt;] [t/&lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -602,10 +602,10 @@ e.g. for a period input of 10 days, use 10d</p>
 <p><code>editBudget 1 n/fooooood budget</code></p>
 </li>
 <li>
-<p><code>editBudget 2 n/lunch budget amt/150</code></p>
+<p><code>editBudget 2 n/lunch budget a/150</code></p>
 </li>
 <li>
-<p><code>editBudget 2 tg/fun</code></p>
+<p><code>editBudget 2 t/fun</code></p>
 </li>
 </ul>
 </div>
@@ -631,7 +631,7 @@ e.g. for a period input of 10 days, use 10d</p>
 <p>Adds a new loan with the given description, amount and interest (in percentage) and calculates the total outstanding amount based on the interest.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addLoan  n/&lt;description&gt; amt/&lt;loan amount&gt; i/&lt;interest&gt;</code></p>
+<p>Format: <code>addLoan  n/&lt;description&gt; a/&lt;loan amount&gt; i/&lt;interest&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -639,7 +639,7 @@ e.g. for a period input of 10 days, use 10d</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addLoan n/student loan amt/30000 i/4.5</code></p>
+<p><code>addLoan n/student loan a/30000 i/4.5</code></p>
 </li>
 </ul>
 </div>
@@ -662,7 +662,7 @@ e.g. for a period input of 10 days, use 10d</p>
 <p>Edits a current loan&#8217;s description, loan amount, or both.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editLoan &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;loan amount&gt;] [i/&lt;interest&gt;]</code></p>
+<p>Format: <code>editLoan &lt;index&gt; [n/&lt;description&gt;] [a/&lt;loan amount&gt;] [i/&lt;interest&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -673,7 +673,7 @@ e.g. for a period input of 10 days, use 10d</p>
 <p><code>editLoan 1 n/nus tuition loan T.T</code></p>
 </li>
 <li>
-<p><code>editLoan 1 amt/25000 i/4.45%</code></p>
+<p><code>editLoan 1 a/25000 i/4.45%</code></p>
 </li>
 </ul>
 </div>
@@ -696,10 +696,10 @@ e.g. for a period input of 10 days, use 10d</p>
 <p>Reduces the loan amount for the loan at the given index after user pays for part of the loan.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>payLoan &lt;index&gt; amt/&lt;amountPaid&gt;</code></p>
+<p>Format: <code>payLoan &lt;index&gt; a/&lt;amountPaid&gt;</code></p>
 </div>
 <div class="paragraph">
-<p>Example: <code>payLoan 1 amt/4000</code></p>
+<p>Example: <code>payLoan 1 a/4000</code></p>
 </div>
 </div>
 </div>
@@ -911,7 +911,7 @@ statistics for convenience of the user.</p>
 <p>Search income/expenditure by Category, Description, Amount, Date or Tags. There must be at least one find parameter.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amount&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</code></p>
+<p>Format: <code>find [c/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -919,13 +919,13 @@ statistics for convenience of the user.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find cat/food n/mala</code>: lists each entry in expenditure and income with title containing keyword “mala” and category of Food.</p>
+<p><code>find c/food n/mala</code>: lists each entry in expenditure and income with title containing keyword “mala” and category of Food.</p>
 </li>
 <li>
-<p><code>find cat/business d/2019-09-09</code>: lists each entry in expenditure and income with date of "2019-09-09" and category of business.</p>
+<p><code>find c/business d/2019-09-09</code>: lists each entry in expenditure and income with date of "2019-09-09" and category of business.</p>
 </li>
 <li>
-<p><code>find d/2019-09-09 tg/a tg/b</code>: lists each entry in expenditure and income with date of "2019-09-09" and tags of a and b.</p>
+<p><code>find d/2019-09-09 t/a t/b</code>: lists each entry in expenditure and income with date of "2019-09-09" and tags of a and b.</p>
 </li>
 </ul>
 </div>
@@ -936,7 +936,7 @@ statistics for convenience of the user.</p>
 <p>Search Wish by Category, Description, Amount, Date or Tags. There must be at least one find parameter.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>findWish [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amt&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</code></p>
+<p>Format: <code>findWish [c/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;a&gt;] [d/&lt;date&gt;] [/&lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -944,13 +944,13 @@ statistics for convenience of the user.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>findWish cat/food n/mala: lists each entry in Wish with title containing keyword “mala” and category of Food.</code></p>
+<p><code>findWish c/food n/mala: lists each entry in Wish with title containing keyword “mala” and category of Food.</code></p>
 </li>
 <li>
-<p><code>findWish cat/business d/2019-09-09: lists each entry in Wish with date of "2019-09-09" and category of business.</code></p>
+<p><code>findWish c/business d/2019-09-09: lists each entry in Wish with date of "2019-09-09" and category of business.</code></p>
 </li>
 <li>
-<p><code>findWish d/2019-09-09 tg/a tg/b: lists each entry in Wish with date of "2019-09-09" and tags of a and b.</code></p>
+<p><code>findWish d/2019-09-09 t/a t/b: lists each entry in Wish with date of "2019-09-09" and tags of a and b.</code></p>
 </li>
 </ul>
 </div>
@@ -961,7 +961,7 @@ statistics for convenience of the user.</p>
 <p>Search Budget by Category,Description,Amount,Date or Tags. There must be at least one find parameter.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>findBudget [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;expenditure&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</code></p>
+<p>Format: <code>findBudget [c/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;expenditure&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -969,13 +969,13 @@ statistics for convenience of the user.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>findBudget cat/food n/mala</code>: lists each entry in Budget with title containing keyword “mala” and category of Food.</p>
+<p><code>findBudget c/food n/mala</code>: lists each entry in Budget with title containing keyword “mala” and category of Food.</p>
 </li>
 <li>
-<p><code>findBudget cat/business d/2019-09-09</code>: lists each entry in Budget with date of "2019-09-09" and category of business.</p>
+<p><code>findBudget c/business d/2019-09-09</code>: lists each entry in Budget with date of "2019-09-09" and category of business.</p>
 </li>
 <li>
-<p><code>findBudget d/2019-09-09 tg/a tg/b</code>: lists each entry in Budget with date of "2019-09-09" and tags of a and b.</p>
+<p><code>findBudget d/2019-09-09 t/a t/b</code>: lists each entry in Budget with date of "2019-09-09" and tags of a and b.</p>
 </li>
 </ul>
 </div>
@@ -998,7 +998,7 @@ Refer to <a href="#conditions">Section 3.8, &#8220;Conditions&#8221;</a> to see 
 The Condition Index refers to the index of the condition to add in the condition list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addReminder n/&lt;Message&gt; i/&lt;Condition Index&gt; [tkr/&lt;Tracker Type&gt;] [amt/&lt;Quota&gt;]</code></p>
+<p>Format: <code>addReminder n/&lt;Message&gt; i/&lt;Condition Index&gt; [tkr/&lt;Tracker Type&gt;] [a/&lt;Quota&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1009,10 +1009,10 @@ The Condition Index refers to the index of the condition to add in the condition
 <p><code>addReminder n/Watch your spending i/1</code></p>
 </li>
 <li>
-<p><code>addReminder n/Watch your spending i/1 tkr/amount amt/100</code></p>
+<p><code>addReminder n/Watch your spending i/1 tkr/amount a/100</code></p>
 </li>
 <li>
-<p><code>addReminder n/Watch your spending i/1 tkr/num amt/10</code></p>
+<p><code>addReminder n/Watch your spending i/1 tkr/num a/10</code></p>
 </li>
 </ul>
 </div>
@@ -1061,7 +1061,7 @@ The Condition Index refers to the index of the condition to add in the condition
 <p>Edits the description/ activation conditions/ attribute being tracked/ quota of the reminder.</p>
 </div>
 <div class="paragraph">
-<p>Format: `editReminder &lt;Reminder Index&gt; [n/&lt;Message&gt;] [i/&lt;Condition Index&gt;] [tkr/&lt;Tracker Type&gt;] [amt/&lt;Quota&gt;] `</p>
+<p>Format: <code>editReminder &lt;Reminder Index&gt; [n/&lt;Message&gt;] [i/&lt;Condition Index&gt;] [tkr/&lt;Tracker Type&gt;] [a/&lt;Quota&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1075,7 +1075,7 @@ The Condition Index refers to the index of the condition to add in the condition
 <p><code>editReminder 2 i/1 i/2 i/3</code></p>
 </li>
 <li>
-<p><code>editReminder 3 tkr/amount amt/100</code></p>
+<p><code>editReminder 3 tkr/amount a/100</code></p>
 </li>
 </ul>
 </div>
@@ -1258,7 +1258,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 <p>Adds a new item to your current wishlist</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addWish n/&lt;Description&gt; cat/&lt;Category&gt; amt/&lt;Price&gt; d/&lt;Date&gt;</code></p>
+<p>Format: <code>addWish n/&lt;Description&gt; c/&lt;Category&gt; a/&lt;Price&gt; d/&lt;Date&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1266,10 +1266,10 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 <div class="ulist">
 <ul>
 <li>
-<p><code>add typ/Wish n/deck mala cat/food amt/5.60 d/2019 10 28</code></p>
+<p><code>add typ/Wish n/deck mala c/food a/5.60 d/2019 10 28</code></p>
 </li>
 <li>
-<p><code>add typ/Wish n/deck mala cat/food amt/5.60 d/01/01/2020</code></p>
+<p><code>add typ/Wish n/deck mala c/food a/5.60 d/01/01/2020</code></p>
 </li>
 </ul>
 </div>
@@ -1310,7 +1310,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 <p><code>editWishlist 1 n/1 try the chinatown ri ri hong mala!</code></p>
 </li>
 <li>
-<p><code>editWishlist 1 amt/20 tag/mala tag/expensive</code></p>
+<p><code>editWishlist 1 a/20 tag/mala tag/expensive</code></p>
 </li>
 </ul>
 </div>
@@ -1596,49 +1596,49 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>add typ/Expense cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</p>
+<p>add typ/Expense c/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>add typ/Income cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</p>
+<p>add typ/Income c/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>edit &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [amt/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</p>
+<p>edit &lt;index&gt; [c/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [a/&lt;expenditure&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
 <p>delete &lt;index&gt;</p>
 </li>
 <li>
-<p>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt; [tg/&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
+<p>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt; [t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
 </li>
 <li>
-<p>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt; tg/&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
+<p>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt; t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
 </li>
 <li>
 <p>deleteAutoExp &lt;index&gt;</p>
 </li>
 <li>
-<p>addBudget cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [tg/&lt;tag&gt;]</p>
+<p>addBudget c/&lt;category&gt; n/&lt;description&gt; a/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [t/&lt;tag&gt;]</p>
 </li>
 <li>
 <p>listBudget</p>
 </li>
 <li>
-<p>editBudget &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;budget&gt;] [tg/&lt;tag&gt;]</p>
+<p>editBudget &lt;index&gt; [n/&lt;description&gt;] [a/&lt;budget&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
 <p>deleteBudget &lt;index&gt;</p>
 </li>
 <li>
-<p>addCategory cat/&lt;category&gt; n/&lt;category name&gt;</p>
+<p>addCategory c/&lt;category&gt; n/&lt;category name&gt;</p>
 </li>
 <li>
-<p>editCategory cat/&lt;category type&gt; o/&lt;old category name&gt; n/&lt;new category name&gt;</p>
+<p>editCategory typ/&lt;category type&gt; c/&lt;old category name&gt; n/&lt;new category name&gt;</p>
 </li>
 <li>
-<p>listCategories</p>
+<p>listCategory</p>
 </li>
 <li>
-<p>deleteCategory cat/&lt;category type&gt; n/&lt;category name&gt;</p>
+<p>deleteCategory c/&lt;category type&gt; n/&lt;category name&gt;</p>
 </li>
 </ol>
 </div>
@@ -1660,13 +1660,13 @@ do so.</p>
 <p>sort typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
 </li>
 <li>
-<p>find [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amount&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</p>
+<p>find [c/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>findWish [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amt&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</p>
+<p>findWish [c/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p>findBudget [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;expenditure&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</p>
+<p>findBudget [c/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;expenditure&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
 </li>
 </ol>
 </div>
@@ -1676,7 +1676,7 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>addReminder n/&lt;Message&gt; i/&lt;Condition Index&gt; [tkr/&lt;Tracker Type&gt;] [amt/&lt;Quota&gt;]</p>
+<p>addReminder n/&lt;Message&gt; i/&lt;Condition Index&gt; [tkr/&lt;Tracker Type&gt;] [a/&lt;Quota&gt;]</p>
 </li>
 <li>
 <p>listActiveReminders</p>
@@ -1685,7 +1685,7 @@ do so.</p>
 <p>listAllReminders</p>
 </li>
 <li>
-<p>editReminder &lt;Reminder Index&gt; [n/&lt;Message&gt;] [i/&lt;Condition Index&gt;] [tkr/&lt;Tracker Type&gt;] [amt/&lt;Quota&gt;]</p>
+<p>editReminder &lt;Reminder Index&gt; [n/&lt;Message&gt;] [i/&lt;Condition Index&gt;] [tkr/&lt;Tracker Type&gt;] [a/&lt;Quota&gt;]</p>
 </li>
 <li>
 <p>deleteReminder &lt;index&gt;</p>
@@ -1728,13 +1728,13 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>addWish n/&lt;Description&gt; cat/&lt;Category&gt; amt/&lt;Price&gt; d/&lt;Date&gt;</p>
+<p>addWish n/&lt;Description&gt; c/&lt;Category&gt; a/&lt;Price&gt; d/&lt;Date&gt;</p>
 </li>
 <li>
 <p>deleteWish &lt;index&gt;</p>
 </li>
 <li>
-<p>editWishlist &lt;index&gt; [n/&lt;Description&gt;] [cat/&lt;Category&gt;] [amt/&lt;Price&gt;] [d/&lt;Date&gt;] [tg/&lt;Tag&gt;]</p>
+<p>editWishlist &lt;index&gt; [n/&lt;Description&gt;] [c/&lt;Category&gt;] [a/&lt;Price&gt;] [d/&lt;Date&gt;] [t/&lt;Tag&gt;]</p>
 </li>
 <li>
 <p>sortWishlistTime &lt;ascending/ descending&gt;</p>
@@ -1783,10 +1783,16 @@ do so.</p>
 <li>
 <p>changeFont &lt;font name&gt;</p>
 </li>
+<li>
+<p>setLightTheme</p>
+</li>
+<li>
+<p>setDarkTheme</p>
+</li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 02:07:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 02:37:26 UTC</div></div></div></body></html>
