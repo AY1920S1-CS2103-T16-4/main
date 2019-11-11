@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>guiltTrip() - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>GuiltTrip - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">guitTrip()</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://ay1920s1-cs2103-t16-4.github.io/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>guiltTrip() - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">guitTrip()</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://ay1920s1-cs2103-t16-4.github.io/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>GuiltTrip - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team T16-04</code>      Since: <code>Aug 2019</code>      Licence: <code>MIT</code></p>
@@ -17,15 +17,16 @@
 <li><a href="#categories">3.2. Categories</a></li>
 <li><a href="#expenses">3.3. Expenses</a></li>
 <li><a href="#autoexpense">3.4. AutoExpense</a></li>
-<li><a href="#budget">3.5. Budget</a></li>
-<li><a href="#loan-coming-in-v2-0">3.6. Loan [coming in v2.0]</a></li>
-<li><a href="#statistics">3.7. Statistics</a></li>
-<li><a href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code">3.8. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code>, <code>sortAutoExp</code></a></li>
-<li><a href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code">3.9. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code>, <code>findAutoExp</code></a></li>
-<li><a href="#reminders">3.10. Reminders</a></li>
-<li><a href="#wishlist">3.11. WishList</a></li>
-<li><a href="#undo-redo">3.12. Undo/Redo</a></li>
-<li><a href="#ui-features">3.13. UI features</a></li>
+<li><a href="#income">3.5. Income</a></li>
+<li><a href="#budget">3.6. Budget</a></li>
+<li><a href="#wishlist">3.7. WishList</a></li>
+<li><a href="#loan-coming-in-v2-0">3.8. Loan [coming in v2.0]</a></li>
+<li><a href="#statistics">3.9. Statistics</a></li>
+<li><a href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code">3.10. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code>, <code>sortAutoExp</code></a></li>
+<li><a href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code">3.11. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code>, <code>findAutoExp</code></a></li>
+<li><a href="#reminders">3.12. Reminders</a></li>
+<li><a href="#undo-redo">3.13. Undo/Redo</a></li>
+<li><a href="#ui-features">3.14. UI features</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -78,10 +79,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code>list</code> : lists all expenses and income</p>
 </li>
 <li>
-<p><code>addAutoExp f/monthly n/drinks a/11.99 c/Food</code> : adds a recurring expense that will generate every day.</p>
+<p><code>addAutoExp f/monthly n/drinks amt/11.99 cat/Food</code> : adds a recurring expense that will generate every day.</p>
 </li>
 <li>
-<p><code>add c/Food typ/Expense n/Mala a/5.50 d/2019 09 09 t/food t/indulgence</code> : adds the specified expense to your
+<p><code>addExpense cat/Food n/Mala amt/5.50 d/2019 09 09 tg/food tg/indulgence</code> : adds the specified expense to your
 list of expenses</p>
 </li>
 <li>
@@ -172,10 +173,10 @@ GuiltTrip comes with a default set of Categories as listed below. All entries mu
 <div class="ulist">
 <ul>
 <li>
-<p>Income: <code>Business,Salary,Gifts,Loans</code></p>
+<p>Income: <code>Business, Salary, Gifts, Loans</code></p>
 </li>
 <li>
-<p>Expense: <code>Food,Travel,Family,Bills,Entertainment,Transport,Shopping,HealthCare,Groceries,Rent</code></p>
+<p>Expense: <code>Food, Travel, Family, Bills, Entertainment, Transport, Shopping, HealthCare, Groceries, Rent</code></p>
 </li>
 </ul>
 </div>
@@ -214,7 +215,7 @@ Category names are case-insensitive.</p>
 <p>If you want to add a new category <strong>CodingServices</strong> under Income, enter the command <code>addCategory cat/Income n/CodingServices</code></p>
 <div class="imageblock">
 <div class="content">
-<img src="images/addingCategory-1.png" alt="addingCategory 1">
+<img src="images/addingCategory1.png" alt="addingCategory1">
 </div>
 </div>
 </li>
@@ -378,29 +379,43 @@ duplicate of existing categories.</p>
 <div class="sect3">
 <h4 id="adding-expense-code-addexpense-code"><a class="link" href="#adding-expense-code-addexpense-code">3.3.1. Adding Expense: <code>addExpense</code></a></h4>
 <div class="paragraph">
-<p>Adds a new expenditure to your total spending.
-Inputs can be arranged in a different order. Tag may be omitted from the expenditure record. Category must already exist
-in the list of categories. Amount must be larger than 0 and positive. Amount should also not be larger than 9999999.99.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addExpense cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
+<p>Adds a new expenditure to your total spending. Some things to take note:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;category name&gt;</code>: The <code>category</code> that the expense belongs to.</p>
+<p>Inputs can be arranged in a different order.</p>
+</li>
+<li>
+<p>Tag may be omitted from the command.</p>
+</li>
+<li>
+<p>Category must already exist in the list of expense categories. (type <code>listCategories</code>)</p>
+</li>
+<li>
+<p>Amount must be larger than 0 and less than 10 million.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <code>addExpense cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;amount&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;category name&gt;</code>: The <code>category</code> that the expense falls under to.</p>
 </li>
 <li>
 <p><code>&lt;description&gt;</code>: The name of this expense.</p>
 </li>
 <li>
-<p><code>&lt;expenditure&gt;</code>: The amount spent for this expense. It can contain at most 2 decimal points.</p>
+<p><code>&lt;amount&gt;</code>: The amount spent for this expense. It can contain at most 2 decimal points.</p>
 </li>
 <li>
 <p><code>&lt;date&gt;</code>: The date of this expense.</p>
 </li>
 <li>
-<p><code>&lt;tag&gt;</code>: Optional tags for this expense. The tag must not have spaces and most only be alphanumeric.</p>
+<p><code>&lt;tag&gt;</code>: Optional tags for this expense. The tag must not have spaces and can only be alphanumeric.</p>
 </li>
 </ul>
 </div>
@@ -410,7 +425,7 @@ in the list of categories. Amount must be larger than 0 and positive. Amount sho
 <div class="olist arabic">
 <ol class="arabic" start="1">
 <li>
-<p>If you would like to add a record of a recent splurging on mala, key in the command  <code>addExpense cat/Food typ/Expense n/Mala amt/5.50 d/2019 11 09 tg/food tg/indulgence</code> .</p>
+<p>If you would like to add a record of a recent splurging on mala, key in the command  <code>addExpense cat/Food n/Mala amt/5.50 d/2019 11 09 tg/food tg/indulgence</code> .</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/addingExpense-1.png" alt="addingExpense 1">
@@ -433,67 +448,21 @@ in the list of categories. Amount must be larger than 0 and positive. Amount sho
 <div class="ulist">
 <ul>
 <li>
-<p><code>addExpense cat/Gifts typ/Expense n/Rubber Duck for Yee Jian amt/55 d/2019 11 09 tg/sanity check</code></p>
+<p><code>addExpense cat/Gifts n/Rubber Duck for Yee Jian amt/55 d/2019 11 09 tg/sanity check</code></p>
 </li>
 <li>
-<p><code>addExpense cat/Travel typ/Expense n/Travel To Alaska amt/550000 d/2019 09 09</code></p>
+<p><code>addExpense cat/Travel n/Travel To Alaska amt/550000 d/2019 09 09</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-income-code-addincome-code"><a class="link" href="#adding-income-code-addincome-code">3.3.2. Adding Income : <code>addIncome</code></a></h4>
+<h4 id="listing-expenses-code-list-code"><a class="link" href="#listing-expenses-code-list-code">3.3.2. Listing Expenses: <code>list</code></a></h4>
 <div class="paragraph">
-<p>Adds a new Income to your total income.
-Inputs can be arranged in a different order. Tag may be omitted from the expenditure record. Category must already exist in the list of category.  Amount must be larger than 0 and positive. Amount should also not be larger than 9999999.99.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addIncome/&lt;category name&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [t/&lt;tag&gt;]</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>&lt;category name&gt;</code>: The <code>category</code> that the entry belongs to.</p>
-</li>
-<li>
-<p><code>&lt;description&gt;</code>: The name of this entry.</p>
-</li>
-<li>
-<p><code>&lt;expenditure&gt;</code>: The amount spent for this income. It can contain at most 2 decimal points.</p>
-</li>
-<li>
-<p><code>&lt;date&gt;</code>: The date of this income.</p>
-</li>
-<li>
-<p><code>&lt;tag&gt;</code>: Optional tags for this income. The tag must not have spaces and must only be alphanumeric.</p>
-</li>
-</ul>
+<p>Lists the expenses (as well as incomes) in the main panel.</p>
 </div>
 <div class="paragraph">
-<p>Example Usage:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="1">
-<li>
-<p>If you would like to add a recent Income from a bursary, key in the command  <code>add cat/Gifts typ/Income n/Bursary amt/5000 d/2019 11 09 tg/reward for studying</code> .</p>
-</li>
-<li>
-<p>You should see the new income being added into in the list of entries as displayed below.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Other examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>addIncome cat/Gifts typ/Income n/Durian a/200.00 d/2019 09 09 tg/food</code></p>
-</li>
-<li>
-<p><code>addIncome cat/Business typ/Income n/business Trip To Mars a/20000.00 d/2019 09 09</code></p>
-</li>
-</ul>
+<p>Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -502,7 +471,7 @@ Inputs can be arranged in a different order. Tag may be omitted from the expendi
 <p>Edits a current entry with the given index number. You may edit one or more fields, but the category must already exist in the list of categories, whether it is Income Category or Expense Category.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editExpense &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [amt/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</code></p>
+<p>Format: <code>editExpense &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [amt/&lt;amount&gt;] [tg/&lt;tag&gt;]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -617,8 +586,8 @@ key in the command  <code>deleteExpense 6</code>.</p>
 <p>Adds an automatically recurring expense every day/week/month (frequency) with the given description and amount.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt;
- [t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
+<p>Format: <code>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt;
+ [tg/&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>To list all categories, you can type <code>listCategories</code>.</p>
@@ -662,7 +631,7 @@ past records will be automatically generated. At your own risk! GuiltTrip can&#8
 <p>Edits an automatically recurring expense every day/week/month (frequency) with the given description and amount.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt;
+<p>Format: <code>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt;
  t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
 </div>
 <div class="paragraph">
@@ -726,14 +695,233 @@ if you stopped your Spotify subscription.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="budget"><a class="link" href="#budget">3.5. Budget</a></h3>
+<h3 id="income"><a class="link" href="#income">3.5. Income</a></h3>
 <div class="sect3">
-<h4 id="adding-budget-code-addbudget-code"><a class="link" href="#adding-budget-code-addbudget-code">3.5.1. Adding Budget : <code>addBudget</code></a></h4>
+<h4 id="adding-income-code-addincome-code"><a class="link" href="#adding-income-code-addincome-code">3.5.1. Adding Income : <code>addIncome</code></a></h4>
+<div class="paragraph">
+<p>Adds a new Income to your total income. Some things to note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Inputs can be arranged in a different order.</p>
+</li>
+<li>
+<p>Tag may be omitted from the command.</p>
+</li>
+<li>
+<p>Category must already exist in the list of income categories. (type <code>listCategories</code>)</p>
+</li>
+<li>
+<p>Amount must be larger than 0 and less than 10 million.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <code>addIncome cat/&lt;category name&gt; n/&lt;description&gt; amt/&lt;income&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;category name&gt;</code>: The <code>category</code> that the entry belongs to.</p>
+</li>
+<li>
+<p><code>&lt;description&gt;</code>: The name of this entry.</p>
+</li>
+<li>
+<p><code>&lt;amount&gt;</code>: The amount spent for this income. It can contain at most 2 decimal points.</p>
+</li>
+<li>
+<p><code>&lt;date&gt;</code>: The date of this income.</p>
+</li>
+<li>
+<p><code>&lt;tag&gt;</code>: Optional tags for this income. The tag must not have spaces and must only be alphanumeric.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example Usage:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>If you would like to add a recent Income, key in the command  <code>addIncome cat/Gifts n/monthly allowance amt/2000 d/2019 11 09 tg/fromsugardaddy</code> .</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddIncomeBefore.png" alt="AddIncomeBefore">
+</div>
+</div>
+</li>
+<li>
+<p>You should see the new income being added into in the list of incomes as displayed below.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddIncomeAfter.png" alt="AddIncomeAfter">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add cat/Gifts n/Durian amt/200.00 d/2019 09 09 tg/food</code></p>
+</li>
+<li>
+<p><code>add cat/Business n/business Trip To Mars amt/20000.00 d/2019 09 09</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-incomes-code-list-code"><a class="link" href="#listing-incomes-code-list-code">3.5.2. Listing Incomes: <code>list</code></a></h4>
+<div class="paragraph">
+<p>Lists the incomes (as well as expenses) in the main panel.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-income-code-editincome-code"><a class="link" href="#editing-income-code-editincome-code">3.5.3. Editing Income: <code>editIncome</code></a></h4>
+<div class="paragraph">
+<p>Edits an existing Income at the given index. Some things to note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Inputs can be arranged in a different order.</p>
+</li>
+<li>
+<p>If you are editing the category of an Income, it must already exist in the list of income categories. (type <code>listCategories</code>)</p>
+</li>
+<li>
+<p>If you are editing the amount of an Income, it must be larger than 0 and less than 10 million.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <code>editIncome cat/&lt;category name&gt; n/&lt;description&gt; amt/&lt;income&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;category name&gt;</code>: The <code>category</code> that the income belongs to.</p>
+</li>
+<li>
+<p><code>&lt;description&gt;</code>: The name of this income.</p>
+</li>
+<li>
+<p><code>&lt;amount&gt;</code>: The amount spent for this income. It can contain at most 2 decimal points.</p>
+</li>
+<li>
+<p><code>&lt;date&gt;</code>: The date of this income.</p>
+</li>
+<li>
+<p><code>&lt;tag&gt;</code>: Tags for this income. The tag must not have spaces and must only be alphanumeric.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example Usage:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>If you would like to edit an existing Income, key in the command  <code>editIncome 2 n/selling my soul</code> .</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditIncomeBefore.png" alt="EditIncomeBefore">
+</div>
+</div>
+</li>
+<li>
+<p>You should see that the second Income&#8217;s description has successfully changed from <code>side business</code> to <code>selling my soul</code>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/EditIncomeAfter.png" alt="EditIncomeAfter"></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editIncome 1 amt/200</code></p>
+</li>
+<li>
+<p><code>editIncome 3 tg/wheresmypayraise</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-income-code-deleteincome-code"><a class="link" href="#deleting-income-code-deleteincome-code">3.5.4. Deleting Income: <code>deleteIncome</code></a></h4>
+<div class="paragraph">
+<p>Deletes an existing Income from the list at the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteIncome &lt;index&gt;</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;index&gt;</code>: The <code>index</code> of the Income in the Income list panel. It must be greater than zero and positive.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example Usage:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>If you would like to delete the Income at index 2, key in the command <code>deleteIncome 2</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteIncomeBefore.png" alt="DeleteIncomeBefore">
+</div>
+</div>
+</li>
+<li>
+<p>You would see that the Income is no longer in the list and the result display box shows the details of the Income that you have just deleted.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteIncomeAfter.png" alt="DeleteIncomeAfter">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Other examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add cat/Gifts n/Durian amt/200.00 d/2019 09 09 tg/food</code></p>
+</li>
+<li>
+<p><code>add cat/Business n/business Trip To Mars amt/20000.00 d/2019 09 09</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="budget"><a class="link" href="#budget">3.6. Budget</a></h3>
+<div class="sect3">
+<h4 id="adding-budget-code-addbudget-code"><a class="link" href="#adding-budget-code-addbudget-code">3.6.1. Adding Budget : <code>addBudget</code></a></h4>
 <div class="paragraph">
 <p>Adds a new budget for expenditure with a certain tag, if applicable. Period: day/week/month</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addBudget c/&lt;category&gt; n/&lt;description&gt; a/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [t/&lt;tag&gt;]</code><br>
+<p>Format: <code>addBudget cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [tg/&lt;tag&gt;]</code><br>
 Note: format for inputting period is &lt;number&gt;&lt;d/m/y&gt; where d/m/y stands for days / months / years respectively
 e.g. for a period input of 10 days, use 10d</p>
 </div>
@@ -743,16 +931,16 @@ e.g. for a period input of 10 days, use 10d</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addBudget c/Food n/Nov Budget a/50.00 d/2019 09 09 p/1m t/food</code></p>
+<p><code>addBudget cat/Food n/Nov Budget amt/50.00 d/2019 09 09 p/1m tg/food</code></p>
 </li>
 <li>
-<p><code>addBudget c/Food n/Mala Budget a/100.00 d/2019 09 10 p/50d</code></p>
+<p><code>addBudget cat/Food n/Mala Budget amt/100.00 d/2019 09 10 p/50d</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-budget-code-listbudget-code"><a class="link" href="#listing-budget-code-listbudget-code">3.5.2. Listing Budget : <code>listBudget</code></a></h4>
+<h4 id="listing-budget-code-listbudget-code"><a class="link" href="#listing-budget-code-listbudget-code">3.6.2. Listing Budget : <code>listBudget</code></a></h4>
 <div class="paragraph">
 <p>Lists all the current budgets the user has.</p>
 </div>
@@ -764,12 +952,12 @@ e.g. for a period input of 10 days, use 10d</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-budget-code-editbudget-code"><a class="link" href="#editing-budget-code-editbudget-code">3.5.3. Editing Budget : <code>editBudget</code></a></h4>
+<h4 id="editing-budget-code-editbudget-code"><a class="link" href="#editing-budget-code-editbudget-code">3.6.3. Editing Budget : <code>editBudget</code></a></h4>
 <div class="paragraph">
 <p>Edits a current budget&#8217;s description, amount or tag (if applicable) at the given index.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editBudget &lt;index&gt; [n/&lt;description&gt;] [a/&lt;budget&gt;] [t/&lt;tag&gt;]</code></p>
+<p>Format: <code>editBudget &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;budget&gt;] [tg/&lt;tag&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -780,16 +968,16 @@ e.g. for a period input of 10 days, use 10d</p>
 <p><code>editBudget 1 n/fooooood budget</code></p>
 </li>
 <li>
-<p><code>editBudget 2 n/lunch budget a/150</code></p>
+<p><code>editBudget 2 n/lunch budget amt/150</code></p>
 </li>
 <li>
-<p><code>editBudget 2 t/fun</code></p>
+<p><code>editBudget 2 tg/fun</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-budget-code-deletebudget-code"><a class="link" href="#deleting-budget-code-deletebudget-code">3.5.4. Deleting Budget : <code>deleteBudget</code></a></h4>
+<h4 id="deleting-budget-code-deletebudget-code"><a class="link" href="#deleting-budget-code-deletebudget-code">3.6.4. Deleting Budget : <code>deleteBudget</code></a></h4>
 <div class="paragraph">
 <p>Deletes a current budget at the given index.</p>
 </div>
@@ -802,14 +990,101 @@ e.g. for a period input of 10 days, use 10d</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="loan-coming-in-v2-0"><a class="link" href="#loan-coming-in-v2-0">3.6. Loan [coming in v2.0]</a></h3>
+<h3 id="wishlist"><a class="link" href="#wishlist">3.7. WishList</a></h3>
 <div class="sect3">
-<h4 id="adding-a-loan-code-addloan-code-coming-in-v2-0"><a class="link" href="#adding-a-loan-code-addloan-code-coming-in-v2-0">3.6.1. Adding a Loan : <code>addLoan</code> [coming in v2.0]</a></h4>
+<h4 id="add-wish-code-addwishlist-code"><a class="link" href="#add-wish-code-addwishlist-code">3.7.1. Add Wish : <code>addWishlist</code></a></h4>
+<div class="paragraph">
+<p>Adds a new item to your current wishlist</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addWish n/&lt;Description&gt; cat/&lt;Category&gt; amt/&lt;Price&gt; d/&lt;Date&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add typ/Wish n/deck mala cat/food amt/5.60 d/2019 10 28</code></p>
+</li>
+<li>
+<p><code>add typ/Wish n/deck mala cat/food amt/5.60 d/01/01/2020</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-wish-code-listwish-code"><a class="link" href="#list-wish-code-listwish-code">3.7.2. List Wish : <code>listWish</code></a></h4>
+<div class="paragraph">
+<p>Lists all the wishes on the main panel.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listWish</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-wish-code-editwish-code"><a class="link" href="#edit-wish-code-editwish-code">3.7.3. Edit Wish : <code>editWish</code></a></h4>
+<div class="paragraph">
+<p>edit the description, date, or tags of your wishes.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editWishlist &lt;index&gt; [n/&lt;Description&gt;] [cat/&lt;Category&gt;] [amt/&lt;Price&gt;] [d/&lt;Date&gt;] [tag/&lt;Tag&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editWishlist 1 n/1 try the chinatown ri ri hong mala!</code></p>
+</li>
+<li>
+<p><code>editWishlist 1 amt/20 tag/mala tag/expensive</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-wish-code-deletewish-code"><a class="link" href="#delete-wish-code-deletewish-code">3.7.4. Delete Wish : <code>deleteWish</code></a></h4>
+<div class="paragraph">
+<p>Deletes the item at the stated index from your current wishlist</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteWish &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteWishlist 3</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="purchase-wishlist-code-purchase-code-coming-in-v2-0"><a class="link" href="#purchase-wishlist-code-purchase-code-coming-in-v2-0">3.7.5. Purchase WishList : <code>purchase</code> [coming in v2.0]</a></h4>
+<div class="paragraph">
+<p>Purchases the item at the stated index from your current wishlist</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>purchase &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>purchase 1</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="loan-coming-in-v2-0"><a class="link" href="#loan-coming-in-v2-0">3.8. Loan [coming in v2.0]</a></h3>
+<div class="sect3">
+<h4 id="adding-a-loan-code-addloan-code-coming-in-v2-0"><a class="link" href="#adding-a-loan-code-addloan-code-coming-in-v2-0">3.8.1. Adding a Loan : <code>addLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Adds a new loan with the given description, amount and interest (in percentage) and calculates the total outstanding amount based on the interest.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addLoan  n/&lt;description&gt; a/&lt;loan amount&gt; i/&lt;interest&gt;</code></p>
+<p>Format: <code>addLoan  n/&lt;description&gt; amt/&lt;loan amount&gt; i/&lt;interest&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -817,13 +1092,13 @@ e.g. for a period input of 10 days, use 10d</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addLoan n/student loan a/30000 i/4.5</code></p>
+<p><code>addLoan n/student loan amt/30000 i/4.5</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-a-loan-code-listloan-code-coming-in-v2-0"><a class="link" href="#listing-a-loan-code-listloan-code-coming-in-v2-0">3.6.2. Listing a loan : <code>listLoan</code> [coming in v2.0]</a></h4>
+<h4 id="listing-a-loan-code-listloan-code-coming-in-v2-0"><a class="link" href="#listing-a-loan-code-listloan-code-coming-in-v2-0">3.8.2. Listing a loan : <code>listLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Lists all the loans that the user has.</p>
 </div>
@@ -835,12 +1110,12 @@ e.g. for a period input of 10 days, use 10d</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-loan-code-editloan-code-coming-in-v2-0"><a class="link" href="#editing-a-loan-code-editloan-code-coming-in-v2-0">3.6.3. Editing a loan : <code>editLoan</code> [coming in v2.0]</a></h4>
+<h4 id="editing-a-loan-code-editloan-code-coming-in-v2-0"><a class="link" href="#editing-a-loan-code-editloan-code-coming-in-v2-0">3.8.3. Editing a loan : <code>editLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Edits a current loan&#8217;s description, loan amount, or both.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editLoan &lt;index&gt; [n/&lt;description&gt;] [a/&lt;loan amount&gt;] [i/&lt;interest&gt;]</code></p>
+<p>Format: <code>editLoan &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;loan amount&gt;] [i/&lt;interest&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -851,13 +1126,13 @@ e.g. for a period input of 10 days, use 10d</p>
 <p><code>editLoan 1 n/nus tuition loan T.T</code></p>
 </li>
 <li>
-<p><code>editLoan 1 a/25000 i/4.45%</code></p>
+<p><code>editLoan 1 amt/25000 i/4.45%</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-loan-code-deleteloan-code-coming-in-v2-0"><a class="link" href="#deleting-a-loan-code-deleteloan-code-coming-in-v2-0">3.6.4. Deleting a loan : <code>deleteLoan</code> [coming in v2.0]</a></h4>
+<h4 id="deleting-a-loan-code-deleteloan-code-coming-in-v2-0"><a class="link" href="#deleting-a-loan-code-deleteloan-code-coming-in-v2-0">3.8.4. Deleting a loan : <code>deleteLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Deletes a current loan at the given index.</p>
 </div>
@@ -869,22 +1144,22 @@ e.g. for a period input of 10 days, use 10d</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="paying-a-loan-code-payloan-code-coming-in-v2-0"><a class="link" href="#paying-a-loan-code-payloan-code-coming-in-v2-0">3.6.5. Paying a loan : <code>payLoan</code> [coming in v2.0]</a></h4>
+<h4 id="paying-a-loan-code-payloan-code-coming-in-v2-0"><a class="link" href="#paying-a-loan-code-payloan-code-coming-in-v2-0">3.8.5. Paying a loan : <code>payLoan</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Reduces the loan amount for the loan at the given index after user pays for part of the loan.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>payLoan &lt;index&gt; a/&lt;amountPaid&gt;</code></p>
+<p>Format: <code>payLoan &lt;index&gt; amt/&lt;amountPaid&gt;</code></p>
 </div>
 <div class="paragraph">
-<p>Example: <code>payLoan 1 a/4000</code></p>
+<p>Example: <code>payLoan 1 amt/4000</code></p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">3.7. Statistics</a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">3.9. Statistics</a></h3>
 <div class="sect3">
-<h4 id="switching-to-statistics-table-view-code-viewtable-code"><a class="link" href="#switching-to-statistics-table-view-code-viewtable-code">3.7.1. Switching to Statistics Table View : <code>viewTable</code></a></h4>
+<h4 id="switching-to-statistics-table-view-code-viewtable-code"><a class="link" href="#switching-to-statistics-table-view-code-viewtable-code">3.9.1. Switching to Statistics Table View : <code>viewTable</code></a></h4>
 <div class="paragraph">
 <p>Switches to the statistics table view. By default, <code>viewTable</code> will show the current month statistics.
 Typing only the month in format <strong>[yyyy-mm]</strong> will show the breakdown of statistics by the specified month.
@@ -939,7 +1214,7 @@ screen will reset the Table to show the month of statistics that reflects the co
 </div>
 </div>
 <div class="sect3">
-<h4 id="switching-to-statistics-pie-chart-view-code-viewpie-code"><a class="link" href="#switching-to-statistics-pie-chart-view-code-viewpie-code">3.7.2. Switching to Statistics Pie Chart View : <code>viewPie</code></a></h4>
+<h4 id="switching-to-statistics-pie-chart-view-code-viewpie-code"><a class="link" href="#switching-to-statistics-pie-chart-view-code-viewpie-code">3.9.2. Switching to Statistics Pie Chart View : <code>viewPie</code></a></h4>
 <div class="paragraph">
 <p>Switches to the statistics table view. By default, <code>viewPie</code> will show the current month statistics.
 Typing only the month in format <strong>[yyyy-mm]</strong> will show the breakdown of statistics by the specified month.
@@ -1008,7 +1283,7 @@ there is a likelihood that it&#8217;ll be hard to see the portion of that catego
 </div>
 </div>
 <div class="sect3">
-<h4 id="switching-to-statistics-bar-chart-view-code-viewbar-code"><a class="link" href="#switching-to-statistics-bar-chart-view-code-viewbar-code">3.7.3. Switching to Statistics Bar Chart View : <code>viewBar</code></a></h4>
+<h4 id="switching-to-statistics-bar-chart-view-code-viewbar-code"><a class="link" href="#switching-to-statistics-bar-chart-view-code-viewbar-code">3.9.3. Switching to Statistics Bar Chart View : <code>viewBar</code></a></h4>
 <div class="paragraph">
 <p>Switches to the statistics table view. By default, <code>viewBar</code> will show the current month statistics.
 Typing only the month in format <strong>[yyyy-mm]</strong> will show the breakdown of statistics by day by the specified month.
@@ -1076,7 +1351,7 @@ the amounts for other days.
 </div>
 </div>
 <div class="sect3">
-<h4 id="switching-to-entry-view-code-viewentry-code"><a class="link" href="#switching-to-entry-view-code-viewentry-code">3.7.4. Switching to Entry View : <code>viewEntry</code></a></h4>
+<h4 id="switching-to-entry-view-code-viewentry-code"><a class="link" href="#switching-to-entry-view-code-viewentry-code">3.9.4. Switching to Entry View : <code>viewEntry</code></a></h4>
 <div class="paragraph">
 <p>Switches back to the default view which contains the list of entries.</p>
 </div>
@@ -1096,7 +1371,7 @@ the amounts for other days.
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code"><a class="link" href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code">3.8. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code>, <code>sortAutoExp</code></a></h3>
+<h3 id="sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code"><a class="link" href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code">3.10. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code>, <code>sortAutoExp</code></a></h3>
 <div class="paragraph">
 <p>Sorts the aforementioned list currently displayed according to sort type which can be <code>amount</code>, <code>time</code>, <code>description</code>,
 <code>tags</code> and <code>category</code>, and sort sequence which can be in <code>ascending</code>, <code>descending</code> order.</p>
@@ -1167,7 +1442,7 @@ Sorting of Budget by Amount refers to the original Budget Total Amount.
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code"><a class="link" href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code">3.9. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code>, <code>findAutoExp</code></a></h3>
+<h3 id="find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code"><a class="link" href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code">3.11. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code>, <code>findAutoExp</code></a></h3>
 <div class="paragraph">
 <p>Find income/expenditure by Category, Description, Amount, Date or Tags. There must be at least one find parameter.</p>
 </div>
@@ -1210,7 +1485,7 @@ both tags. The reason for this is that tags should be more specific that entry D
 </table>
 </div>
 <div class="paragraph">
-<p>Format: <code>findExpense [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
+<p>Format: <code>findExpense [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amount&gt;] [d/&lt;date&gt;] [tg/&lt;tag&gt;]</code></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="1">
@@ -1250,9 +1525,9 @@ both tags. The reason for this is that tags should be more specific that entry D
 </div>
 </div>
 <div class="sect2">
-<h3 id="reminders"><a class="link" href="#reminders">3.10. Reminders</a></h3>
+<h3 id="reminders"><a class="link" href="#reminders">3.12. Reminders</a></h3>
 <div class="sect3">
-<h4 id="add-reminder-code-addreminder-code"><a class="link" href="#add-reminder-code-addreminder-code">3.10.1. Add Reminder: <code>addReminder</code></a></h4>
+<h4 id="add-reminder-code-addreminder-code"><a class="link" href="#add-reminder-code-addreminder-code">3.12.1. Add Reminder: <code>addReminder</code></a></h4>
 <div class="paragraph">
 <p>Adds new GeneralReminder.
 Format: <code>addReminder n/&lt;Message&gt; [typ/&lt;EntryType&gt;] [l.b/&lt;LowerBound&gt;] [u.b/&lt;UpperBound&gt;] [start/&lt;Start Date&gt;] [end/&lt;End Date&gt;] [tg/&lt;tags&gt;]</code></p>
@@ -1269,7 +1544,7 @@ Format: <code>addReminder n/&lt;Message&gt; [typ/&lt;EntryType&gt;] [l.b/&lt;Low
 </div>
 </div>
 <div class="sect3">
-<h4 id="set-reminder-code-setreminder-code"><a class="link" href="#set-reminder-code-setreminder-code">3.10.2. Set Reminder: <code>setReminder</code></a></h4>
+<h4 id="set-reminder-code-setreminder-code"><a class="link" href="#set-reminder-code-setreminder-code">3.12.2. Set Reminder: <code>setReminder</code></a></h4>
 <div class="paragraph">
 <p>Sets new EntryReminder for selected Entry specified by the type and index in the corresponding list.
 Format: `setReminder &lt;Reminder Index&gt; n/&lt;Message&gt; p/&lt;Period&gt; f/&lt;frequency&gt;</p>
@@ -1286,16 +1561,16 @@ Format: `setReminder &lt;Reminder Index&gt; n/&lt;Message&gt; p/&lt;Period&gt; f
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-all-active-reminders-reminders-currently-set-to-display-code-listreminders-code"><a class="link" href="#list-all-active-reminders-reminders-currently-set-to-display-code-listreminders-code">3.10.3. List all active Reminders (reminders currently set to display) : <code>listReminders</code></a></h4>
+<h4 id="list-all-active-reminders-reminders-currently-set-to-display-code-listreminders-code"><a class="link" href="#list-all-active-reminders-reminders-currently-set-to-display-code-listreminders-code">3.12.3. List all active Reminders (reminders currently set to display) : <code>listReminders</code></a></h4>
 <div class="paragraph">
-<p>Shows reminder pannel.</p>
+<p>Shows reminder panel.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>listReminders</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="select-reminders-code-selectreminder-code"><a class="link" href="#select-reminders-code-selectreminder-code">3.10.4. Select Reminders : <code>selectReminder</code></a></h4>
+<h4 id="select-reminders-code-selectreminder-code"><a class="link" href="#select-reminders-code-selectreminder-code">3.12.4. Select Reminders : <code>selectReminder</code></a></h4>
 <div class="paragraph">
 <p>select reminder to edit.</p>
 </div>
@@ -1314,7 +1589,7 @@ Format: `setReminder &lt;Reminder Index&gt; n/&lt;Message&gt; p/&lt;Period&gt; f
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-reminder-code-editreminder-code"><a class="link" href="#edit-reminder-code-editreminder-code">3.10.5. Edit Reminder : <code>editReminder</code></a></h4>
+<h4 id="edit-reminder-code-editreminder-code"><a class="link" href="#edit-reminder-code-editreminder-code">3.12.5. Edit Reminder : <code>editReminder</code></a></h4>
 <div class="paragraph">
 <p>Edits conditions of a GeneralReminder or period/ frequency of an EntryReminder selected.</p>
 </div>
@@ -1347,7 +1622,7 @@ the user is more likely to create a new reminder instead of completely modifying
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-condition-from-reminder-removecondition"><a class="link" href="#remove-condition-from-reminder-removecondition">3.10.6. Remove Condition from Reminder : 'removeCondition`</a></h4>
+<h4 id="remove-condition-from-reminder-removecondition"><a class="link" href="#remove-condition-from-reminder-removecondition">3.12.6. Remove Condition from Reminder : 'removeCondition`</a></h4>
 <div class="paragraph">
 <p>Removes condition from GeneralReminder.</p>
 </div>
@@ -1370,7 +1645,7 @@ Note that the entry type of the General reminder cannot be removed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-reminder-code-deletereminder-code"><a class="link" href="#delete-reminder-code-deletereminder-code">3.10.7. Delete Reminder : <code>deleteReminder</code></a></h4>
+<h4 id="delete-reminder-code-deletereminder-code"><a class="link" href="#delete-reminder-code-deletereminder-code">3.12.7. Delete Reminder : <code>deleteReminder</code></a></h4>
 <div class="paragraph">
 <p>Deletes the selected Reminder.</p>
 </div>
@@ -1380,87 +1655,9 @@ Note that the entry type of the General reminder cannot be removed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="wishlist"><a class="link" href="#wishlist">3.11. WishList</a></h3>
+<h3 id="undo-redo"><a class="link" href="#undo-redo">3.13. Undo/Redo</a></h3>
 <div class="sect3">
-<h4 id="add-wishlist-code-addwishlist-code"><a class="link" href="#add-wishlist-code-addwishlist-code">3.11.1. Add WishList : <code>addWishlist</code></a></h4>
-<div class="paragraph">
-<p>Adds a new item to your current wishlist</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addWish n/&lt;Description&gt; c/&lt;Category&gt; a/&lt;Price&gt; d/&lt;Date&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add typ/Wish n/deck mala c/food a/5.60 d/2019 10 28</code></p>
-</li>
-<li>
-<p><code>add typ/Wish n/deck mala c/food a/5.60 d/01/01/2020</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-wishlist-code-deletewish-code"><a class="link" href="#delete-wishlist-code-deletewish-code">3.11.2. Delete WishList : <code>deleteWish</code></a></h4>
-<div class="paragraph">
-<p>Deletes the item at the stated index from your current wishlist</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deleteWish &lt;index&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>deleteWishlist 3</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="edit-wish-in-wishlist-code-editwish-code"><a class="link" href="#edit-wish-in-wishlist-code-editwish-code">3.11.3. Edit Wish in WishList : <code>editWish</code></a></h4>
-<div class="paragraph">
-<p>edit the description, date, or tags of your wishes.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>editWishlist &lt;index&gt; [n/&lt;Description&gt;] [cat/&lt;Category&gt;] [amt/&lt;Price&gt;] [d/&lt;Date&gt;] [tag/&lt;Tag&gt;]</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>editWishlist 1 n/1 try the chinatown ri ri hong mala!</code></p>
-</li>
-<li>
-<p><code>editWishlist 1 a/20 tag/mala tag/expensive</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="purchase-wishlist-code-purchase-code-coming-in-v2-0"><a class="link" href="#purchase-wishlist-code-purchase-code-coming-in-v2-0">3.11.4. Purchase WishList : <code>purchase</code> [coming in v2.0]</a></h4>
-<div class="paragraph">
-<p>Purchases the item at the stated index from your current wishlist</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>purchase &lt;index&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example: <code>purchase 1</code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="undo-redo"><a class="link" href="#undo-redo">3.12. Undo/Redo</a></h3>
-<div class="sect3">
-<h4 id="undo-previous-command-code-undo-code"><a class="link" href="#undo-previous-command-code-undo-code">3.12.1. Undo previous command : <code>undo</code></a></h4>
+<h4 id="undo-previous-command-code-undo-code"><a class="link" href="#undo-previous-command-code-undo-code">3.13.1. Undo previous command : <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Restores the finance tracker to the state before the previous undoable command was executed.</p>
 </div>
@@ -1486,7 +1683,7 @@ Note that the entry type of the General reminder cannot be removed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo-previously-undone-command-code-redo-code"><a class="link" href="#redo-previously-undone-command-code-redo-code">3.12.2. Redo previously undone command : <code>redo</code></a></h4>
+<h4 id="redo-previously-undone-command-code-redo-code"><a class="link" href="#redo-previously-undone-command-code-redo-code">3.13.2. Redo previously undone command : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Reverses the most recent undone command.</p>
 </div>
@@ -1513,9 +1710,9 @@ Note that the entry type of the General reminder cannot be removed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ui-features"><a class="link" href="#ui-features">3.13. UI features</a></h3>
+<h3 id="ui-features"><a class="link" href="#ui-features">3.14. UI features</a></h3>
 <div class="sect3">
-<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.13.1. Toggle Panel : <code>toggle</code></a></h4>
+<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.14.1. Toggle Panel : <code>toggle</code></a></h4>
 <div class="paragraph">
 <p>Toggles visibility of the specified panel on the GUI. Only the following inputs are accepted:</p>
 </div>
@@ -1547,19 +1744,42 @@ Note that the entry type of the General reminder cannot be removed.</p>
 <p><code>toggle wishlist</code></p>
 </li>
 <li>
-<p><code>toggle budget</code></p>
-</li>
-<li>
-<p><code>toggle r</code></p>
+<p><code>toggle ae`</code></p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. If user does not want to view the wishlist panel all the time, he could choose to execute the <code>toggle wishlist</code> command as shown below.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>He could refer to the panel names in the result display box above when typing in the input panel name.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ToggleBefore.png" alt="ToggleBefore">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. After the command is executed, the <code>wishlist</code> panel is toggled off and no longer in the side panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ToggleAfter.png" alt="ToggleAfter">
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.13.2. Change Font : <code>changeFont</code></a></h4>
+<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.14.2. Change Font : <code>changeFont</code></a></h4>
 <div class="paragraph">
 <p>Changes the font used in application to the specified font. The input is case-sensitive. Only the following font names are accepted:
-"arial", "calibri", "cambria", "candara", "garamond", "georgia", "rockwell", "segoe UI", "serif", "verdana"</p>
+"arial", "calibri", "cambria", "candara", "garamond", "georgia", "rockwell", "segoe UI", "serif", "verdana". The available fonts to change to will be shown in the result display box for the user to refer to easily. The change in font will be saved.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>changeFont &lt;font name&gt;</code></p>
@@ -1570,36 +1790,101 @@ Note that the entry type of the General reminder cannot be removed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>changeFont arial</code></p>
+<p><code>changeFont rockwell</code></p>
 </li>
 <li>
 <p><code>changeFont segoe UI</code></p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User changes the font by executing the <code>changeFont rockwell</code> command as shown below.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>He is also able to refer to the available font names in the result display box above.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ChangeFontBefore.png" alt="ChangeFontBefore">
+</div>
+</div>
+</li>
+<li>
+<p>The font is successfully changed to <code>ROCKWELL</code> as seen in the result display box and the application.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/ChangeFontAfter.png" alt="ChangeFontAfter"></span></p>
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect3">
-<h4 id="change-to-dark-theme-code-setdarktheme-code"><a class="link" href="#change-to-dark-theme-code-setdarktheme-code">3.13.3. Change to dark theme : <code>setDarkTheme</code></a></h4>
+<h4 id="change-to-dark-theme-code-setdarktheme-code"><a class="link" href="#change-to-dark-theme-code-setdarktheme-code">3.14.3. Change to dark theme : <code>setDarkTheme</code></a></h4>
 <div class="paragraph">
-<p>Changes the theme from light to dark.</p>
+<p>Changes the theme from light to dark. The change in theme will be saved.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>setDarkTheme</code></p>
 </div>
 <div class="paragraph">
-<p>Example: <code>setDarkTheme</code></p>
+<p>Example usage:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User executes the command <code>setDarkTheme</code> as shown below:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/SetDarkThemeBefore.png" alt="SetDarkThemeBefore">
+</div>
+</div>
+</li>
+<li>
+<p>After command is executed, the theme is changed to the dark theme and the result display box notifies user that the command is executed successfully.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/SetDarkThemeAfter.png" alt="SetDarkThemeAfter">
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-to-light-theme-code-setlighttheme-code"><a class="link" href="#change-to-light-theme-code-setlighttheme-code">3.13.4. Change to light theme : <code>setLightTheme</code></a></h4>
+<h4 id="change-to-light-theme-code-setlighttheme-code"><a class="link" href="#change-to-light-theme-code-setlighttheme-code">3.14.4. Change to light theme : <code>setLightTheme</code></a></h4>
 <div class="paragraph">
-<p>Changes the theme from dark to light.</p>
+<p>Changes the theme from dark to light. The change in theme will be saved.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>setLightTheme</code></p>
 </div>
-<div class="paragraph">
-<p>Example: <code>setLightTheme</code></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User executes the command <code>setLightTheme</code> as shown below:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/SetLightThemeBefore.png" alt="SetLightThemeBefore">
+</div>
+</div>
+</li>
+<li>
+<p>After command is executed, the theme is changed to the light theme and the result display box notifies user that the command is executed successfully.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/SetLightThemeAfter.png" alt="SetLightThemeAfter">
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1849,4 +2134,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:32:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:41:27 UTC</div></div></div></body></html>
