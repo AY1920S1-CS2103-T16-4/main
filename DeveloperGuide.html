@@ -26,8 +26,8 @@
 <li><a href="#data-presentation-find-command">3.3. Data Presentation: Find Command</a></li>
 <li><a href="#data-presentation-statistics">3.4. Data Presentation: Statistics</a></li>
 <li><a href="#toggle-panel-command">3.5. Toggle Panel Command</a></li>
-<li><a href="#listfont-command">3.6. ListFont Command</a></li>
-<li><a href="#changefontcommand">3.7. ChangeFontCommand</a></li>
+<li><a href="#change-font-command">3.6. Change Font Command</a></li>
+<li><a href="#set-light-dark-theme-command">3.7. Set Light/Dark Theme Command</a></li>
 <li><a href="#reminders">3.8. Reminders</a></li>
 <li><a href="#undo-redo">3.9. Undo/ Redo</a></li>
 </ul>
@@ -67,6 +67,11 @@
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
+<li><a href="#instructions-for-manual-testing">7. Instructions for Manual Testing</a>
+<ul class="sectlevel2">
+<li><a href="#customising-the-gui">7.1. Customising the GUI</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -186,7 +191,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g. <code>CommandBox</code>, <code>ResultDisplay</code>, <code>EntryListPanel</code>,
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g. <code>CommandBox</code>, <code>ResultDisplay</code>, <code>ExpenseListPanel</code>,
 <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </li>
 <li>
@@ -774,53 +779,306 @@ For example, it could notice that the user has been spending a lot every Tuesday
 <h3 id="toggle-panel-command"><a class="link" href="#toggle-panel-command">3.5. Toggle Panel Command</a></h3>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">3.5.1. Implementation</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/PartialUiClassDiagramForToggle.png" alt="PartialUiClassDiagramForToggle">
+</div>
+<div class="title">Figure 16. Partial class diagram showing only the classes in <code>UI</code> involved in the Toggle Panel Command.</div>
+</div>
 <div class="paragraph">
 <p>The <code>toggle</code> command extends from the <code>Command</code> class. <code>MainWindow</code> checks using the <code>CommandResult</code> obtained from <code>Logic</code>
 if the user wants to toggle a specified panel. If so, it toggles the <code>isVisible</code> and <code>isManaged</code> properties of the place
 holder for that panel.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the toggle panel command work:</p>
+<p>The following sequence diagram shows how an example usage scenario <code>toggle wishlist</code> would work:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ToggleSequenceDiagram.png" alt="ToggleSequenceDiagram">
 </div>
+<div class="title">Figure 17. Interactions inside the Logic and UI components for the <code>toggle wishlist</code> command</div>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
+<p>The sequence diagram is as explained below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user launches the application and executes the <code>toggle wishlist</code> command to toggle the <code>wishlist</code> panel.</p>
+</li>
+<li>
+<p><code>commandResult</code> is obtained in <code>MainWindow</code> after the command is parsed and executed.</p>
+</li>
+<li>
+<p><code>MainWindow</code> checks if the <code>togglePanel</code> attribute in <code>commandResult</code> is true.</p>
+</li>
+<li>
+<p>Since it is true, it retrieves the <code>PanelName</code> <code>WISH</code> from <code>commandResult</code> and calls on its own method <code>handleTogglePanel</code>.</p>
+</li>
+<li>
+<p>This method then calls on another method <code>togglePanel()</code> that toggles the panel and takes in the <code>PanelName</code> <code>WISH</code> as a parameter.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>(Not shown in sequence diagram to reduce its complexity) It also checks if the wishlist is already shown in the main panel.</p>
+</li>
+<li>
+<p>If it is, then a <code>CommandException</code> is thrown to prevent the user from toggling the wishlist side panel when the wishlist is already shown in the main panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a <code>toggle</code> command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ToggleActivityDiagram.png" alt="ToggleActivityDiagram">
+<img src="images/ToggleActivityDiagram.png" alt="ToggleActivityDiagram" width="400">
 </div>
+<div class="title">Figure 18. Activity diagram showing what happens when user executes a <code>toggle</code> command</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.5.2. Design Considerations</a></h4>
-<div class="paragraph">
-<p><strong>Current method:</strong> Toggle the panels from within MainWindow class.</p>
-</div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current method):</strong> Toggle the panels from within <code>MainWindow</code>.</p>
+<div class="ulist">
+<ul>
+<li>
 <p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Might not be as OOP as other designs.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> <code>MainWindow</code> has a <code>PanelManager</code> class that manages all the side panels (toggling them on and off).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More OOP, reduces number of methods and lines of code in <code>MainWindow</code>.</p>
+</li>
+<li>
+<p>Cons: May introduce cyclic dependency between <code>PanelManager</code> and <code>MainWindow</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="change-font-command"><a class="link" href="#change-font-command">3.6. Change Font Command</a></h3>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.6.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>changeFont</code> command extends from the <code>Command</code> class. <code>MainWindow</code> checks using the
+<code>CommandResult</code> obtained from <code>Logic</code> if the user wants to change the application font.
+If so, it immediately changes the font without requiring the user to exit and launch the application again.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This change in font is also saved in <code>UserPrefs</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Cons: Might not be as OOP as other designs.</p>
+<p>The following sequence diagram shows how an example usage scenario <code>changeFont rockwell</code> would work:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ChangeFontSequenceDiagram.png" alt="ChangeFontSequenceDiagram">
+</div>
+<div class="title">Figure 19. Interactions inside Logic and UI components for the <code>changeFont rockwell</code> command</div>
+</div>
+<div class="paragraph">
+<p>The sequence diagram is as explained below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user launches the application and executes the <code>changeFont rockwell</code> command to change the current application font to <em>rockwell</em>.</p>
+</li>
+<li>
+<p><code>commandResult</code> is obtained in <code>MainWindow</code> after the command is parsed and executed.</p>
+</li>
+<li>
+<p><code>MainWindow</code> checks if the <code>changeFont</code> attribute in <code>commandResult</code> is true.</p>
+</li>
+<li>
+<p>Since it is true, it retrieves the <code>FontName</code> <code>ROCKWELL</code> from <code>commandResult</code> and calls on its own method <code>handleChangeFont</code>.</p>
+</li>
+<li>
+<p>This method then converts the <code>FontName</code> <code>ROCKWELL</code> to a <code>String "rockwell"</code> and sets the <code>font-family</code> attribute of <code>window</code>, that contains all the child nodes, to <code>rockwell</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a <code>changeFont</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ChangeFontActivityDiagram.png" alt="ChangeFontActivityDiagram">
+</div>
+<div class="title">Figure 20. Activity diagram showing what happens when user executes a <code>changeFont</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.6.2. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Change the application font from within <code>MainWindow</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May not be as OOP as other methods.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use a separate class to control the theme, such as <code>ThemeManager</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More OOP, reduces amount of code in <code>MainWindow</code>.</p>
+</li>
+<li>
+<p>Cons: As the implementation is not very complicated, introducing a new class just to change the theme may not be worth the increase in dependency (introduces dependency between <code>Theme</code> and <code>ThemeManager</code> and between <code>ThemeManager</code> and <code>MainWindow</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listfont-command"><a class="link" href="#listfont-command">3.6. ListFont Command</a></h3>
-
+<h3 id="set-light-dark-theme-command"><a class="link" href="#set-light-dark-theme-command">3.7. Set Light/Dark Theme Command</a></h3>
+<div class="sect3">
+<h4 id="implementation-6"><a class="link" href="#implementation-6">3.7.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>setLightTheme</code>/<code>setDarkTheme</code> command extends from the <code>Command</code> class. <code>MainWindow</code> checks using the <code>CommandResult</code> obtained from <code>Logic</code> if the user wants to change the theme of the application.
+If so, it immediately changes the theme without requiring the user to exit and launch the application again.</p>
 </div>
-<div class="sect2">
-<h3 id="changefontcommand"><a class="link" href="#changefontcommand">3.7. ChangeFontCommand</a></h3>
-
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This change in the application theme is also saved in <code>UserPrefs</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how an example usage scenario <code>setLightTheme</code> would work:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SetLightThemeSequenceDiagram.png" alt="SetLightThemeSequenceDiagram">
+</div>
+<div class="title">Figure 21. Interactions inside Logic and UI components for <code>setLightTheme</code> command</div>
+</div>
+<div class="paragraph">
+<p>The sequence diagram is as explained:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user launches the application and executes the <code>setLightTheme</code> command to change the current theme to <em>light</em>.</p>
+</li>
+<li>
+<p><code>commandResult</code> is obtained in <code>MainWindow</code> after the command is parsed and executed.</p>
+</li>
+<li>
+<p><code>MainWindow</code> checks if the <code>changeTheme</code> attribute in <code>commandResult</code> is true.</p>
+</li>
+<li>
+<p>Since it is true, it retrieves the <code>newTheme</code> from <code>commandResult</code>, <code>LIGHT</code>, and calls on its own method <code>switchThemeTo(LIGHT)</code>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>(Following details were trivial and thus omitted from the diagram) This method retrieves the URLs for the light theme and corresponding extensions css files and adds it to the stylesheets for the scene.
+This is done after removing the stylesheets for the previous theme.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>This implementation is essentially the same for <code>setDarkTheme</code> command, with the <code>newTheme</code> as <code>DARK</code> instead.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a <code>setLightTheme</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SetLightThemeActivityDiagram.png" alt="SetLightThemeActivityDiagram">
+</div>
+<div class="title">Figure 22. Activity diagram showing what happens when user executes a <code>setLightTheme</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.7.2. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Change the theme from within <code>MainWindow</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May not be as OOP as it could be, increases number of lines of code in <code>MainWindow</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use a separate class to control the theme, such as <code>ThemeManager</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Abstracts out the methods regarding changing of theme to be contained in <code>ThemeManager</code> and reduces the number of lines of code in <code>MainWindow</code>.</p>
+</li>
+<li>
+<p>Cons: Harder to implement; may introduce cyclic dependency.
+It may also be redundant or excessive as implementing the <code>changeFont</code> command is not very complicated.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="reminders"><a class="link" href="#reminders">3.8. Reminders</a></h3>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">3.8.1. Implementation</a></h4>
+<h4 id="implementation-7"><a class="link" href="#implementation-7">3.8.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The Reminder mechanism is facilitated by the Reminder class. Each Reminder object consists of a Condition class object which represents a set of conditions to be met. When all conditions are met, the reminder is activated and its message is displayed under the Reminder Pannel. The following class diagram helps to show how the classes are related.</p>
 </div>
@@ -845,7 +1103,7 @@ the ConditionList object is updated to see if any conditions have been met.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.8.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.8.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Current method:</strong> Instance specific reminders are made known to the instance object, and the object is made known to the reminder. (i.e Such reminders trigger conditions are entirely based on a single Entry class object)</p>
 </div>
@@ -858,7 +1116,7 @@ Cons: Might not be as OOP as other designs.</p>
 <div class="sect2">
 <h3 id="undo-redo"><a class="link" href="#undo-redo">3.9. Undo/ Redo</a></h3>
 <div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">3.9.1. Implementation</a></h4>
+<h4 id="implementation-8"><a class="link" href="#implementation-8">3.9.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedGuiltTrip</code>.
 It extends <code>GuiltTrip</code> with an undo/redo history, stored internally as an <code>guiltTripStateList</code> and <code>currentStatePointer</code>.
@@ -1000,7 +1258,7 @@ If the <code>currentStatePointer</code> is at index <code>guiltTripStateList.siz
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.9.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">3.9.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -2090,4 +2348,137 @@ Use case resumes from step 2.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:39:43 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">7. Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="customising-the-gui"><a class="link" href="#customising-the-gui">7.1. Customising the GUI</a></h3>
+<div class="sect3">
+<h4 id="change-theme"><a class="link" href="#change-theme">7.1.1. Change theme</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Changing the theme of the application</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Application is in dark theme.</p>
+</li>
+<li>
+<p>Test case: <code>setLightTheme</code><br>
+Expected: Theme changes to the light theme. Result display shows the message that command is executed successfully.</p>
+</li>
+<li>
+<p>Prerequisites: Application is in light theme.</p>
+</li>
+<li>
+<p>Test case: <code>setDarkTheme</code><br>
+Expected: Theme changes to the dark theme. Result display shows the message that command is executed successfully.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving theme preferences</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Change the theme to a different one (see examples above). Close the window.</p>
+</li>
+<li>
+<p>Relaunch the application.<br>
+Expected: The change in theme is saved and application is in the most recent theme.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="change-font"><a class="link" href="#change-font">7.1.2. Change font</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Changing the font of the application</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: none</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Test case: <code>changeFont rockwell</code><br>
+Expected: Font changes to <em>rockwell</em>.</p>
+</li>
+<li>
+<p>Test case: <code>changeFont segoe UI</code><br>
+Expected: Font changes to <em>segoe UI</em>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving font preferences</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Change the font to a different one (see examples above). Close the window.</p>
+</li>
+<li>
+<p>Relaunch the appication.<br>
+Expected: The change in font is saved and the application is in the most recent font.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="toggle-panel"><a class="link" href="#toggle-panel">7.1.3. Toggle panel</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Toggling a specified panel on or off</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: panel to toggle does not have its contents already shown in main panel</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Test case: <code>toggle budget</code><br>
+Expected: If panel was not previously shown, Budget panel will be toggled on. Otherwise, it will be toggled off.</p>
+</li>
+<li>
+<p>Test case: <code>toggle ae</code><br>
+Expected: If panel was not previously shown, AutoExpenses panel will be toggled on. Otherwise, it will be toggled off.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Prerequisites: panel to toggle already has its contents shown in the main panel, such as by doing <code>listBudget</code></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Test case: <code>toggle budget</code><br>
+Expected: Budget panel is not toggled on. Error message is shown in the result display.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:53:06 UTC</div></div></div></body></html>
