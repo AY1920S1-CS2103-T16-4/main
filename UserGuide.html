@@ -23,10 +23,9 @@
 <li><a href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code">3.8. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code></a></li>
 <li><a href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code">3.9. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code></a></li>
 <li><a href="#reminders">3.10. Reminders</a></li>
-<li><a href="#conditions">3.11. Conditions</a></li>
-<li><a href="#wishlist">3.12. WishList</a></li>
-<li><a href="#undo-redo">3.13. Undo/Redo</a></li>
-<li><a href="#ui-features">3.14. UI features</a></li>
+<li><a href="#wishlist">3.11. WishList</a></li>
+<li><a href="#undo-redo">3.12. Undo/Redo</a></li>
+<li><a href="#ui-features">3.13. UI features</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -1240,22 +1239,11 @@ both tags. The reason for this is that tags should be more specific that entry D
 </div>
 <div class="sect2">
 <h3 id="reminders"><a class="link" href="#reminders">3.10. Reminders</a></h3>
-<div class="paragraph">
-<p>Reminders display messages when Conditions are met.
-Alternatively, a reminder may be set to monitor entries satisfying its conditions.
-This behavior is specified by the TrackerType of the reminder.
-Reminders will only monitor entries added after the reminder is created.
-When the total amount/ or total number of these entries exceeds a specified quota, the reminder displays a message.
-Refer to <a href="#conditions">Section 3.11, &#8220;Conditions&#8221;</a> to see Condition related commands.</p>
-</div>
 <div class="sect3">
 <h4 id="add-reminder-code-addreminder-code"><a class="link" href="#add-reminder-code-addreminder-code">3.10.1. Add Reminder: <code>addReminder</code></a></h4>
 <div class="paragraph">
-<p>Adds new Reminder. Creating Reminder requires Conditions to be created first.
-The Condition Index refers to the index of the condition to add in the condition list.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addReminder n/&lt;Message&gt; i/&lt;Condition Index&gt; [tkr/&lt;Tracker Type&gt;] [a/&lt;Quota&gt;]</code></p>
+<p>Adds new GeneralReminder.
+Format: <code>addReminder n/&lt;Message&gt; [typ/&lt;EntryType&gt;] [l.b/&lt;LowerBound&gt;] [u.b/&lt;UpperBound&gt;] [start/&lt;Start Date&gt;] [end/&lt;End Date&gt;] [tg/&lt;tags&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1263,24 +1251,44 @@ The Condition Index refers to the index of the condition to add in the condition
 <div class="ulist">
 <ul>
 <li>
-<p><code>addReminder n/Watch your spending i/1</code></p>
-</li>
-<li>
-<p><code>addReminder n/Watch your spending i/1 tkr/amount a/100</code></p>
-</li>
-<li>
-<p><code>addReminder n/Watch your spending i/1 tkr/num a/10</code></p>
+<p>`addReminder n/Don&#8217;t be broke. l.b/10 u.b/20 start/2019/01/01 end/2019/12/30'</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-all-active-reminders-reminders-currently-set-to-display-code-listactivereminders-code"><a class="link" href="#list-all-active-reminders-reminders-currently-set-to-display-code-listactivereminders-code">3.10.2. List all active Reminders (reminders currently set to display) : <code>listActiveReminders</code></a></h4>
+<h4 id="set-reminder-code-setreminder-code"><a class="link" href="#set-reminder-code-setreminder-code">3.10.2. Set Reminder: <code>setReminder</code></a></h4>
 <div class="paragraph">
-<p>Lists all the reminders that are currently being displayed.</p>
+<p>Sets new EntryReminder for selected Entry specified by the type and index in the corresponding list.
+Format: `setReminder &lt;Reminder Index&gt; n/&lt;Message&gt; p/&lt;Period&gt; f/&lt;frequency&gt;</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>listActiveReminders</code></p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>` setReminder 1 typ/expense n/Mala p/1d f/daily '</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-all-active-reminders-reminders-currently-set-to-display-code-listreminders-code"><a class="link" href="#list-all-active-reminders-reminders-currently-set-to-display-code-listreminders-code">3.10.3. List all active Reminders (reminders currently set to display) : <code>listReminders</code></a></h4>
+<div class="paragraph">
+<p>Shows reminder pannel.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listReminders</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="select-reminders-code-selectreminder-code"><a class="link" href="#select-reminders-code-selectreminder-code">3.10.4. Select Reminders : <code>selectReminder</code></a></h4>
+<div class="paragraph">
+<p>select reminder to edit.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>selectReminder &lt;Reminder Index&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1288,18 +1296,26 @@ The Condition Index refers to the index of the condition to add in the condition
 <div class="ulist">
 <ul>
 <li>
-<p><code>listActiveReminders</code></p>
+<p><code>selectReminder 1</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-all-reminders-code-listallreminders-code"><a class="link" href="#list-all-reminders-code-listallreminders-code">3.10.3. List all Reminders : <code>listAllReminders</code></a></h4>
+<h4 id="edit-reminder-code-editreminder-code"><a class="link" href="#edit-reminder-code-editreminder-code">3.10.5. Edit Reminder : <code>editReminder</code></a></h4>
 <div class="paragraph">
-<p>Lists all the reminders that the user has set.</p>
+<p>Edits conditions of a GeneralReminder or period/ frequency of an EntryReminder selected.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>listAllReminders</code></p>
+<p>User must first select a reminder to modify before he can edit said reminder.</p>
+</div>
+<div class="paragraph">
+<p>Note that the entry type of the General reminder is not edited as the developers feel
+the user is more likely to create a new reminder instead of completely modifying the nature of the reminder.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editReminder [n/&lt;Message&gt;] [l.b/&lt;LowerBound&gt;] [u.b/&lt;UpperBound&gt;] [start/&lt;Start Date&gt;] [end/&lt;End Date&gt;] [tg/&lt;tags&gt;]</code>
+        <code>editReminder [n/&lt;Message&gt;] [p/&lt;period&gt;] [f/&lt;frequency&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1307,18 +1323,28 @@ The Condition Index refers to the index of the condition to add in the condition
 <div class="ulist">
 <ul>
 <li>
-<p><code>listAllReminders</code></p>
+<p><code>editReminder n/Don&#8217;t be broke.</code></p>
+</li>
+<li>
+<p>`editReminder l.b/5 u.b/10 `</p>
+</li>
+<li>
+<p><code>editReminder f/monthly</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-reminder-code-editreminder-code"><a class="link" href="#edit-reminder-code-editreminder-code">3.10.4. Edit Reminder : <code>editReminder</code></a></h4>
+<h4 id="remove-condition-from-reminder-removecondition"><a class="link" href="#remove-condition-from-reminder-removecondition">3.10.6. Remove Condition from Reminder : 'removeCondition`</a></h4>
 <div class="paragraph">
-<p>Edits the description/ activation conditions/ attribute being tracked/ quota of the reminder.</p>
+<p>Removes condition from GeneralReminder.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>editReminder &lt;Reminder Index&gt; [n/&lt;Message&gt;] [i/&lt;Condition Index&gt;] [tkr/&lt;Tracker Type&gt;] [a/&lt;Quota&gt;]</code></p>
+<p>User must first select a reminder to modify before he can edit said reminder.
+Note that the entry type of the General reminder cannot be removed.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>removeCondition &lt;Reminder Index&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1326,191 +1352,25 @@ The Condition Index refers to the index of the condition to add in the condition
 <div class="ulist">
 <ul>
 <li>
-<p><code>editReminder 1 n/Don&#8217;t be broke.</code></p>
-</li>
-<li>
-<p><code>editReminder 2 i/1 i/2 i/3</code></p>
-</li>
-<li>
-<p><code>editReminder 3 tkr/amount a/100</code></p>
+<p><code>removeCondition 1</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-reminder-code-deletereminder-code"><a class="link" href="#delete-reminder-code-deletereminder-code">3.10.5. Delete Reminder : <code>deleteReminder</code></a></h4>
+<h4 id="delete-reminder-code-deletereminder-code"><a class="link" href="#delete-reminder-code-deletereminder-code">3.10.7. Delete Reminder : <code>deleteReminder</code></a></h4>
 <div class="paragraph">
-<p>Deletes the reminder that was at index in the list.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deleteReminder &lt;index&gt;</code></p>
+<p>Deletes the selected Reminder.</p>
 </div>
 <div class="paragraph">
-<p>Example: <code>deleteReminder 3</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="add-condition-to-reminder-code-addtoreminder-code"><a class="link" href="#add-condition-to-reminder-code-addtoreminder-code">3.10.6. Add Condition to Reminder : <code>addToReminder</code></a></h4>
-<div class="paragraph">
-<p>Adds condition to list of conditions that must be fulfilled for reminder to display message.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addToReminder &lt;Reminder Index&gt;, &lt;Condition Index&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example: <code>addToReminder 1, 3</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="remove-condition-from-reminder-code-removefromreminder-code"><a class="link" href="#remove-condition-from-reminder-code-removefromreminder-code">3.10.7. Remove Condition from Reminder : <code>removeFromReminder</code></a></h4>
-<div class="paragraph">
-<p>Removes condition from list of conditions that must be fulfilled for reminder to display message.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>removeFromReminder &lt;Reminder Index&gt;, &lt;Condition Index&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example: <code>removeFromReminder 1, 3</code></p>
+<p>Format: <code>deleteReminder</code></p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="conditions"><a class="link" href="#conditions">3.11. Conditions</a></h3>
+<h3 id="wishlist"><a class="link" href="#wishlist">3.11. WishList</a></h3>
 <div class="sect3">
-<h4 id="add-classcondition-code-addclasscondition-code"><a class="link" href="#add-classcondition-code-addclasscondition-code">3.11.1. Add ClassCondition: <code>addClassCondition</code></a></h4>
-<div class="paragraph">
-<p>Adds a ClassCondition. A ClassCondition is met when an entry is of a specified type.
-The supported types of entries are Expense, Income, Wishes, Budget and AutoExpense.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addClassCondition &lt;entryType&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example: <code>addClassCondition expense</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="add-datecondition-code-adddatecondition-code"><a class="link" href="#add-datecondition-code-adddatecondition-code">3.11.2. Add DateCondition: <code>addDateCondition</code></a></h4>
-<div class="paragraph">
-<p>Adds a DateCondition. A DateCondition is met when the date of the entry is within the specified period.
-The supported types of entries are Expense, Income, Wishes, Budget and AutoExpense.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addDateCondition &lt;Start Date&gt;, &lt;End Date&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example: 'addDateCondition 2019/03/01, 2019/11/01'</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="add-haskeywordcondition-code-addhaskeywordcondition-code"><a class="link" href="#add-haskeywordcondition-code-addhaskeywordcondition-code">3.11.3. Add HasKeyWordCondition: <code>addHasKeyWordCondition</code></a></h4>
-<div class="paragraph">
-<p>Adds a HasKeyWordCondition. A HasKeyWordCondition is met when the description of an entry has any of the keywords specified.
-The supported types of entries are Expense, Income, Wishes, Budget and AutoExpense.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addHasKeyWord &lt;keywords&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example: 'addHasKeyWordCondition mala deck food'</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="add-quotacondition-code-addquotacondition-code"><a class="link" href="#add-quotacondition-code-addquotacondition-code">3.11.4. Add QuotaCondition: <code>addQuotaCondition</code></a></h4>
-<div class="paragraph">
-<p>Adds a QuotaCondition. A QuotaCondition is met when the individual amount of an entry is above a specified amount.
-The supported types of entries are Expense, Income, Wishes, Budget and AutoExpense.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addQuotaCondition &lt;Quota&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example: 'addQuotaCondition 100'</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="add-tagscondition-code-addhastagscondition-code"><a class="link" href="#add-tagscondition-code-addhastagscondition-code">3.11.5. Add TagsCondition: <code>addHasTagsCondition</code></a></h4>
-<div class="paragraph">
-<p>Adds a TagsCondition. A TagsCondition is met when the description of an entry has any of the Tags specified.
-The supported types of entries are Expense, Income, Wishes, Budget and AutoExpense.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addHasTagsConditions &lt;Tags&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>'addHasTagsCondition mala deck food'</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-condition-code-deletecondition-code"><a class="link" href="#delete-condition-code-deletecondition-code">3.11.6. Delete Condition: <code>deleteCondition</code></a></h4>
-<div class="paragraph">
-<p>Removes a Condition specified by the index.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deleteCondition &lt;Index&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>'deleteCondition 1'</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="replace-condition-code-replacecondition-code"><a class="link" href="#replace-condition-code-replacecondition-code">3.11.7. Replace Condition: <code>replaceCondition</code></a></h4>
-<div class="paragraph">
-<p>Replaces one Condition with another. All Reminders with the replaced condition will now have the replacing condition.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>replaceCondtion &lt;Index of Condition being Replaced&gt;, &lt;Index of Replacing Condition&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>'replaceCondition 1, 2'</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-condition-code-listcondition-code"><a class="link" href="#list-condition-code-listcondition-code">3.11.8. List Condition: <code>listCondition</code></a></h4>
-<div class="paragraph">
-<p>Shows the list of Conditions. Conditions are listed in the Reminder Pannel.
-(To be changed)</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>listConditions</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>'listConditions'</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="wishlist"><a class="link" href="#wishlist">3.12. WishList</a></h3>
-<div class="sect3">
-<h4 id="add-wishlist-code-addwishlist-code"><a class="link" href="#add-wishlist-code-addwishlist-code">3.12.1. Add WishList : <code>addWishlist</code></a></h4>
+<h4 id="add-wishlist-code-addwishlist-code"><a class="link" href="#add-wishlist-code-addwishlist-code">3.11.1. Add WishList : <code>addWishlist</code></a></h4>
 <div class="paragraph">
 <p>Adds a new item to your current wishlist</p>
 </div>
@@ -1532,7 +1392,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-wishlist-code-deletewish-code"><a class="link" href="#delete-wishlist-code-deletewish-code">3.12.2. Delete WishList : <code>deleteWish</code></a></h4>
+<h4 id="delete-wishlist-code-deletewish-code"><a class="link" href="#delete-wishlist-code-deletewish-code">3.11.2. Delete WishList : <code>deleteWish</code></a></h4>
 <div class="paragraph">
 <p>Deletes the item at the stated index from your current wishlist</p>
 </div>
@@ -1551,7 +1411,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-wish-in-wishlist-code-editwish-code"><a class="link" href="#edit-wish-in-wishlist-code-editwish-code">3.12.3. Edit Wish in WishList : <code>editWish</code></a></h4>
+<h4 id="edit-wish-in-wishlist-code-editwish-code"><a class="link" href="#edit-wish-in-wishlist-code-editwish-code">3.11.3. Edit Wish in WishList : <code>editWish</code></a></h4>
 <div class="paragraph">
 <p>edit the description, date, or tags of your wishes.</p>
 </div>
@@ -1573,7 +1433,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect3">
-<h4 id="purchase-wishlist-code-purchase-code-coming-in-v2-0"><a class="link" href="#purchase-wishlist-code-purchase-code-coming-in-v2-0">3.12.4. Purchase WishList : <code>purchase</code> [coming in v2.0]</a></h4>
+<h4 id="purchase-wishlist-code-purchase-code-coming-in-v2-0"><a class="link" href="#purchase-wishlist-code-purchase-code-coming-in-v2-0">3.11.4. Purchase WishList : <code>purchase</code> [coming in v2.0]</a></h4>
 <div class="paragraph">
 <p>Purchases the item at the stated index from your current wishlist</p>
 </div>
@@ -1586,9 +1446,9 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo"><a class="link" href="#undo-redo">3.13. Undo/Redo</a></h3>
+<h3 id="undo-redo"><a class="link" href="#undo-redo">3.12. Undo/Redo</a></h3>
 <div class="sect3">
-<h4 id="undo-previous-command-code-undo-code"><a class="link" href="#undo-previous-command-code-undo-code">3.13.1. Undo previous command : <code>undo</code></a></h4>
+<h4 id="undo-previous-command-code-undo-code"><a class="link" href="#undo-previous-command-code-undo-code">3.12.1. Undo previous command : <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Restores the finance tracker to the state before the previous undoable command was executed.</p>
 </div>
@@ -1614,7 +1474,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo-previously-undone-command-code-redo-code"><a class="link" href="#redo-previously-undone-command-code-redo-code">3.13.2. Redo previously undone command : <code>redo</code></a></h4>
+<h4 id="redo-previously-undone-command-code-redo-code"><a class="link" href="#redo-previously-undone-command-code-redo-code">3.12.2. Redo previously undone command : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Reverses the most recent undone command.</p>
 </div>
@@ -1641,9 +1501,9 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect2">
-<h3 id="ui-features"><a class="link" href="#ui-features">3.14. UI features</a></h3>
+<h3 id="ui-features"><a class="link" href="#ui-features">3.13. UI features</a></h3>
 <div class="sect3">
-<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.14.1. Toggle Panel : <code>toggle</code></a></h4>
+<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.13.1. Toggle Panel : <code>toggle</code></a></h4>
 <div class="paragraph">
 <p>Toggles visibility of the specified panel on the GUI. Only the following inputs are accepted:</p>
 </div>
@@ -1684,7 +1544,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.14.2. Change Font : <code>changeFont</code></a></h4>
+<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.13.2. Change Font : <code>changeFont</code></a></h4>
 <div class="paragraph">
 <p>Changes the font used in application to the specified font. The input is case-sensitive. Only the following font names are accepted:
 "arial", "calibri", "cambria", "candara", "garamond", "georgia", "rockwell", "segoe UI", "serif", "verdana"</p>
@@ -1707,7 +1567,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-to-dark-theme-code-setdarktheme-code"><a class="link" href="#change-to-dark-theme-code-setdarktheme-code">3.14.3. Change to dark theme : <code>setDarkTheme</code></a></h4>
+<h4 id="change-to-dark-theme-code-setdarktheme-code"><a class="link" href="#change-to-dark-theme-code-setdarktheme-code">3.13.3. Change to dark theme : <code>setDarkTheme</code></a></h4>
 <div class="paragraph">
 <p>Changes the theme from light to dark.</p>
 </div>
@@ -1719,7 +1579,7 @@ The supported types of entries are Expense, Income, Wishes, Budget and AutoExpen
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-to-light-theme-code-setlighttheme-code"><a class="link" href="#change-to-light-theme-code-setlighttheme-code">3.14.4. Change to light theme : <code>setLightTheme</code></a></h4>
+<h4 id="change-to-light-theme-code-setlighttheme-code"><a class="link" href="#change-to-light-theme-code-setlighttheme-code">3.13.4. Change to light theme : <code>setLightTheme</code></a></h4>
 <div class="paragraph">
 <p>Changes the theme from dark to light.</p>
 </div>
@@ -1977,4 +1837,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:53:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:18:02 UTC</div></div></div></body></html>
