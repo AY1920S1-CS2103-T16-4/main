@@ -25,8 +25,7 @@
 <li><a href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code">3.10. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code>, <code>sortAutoExp</code></a></li>
 <li><a href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code">3.11. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code>, <code>findAutoExp</code></a></li>
 <li><a href="#reminders">3.12. Reminders</a></li>
-<li><a href="#undo-redo">3.13. Undo/Redo</a></li>
-<li><a href="#ui-features">3.14. UI features</a></li>
+<li><a href="#ui-features">3.13. UI features</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -1217,18 +1216,6 @@ key in the command  <code>deleteBudget 1</code>.</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="purchase-wishlist-code-purchase-code-coming-in-v2-0"><a class="link" href="#purchase-wishlist-code-purchase-code-coming-in-v2-0">3.7.5. Purchase WishList : <code>purchase</code> [coming in v2.0]</a></h4>
-<div class="paragraph">
-<p>Purchases the item at the stated index from your current wishlist</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>purchase &lt;index&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Example: <code>purchase 1</code></p>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="loan-coming-in-v2-0"><a class="link" href="#loan-coming-in-v2-0">3.8. Loan [coming in v2.0]</a></h3>
@@ -1716,6 +1703,11 @@ Format: `setReminder &lt;Reminder Index&gt; n/&lt;Message&gt; p/&lt;Period&gt; f
 </div>
 <div class="sect3">
 <h4 id="list-all-active-reminders-reminders-currently-set-to-display-code-listreminders-code"><a class="link" href="#list-all-active-reminders-reminders-currently-set-to-display-code-listreminders-code">3.12.3. List all active Reminders (reminders currently set to display) : <code>listReminders</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/listReminderspage.png" alt="listReminderspage">
+</div>
+</div>
 <div class="paragraph">
 <p>Shows reminder panel.</p>
 </div>
@@ -1725,6 +1717,11 @@ Format: `setReminder &lt;Reminder Index&gt; n/&lt;Message&gt; p/&lt;Period&gt; f
 </div>
 <div class="sect3">
 <h4 id="select-reminders-code-selectreminder-code"><a class="link" href="#select-reminders-code-selectreminder-code">3.12.4. Select Reminders : <code>selectReminder</code></a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/selectReminder.png" alt="selectReminder">
+</div>
+</div>
 <div class="paragraph">
 <p>select reminder to edit.</p>
 </div>
@@ -1804,16 +1801,10 @@ Note that the entry type of the General reminder cannot be removed.</p>
 <p>Deletes the selected Reminder.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>deleteReminder</code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="undo-redo"><a class="link" href="#undo-redo">3.13. Undo/Redo</a></h3>
-<div class="sect3">
-<h4 id="undo-previous-command-code-undo-code"><a class="link" href="#undo-previous-command-code-undo-code">3.13.1. Undo previous command : <code>undo</code></a></h4>
-<div class="paragraph">
-<p>Restores the finance tracker to the state before the previous undoable command was executed or
+<p>Format: <code>deleteReminder</code>
+=== Undo/Redo
+==== Undo previous command : <code>undo</code>
+Restores the finance tracker to the state before the previous undoable command was executed or
 before the specified number of undoable commands were executed.</p>
 </div>
 <div class="paragraph">
@@ -1886,7 +1877,7 @@ key in the command  <code>deleteBudget 1</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo-previously-undone-command-code-redo-code"><a class="link" href="#redo-previously-undone-command-code-redo-code">3.13.2. Redo previously undone command : <code>redo</code></a></h4>
+<h4 id="redo-previously-undone-command-code-redo-code"><a class="link" href="#redo-previously-undone-command-code-redo-code">3.12.8. Redo previously undone command : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Reverses the most recent undone command or the specified number of most recent undone commands.</p>
 </div>
@@ -1986,7 +1977,7 @@ key in the command  <code>deleteBudget 1</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-the-history-of-commands-entered-code-history-code"><a class="link" href="#view-the-history-of-commands-entered-code-history-code">3.13.3. View the history of commands entered : <code>history</code></a></h4>
+<h4 id="view-the-history-of-commands-entered-code-history-code"><a class="link" href="#view-the-history-of-commands-entered-code-history-code">3.12.9. View the history of commands entered : <code>history</code></a></h4>
 <div class="paragraph">
 <p>Displays the list of commands entered, from most recent to earliest.</p>
 </div>
@@ -2042,9 +2033,9 @@ key in the command  <code>deleteBudget 1</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ui-features"><a class="link" href="#ui-features">3.14. UI features</a></h3>
+<h3 id="ui-features"><a class="link" href="#ui-features">3.13. UI features</a></h3>
 <div class="sect3">
-<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.14.1. Toggle Panel : <code>toggle</code></a></h4>
+<h4 id="toggle-panel-code-toggle-code"><a class="link" href="#toggle-panel-code-toggle-code">3.13.1. Toggle Panel : <code>toggle</code></a></h4>
 <div class="paragraph">
 <p>Toggles visibility of the specified panel on the GUI. Only the following inputs are accepted:</p>
 </div>
@@ -2108,7 +2099,7 @@ key in the command  <code>deleteBudget 1</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.14.2. Change Font : <code>changeFont</code></a></h4>
+<h4 id="change-font-code-changefont-code"><a class="link" href="#change-font-code-changefont-code">3.13.2. Change Font : <code>changeFont</code></a></h4>
 <div class="paragraph">
 <p>Changes the font used in application to the specified font. The input is case-sensitive. Only the following font names are accepted:
 "arial", "calibri", "cambria", "candara", "garamond", "georgia", "rockwell", "segoe UI", "serif", "verdana". The available fonts to change to will be shown in the result display box for the user to refer to easily. The change in font will be saved.</p>
@@ -2159,7 +2150,7 @@ key in the command  <code>deleteBudget 1</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-to-dark-theme-code-setdarktheme-code"><a class="link" href="#change-to-dark-theme-code-setdarktheme-code">3.14.3. Change to dark theme : <code>setDarkTheme</code></a></h4>
+<h4 id="change-to-dark-theme-code-setdarktheme-code"><a class="link" href="#change-to-dark-theme-code-setdarktheme-code">3.13.3. Change to dark theme : <code>setDarkTheme</code></a></h4>
 <div class="paragraph">
 <p>Changes the theme from light to dark. The change in theme will be saved.</p>
 </div>
@@ -2191,7 +2182,7 @@ key in the command  <code>deleteBudget 1</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-to-light-theme-code-setlighttheme-code"><a class="link" href="#change-to-light-theme-code-setlighttheme-code">3.14.4. Change to light theme : <code>setLightTheme</code></a></h4>
+<h4 id="change-to-light-theme-code-setlighttheme-code"><a class="link" href="#change-to-light-theme-code-setlighttheme-code">3.13.4. Change to light theme : <code>setLightTheme</code></a></h4>
 <div class="paragraph">
 <p>Changes the theme from dark to light. The change in theme will be saved.</p>
 </div>
@@ -2475,4 +2466,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:52:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:54:06 UTC</div></div></div></body></html>

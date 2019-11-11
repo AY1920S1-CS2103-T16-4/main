@@ -31,7 +31,6 @@
 <li><a href="#quality-of-life-features">3.8. Quality of Life features</a></li>
 <li><a href="#reminders">3.9. Reminders</a></li>
 <li><a href="#design-considerations-7">3.10. Design Considerations:</a></li>
-<li><a href="#undo-redo">3.11. Undo/ Redo</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -1419,18 +1418,16 @@ Update at every startup only.</p>
 <p>Pros: Faster as it involves one less step. May be more convenient for users who frequently forget to first select reminder to modify.</p>
 </li>
 <li>
-<p>Cons: Aforementioned benefits are mitigated as reminders are hidden in default GUI settings, and most users will have to open up the    reminderList to know which reminder to modify anyway.</p>
+<p>Cons: Aforementioned benefits are mitigated as reminders are hidden in default GUI settings, and most users will have to open up the    reminderList to know which reminder to modify anyway.
+=== Undo/ Redo</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="undo-redo"><a class="link" href="#undo-redo">3.11. Undo/ Redo</a></h3>
 <div class="sect3">
-<h4 id="implementation-10"><a class="link" href="#implementation-10">3.11.1. Implementation</a></h4>
+<h4 id="implementation-10"><a class="link" href="#implementation-10">3.10.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedGuiltTrip</code>.
 It extends <code>GuiltTrip</code> with an undo/redo history, stored internally as an <code>guiltTripStateList</code> and <code>currentStatePointer</code>.
@@ -1572,7 +1569,7 @@ If the <code>currentStatePointer</code> is at index <code>guiltTripStateList.siz
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">3.11.2. Design Considerations</a></h4>
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">3.10.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -3285,4 +3282,4 @@ Expected: Budget panel is not toggled on. Error message is shown in the result d
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:52:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:54:06 UTC</div></div></div></body></html>
