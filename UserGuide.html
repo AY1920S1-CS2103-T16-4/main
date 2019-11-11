@@ -20,8 +20,8 @@
 <li><a href="#budget">3.5. Budget</a></li>
 <li><a href="#loan-coming-in-v2-0">3.6. Loan [coming in v2.0]</a></li>
 <li><a href="#statistics">3.7. Statistics</a></li>
-<li><a href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code">3.8. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code></a></li>
-<li><a href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code">3.9. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code></a></li>
+<li><a href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code">3.8. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code>, <code>sortAutoExp</code></a></li>
+<li><a href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code">3.9. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code>, <code>findAutoExp</code></a></li>
 <li><a href="#reminders">3.10. Reminders</a></li>
 <li><a href="#wishlist">3.11. WishList</a></li>
 <li><a href="#undo-redo">3.12. Undo/Redo</a></li>
@@ -62,7 +62,7 @@ type fast, guiltTrip() can get your finance tracker tasks done faster than tradi
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/Ui.png" alt="Ui" width="790">
+<img src="images/Ui.png" alt="Ui" width="790">
 </div>
 </div>
 </li>
@@ -136,7 +136,7 @@ This is an intelligent bot that helps you navigate through your finance journey 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/autosuggest_startup.png" alt="autosuggest startup">
+<img src="images/autosuggest_startup.png" alt="autosuggest startup">
 </div>
 </div>
 <div class="paragraph">
@@ -146,7 +146,7 @@ command. Isn&#8217;t that cool?</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/autosuggest_hlp.png" alt="autosuggest hlp">
+<img src="images/autosuggest_hlp.png" alt="autosuggest hlp">
 </div>
 </div>
 <div class="paragraph">
@@ -155,7 +155,7 @@ this afternoon!</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/autosuggest_addExpense.png" alt="autosuggest addExpense">
+<img src="images/autosuggest_addExpense.png" alt="autosuggest addExpense">
 </div>
 </div>
 <div class="paragraph">
@@ -214,7 +214,7 @@ Category names are case-insensitive.</p>
 <p>If you want to add a new category <strong>CodingServices</strong> under Income, enter the command <code>addCategory cat/Income n/CodingServices</code></p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/addingCategory-1.png" alt="addingCategory 1">
+<img src="images/addingCategory-1.png" alt="addingCategory 1">
 </div>
 </div>
 </li>
@@ -222,7 +222,7 @@ Category names are case-insensitive.</p>
 <p>The new category will thus be added to guiltTrip. You can verify it using <code>listCategories</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/addingCategory-2.png" alt="addingCategory 2">
+<img src="images/addingCategory-2.png" alt="addingCategory 2">
 </div>
 </div>
 </li>
@@ -273,7 +273,7 @@ duplicate of existing categories.</p>
 <p>If you would like to edit an existing Category <strong>Business</strong> to <strong>Bursary</strong> under Income, enter the command <code>editCategory cat/Income o/Business n/Bursary</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/editingCategory-1.png" alt="editingCategory 1">
+<img src="images/editingCategory-1.png" alt="editingCategory 1">
 </div>
 </div>
 </li>
@@ -281,7 +281,7 @@ duplicate of existing categories.</p>
 <p>The old category will thus be edited in guiltTrip. All existing entries will also be renamed as shown below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/editingCategory-2.png" alt="editingCategory 2">
+<img src="images/editingCategory-2.png" alt="editingCategory 2">
 </div>
 </div>
 </li>
@@ -341,7 +341,7 @@ duplicate of existing categories.</p>
 <p>If you would like to remove an existing Category <strong>Rent</strong> under Expense, type <code>deleteCategory cat/Expense n/Rent</code></p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/deletingCategory-1.png" alt="deletingCategory 1">
+<img src="images/deletingCategory-1.png" alt="deletingCategory 1">
 </div>
 </div>
 </li>
@@ -349,7 +349,7 @@ duplicate of existing categories.</p>
 <p>The old category will thus be deleted from guiltTrip. You can verify that it is removed using <code>listCategories</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/deletingCategory-2.png" alt="deletingCategory 2">
+<img src="images/deletingCategory-2.png" alt="deletingCategory 2">
 </div>
 </div>
 </li>
@@ -413,7 +413,7 @@ in the list of categories. Amount must be larger than 0 and positive. Amount sho
 <p>If you would like to add a record of a recent splurging on mala, key in the command  <code>addExpense cat/Food typ/Expense n/Mala amt/5.50 d/2019 11 09 tg/food tg/indulgence</code> .</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/addingExpense-1.png" alt="addingExpense 1">
+<img src="images/addingExpense-1.png" alt="addingExpense 1">
 </div>
 </div>
 </li>
@@ -421,7 +421,7 @@ in the list of categories. Amount must be larger than 0 and positive. Amount sho
 <p>You should see the new expense being added into in the list of entries as displayed below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/addingExpense-2.png" alt="addingExpense 2">
+<img src="images/addingExpense-2.png" alt="addingExpense 2">
 </div>
 </div>
 </li>
@@ -524,7 +524,7 @@ Inputs can be arranged in a different order. Tag may be omitted from the expendi
 key in the command  <code>editExpense 2 amt/999.99 tg/irreversiblecatastrophicdestructiontomykidneysandhealth</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/editingExpense-1.png" alt="editingExpense 1">
+<img src="images/editingExpense-1.png" alt="editingExpense 1">
 </div>
 </div>
 </li>
@@ -532,7 +532,7 @@ key in the command  <code>editExpense 2 amt/999.99 tg/irreversiblecatastrophicde
 <p>You should see the new expense being edited in the list of entries as displayed below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/editingExpense-2.png" alt="editingExpense 2">
+<img src="images/editingExpense-2.png" alt="editingExpense 2">
 </div>
 </div>
 </li>
@@ -580,7 +580,7 @@ key in the command  <code>editExpense 2 amt/999.99 tg/irreversiblecatastrophicde
 key in the command  <code>deleteExpense 6</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/deleteExpense-1.png" alt="deleteExpense 1">
+<img src="images/deleteExpense-1.png" alt="deleteExpense 1">
 </div>
 </div>
 </li>
@@ -588,7 +588,7 @@ key in the command  <code>deleteExpense 6</code>.</p>
 <p>You should see the expense being deleted in the list of entries as displayed below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/deleteExpense-2.png" alt="deleteExpense 2">
+<img src="images/deleteExpense-2.png" alt="deleteExpense 2">
 </div>
 </div>
 </li>
@@ -652,7 +652,7 @@ past records will be automatically generated. At your own risk! GuiltTrip can&#8
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/autoexpense_add.png" alt="autoexpense add">
+<img src="images/autoexpense_add.png" alt="autoexpense add">
 </div>
 </div>
 </div>
@@ -688,7 +688,7 @@ entry, try out the <code>undo</code> command, and then recreate it again. Use th
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/autoexpense_edit.png" alt="autoexpense edit">
+<img src="images/autoexpense_edit.png" alt="autoexpense edit">
 </div>
 </div>
 </div>
@@ -720,7 +720,7 @@ if you stopped your Spotify subscription.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/autoexpense_delete.png" alt="autoexpense delete">
+<img src="images/autoexpense_delete.png" alt="autoexpense delete">
 </div>
 </div>
 </div>
@@ -910,7 +910,7 @@ screen will reset the Table to show the month of statistics that reflects the co
 <p>Let&#8217;s say you want to view the Statistics in table form for period <strong>2018/01</strong> to <strong>2019/12</strong>. You then type in the command <code>viewTable p/2018-01,2019-12</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/viewTable-1.png" alt="viewTable 1">
+<img src="images/viewTable-1.png" alt="viewTable 1">
 </div>
 </div>
 </li>
@@ -918,7 +918,7 @@ screen will reset the Table to show the month of statistics that reflects the co
 <p>GuiltTrip will display to you the statistics for this period of time broken down in table form as shown below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/viewTable-2.png" alt="viewTable 2">
+<img src="images/viewTable-2.PNG" alt="viewTable 2">
 </div>
 </div>
 </li>
@@ -966,7 +966,7 @@ The statistics by percentage will be rounded to the nearest 1 decimal place so a
 <p>Let&#8217;s say you want to view the Statistics in pie chart form for period <strong>2018/01</strong> to <strong>2019/12</strong>. You then type in the command <code>viewPie p/2018-01,2019-12</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/ViewPie-1.png" alt="ViewPie 1">
+<img src="images/ViewPie-1.png" alt="ViewPie 1">
 </div>
 </div>
 </li>
@@ -974,7 +974,7 @@ The statistics by percentage will be rounded to the nearest 1 decimal place so a
 <p>GuiltTrip will display to you the statistics for this period of time broken down in pie chart form as shown below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/viewPie-2.png" alt="viewPie 2">
+<img src="images/ViewPie-2.PNG" alt="ViewPie 2">
 </div>
 </div>
 </li>
@@ -1047,7 +1047,7 @@ the amounts for other days.
 <p>Let&#8217;s say you want to view the Statistics in bar chart form for period <strong>2019/10</strong>. You then type in the command <code>viewBar p/2019-10</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/viewBar-1.png" alt="viewBar 1">
+<img src="images/viewBar-1.png" alt="viewBar 1">
 </div>
 </div>
 </li>
@@ -1055,7 +1055,7 @@ the amounts for other days.
 <p>GuiltTrip will display to you the statistics for this period of time broken down in table form as shown below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/viewBar-2.png" alt="viewBar 2">
+<img src="images/viewBar-2.PNG" alt="viewBar 2">
 </div>
 </div>
 </li>
@@ -1096,10 +1096,13 @@ the amounts for other days.
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code"><a class="link" href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code">3.8. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code></a></h3>
+<h3 id="sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code"><a class="link" href="#sorting-code-sortexpense-code-code-sortincome-code-code-sortbudget-code-code-sortwish-code-code-sortautoexp-code">3.8. Sorting : <code>sortExpense</code>, <code>sortIncome</code>, <code>sortBudget</code>, <code>sortWish</code>, <code>sortAutoExp</code></a></h3>
 <div class="paragraph">
 <p>Sorts the aforementioned list currently displayed according to sort type which can be <code>amount</code>, <code>time</code>, <code>description</code>,
 <code>tags</code> and <code>category</code>, and sort sequence which can be in <code>ascending</code>, <code>descending</code> order.</p>
+</div>
+<div class="paragraph">
+<p>[NOTE] Sorting of Budget by Amount refers to the original Budget Total Amount.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>sortExpense typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
@@ -1123,7 +1126,7 @@ the amounts for other days.
 <p>Let&#8217;s say you want to view the entries sorted by Category in ascending order. You then type <code>sortExpense typ/Category s/ascending</code></p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/Sort-1.png" alt="Sort 1">
+<img src="images/Sort-1.png" alt="Sort 1">
 </div>
 </div>
 </li>
@@ -1131,7 +1134,7 @@ the amounts for other days.
 <p>GuiltTrip will display to you the entries sorted by Category in the proper order as shown below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/sort-2.png" alt="sort 2">
+<img src="images/sort-2.png" alt="sort 2">
 </div>
 </div>
 </li>
@@ -1155,7 +1158,7 @@ the amounts for other days.
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code"><a class="link" href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code">3.9. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code></a></h3>
+<h3 id="find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code"><a class="link" href="#find-code-findexpense-code-code-findincome-code-code-findwish-code-code-findbudget-code-code-findautoexp-code">3.9. Find : <code>findExpense</code>, <code>findIncome</code>, <code>findWish</code>, <code>findBudget</code>, <code>findAutoExp</code></a></h3>
 <div class="paragraph">
 <p>Find income/expenditure by Category, Description, Amount, Date or Tags. There must be at least one find parameter.</p>
 </div>
@@ -1166,7 +1169,7 @@ the amounts for other days.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Finding by <code>Amount</code> will show the entries that are above a certain amount.
+Finding by <code>Amount</code> will show the entries that are above a certain amount. Budget&#8217;s Amount refers to the total amount allocated for the Budget.
 </td>
 </tr>
 </table>
@@ -1206,7 +1209,7 @@ both tags. The reason for this is that tags should be more specific that entry D
 <p>Let&#8217;s say you want to find all the expenses with Category name food. You then type <code>findExpense cat/Food</code></p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/find-1.png" alt="find 1">
+<img src="images/find-1.png" alt="find 1">
 </div>
 </div>
 </li>
@@ -1214,7 +1217,7 @@ both tags. The reason for this is that tags should be more specific that entry D
 <p>GuiltTrip will display to you the expenses with the Category Name as shown below.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/user-guide-pictures/find-2.png" alt="find 2">
+<img src="images/find-2.png" alt="find 2">
 </div>
 </div>
 </li>
@@ -1617,55 +1620,55 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><code>addExpense cat/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
+<p>addExpense cat/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>editExpense &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [a/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</code></p>
+<p>editExpense &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [a/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>deleteExpense &lt;index&gt;</code></p>
+<p>deleteExpense &lt;index&gt;</p>
 </li>
 <li>
-<p><code>add typ/Income c/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [t/&lt;tag&gt;]</code></p>
+<p>add typ/Income c/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>edit &lt;index&gt; [c/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [a/&lt;expenditure&gt;] [t/&lt;tag&gt;]</code></p>
+<p>edit &lt;index&gt; [c/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [a/&lt;expenditure&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>delete &lt;index&gt;</code></p>
+<p>delete &lt;index&gt;</p>
 </li>
 <li>
-<p><code>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt; [t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
+<p>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt; [t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
 </li>
 <li>
-<p><code>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt; t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
+<p>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt; t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
 </li>
 <li>
-<p><code>deleteAutoExp &lt;index&gt;</code></p>
+<p>deleteAutoExp &lt;index&gt;</p>
 </li>
 <li>
-<p><code>addBudget c/&lt;category&gt; n/&lt;description&gt; a/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [t/&lt;tag&gt;]</code></p>
+<p>addBudget c/&lt;category&gt; n/&lt;description&gt; a/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>listBudget</code></p>
+<p>listBudget</p>
 </li>
 <li>
-<p><code>editBudget &lt;index&gt; [n/&lt;description&gt;] [a/&lt;budget&gt;] [t/&lt;tag&gt;]</code></p>
+<p>editBudget &lt;index&gt; [n/&lt;description&gt;] [a/&lt;budget&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>deleteBudget &lt;index&gt;</code></p>
+<p>deleteBudget &lt;index&gt;</p>
 </li>
 <li>
-<p><code>addCategory cat/&lt;category&gt; n/&lt;category name&gt;</code></p>
+<p>addCategory cat/&lt;category&gt; n/&lt;category name&gt;</p>
 </li>
 <li>
-<p><code>editCategory typ/&lt;category type&gt; cat/&lt;old category name&gt; n/&lt;new category name&gt;</code></p>
+<p>editCategory typ/&lt;category type&gt; cat/&lt;old category name&gt; n/&lt;new category name&gt;</p>
 </li>
 <li>
-<p><code>listCategories</code></p>
+<p>listCategories</p>
 </li>
 <li>
-<p><code>deleteCategory cat/&lt;category type&gt; n/&lt;category name&gt;</code></p>
+<p>deleteCategory cat/&lt;category type&gt; n/&lt;category name&gt;</p>
 </li>
 </ol>
 </div>
@@ -1675,40 +1678,40 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><code>viewTable [p/&lt;RangeOfMonths&gt;]</code></p>
+<p>viewTable [p/&lt;RangeOfMonths&gt;]</p>
 </li>
 <li>
-<p><code>viewPie [p/&lt;RangeOfMonths&gt;]</code></p>
+<p>viewPie [p/&lt;RangeOfMonths&gt;]</p>
 </li>
 <li>
-<p><code>viewBar [p/&lt;SpecifiedMonth&gt;]</code></p>
+<p>viewBar [p/&lt;SpecifiedMonth&gt;]</p>
 </li>
 <li>
-<p><code>viewEntry</code></p>
+<p>viewEntry</p>
 </li>
 <li>
-<p><code>sortExpense typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
+<p>sortExpense typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
 </li>
 <li>
-<p><code>sortIncome typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
+<p>sortIncome typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
 </li>
 <li>
-<p><code>sortBudget typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
+<p>sortBudget typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
 </li>
 <li>
-<p><code>sortWish typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
+<p>sortWish typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
 </li>
 <li>
-<p><code>findExpense [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
+<p>findExpense [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>findIncome [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
+<p>findIncome [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>findBudget [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
+<p>findBudget [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
 </li>
 <li>
-<p><code>findWish [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
+<p>findWish [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
 </li>
 </ol>
 </div>
@@ -1837,4 +1840,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:35:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:40:16 UTC</div></div></div></body></html>
