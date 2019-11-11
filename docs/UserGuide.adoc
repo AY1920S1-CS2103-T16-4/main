@@ -644,7 +644,7 @@ Example:
 Reminders display messages when Conditions are met.
 Alternatively, a reminder may be set to monitor entries satisfying its conditions.
 This behavior is specified by the TrackerType of the reminder.
-Reminders will only monitor entries added after the reminder is created.
+Reminders will only monitor entreis after the reminder is created.
 When the total amount/ or total number of these entries exceeds a specified quota, the reminder displays a message.
 Refer to <<Conditions>> to see Condition related commands.
 
