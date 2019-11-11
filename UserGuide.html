@@ -2246,55 +2246,58 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>addExpense cat/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</p>
+<p><code>addExpense / addExp cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
 </li>
 <li>
-<p>editExpense &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [a/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</p>
+<p><code>editExpense &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [amt/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</code></p>
 </li>
 <li>
-<p>deleteExpense &lt;index&gt;</p>
+<p><code>deleteExpense &lt;index&gt;</code></p>
 </li>
 <li>
-<p>add typ/Income c/&lt;category&gt; n/&lt;description&gt; a/&lt;expenditure&gt; d/&lt;date&gt; [t/&lt;tag&gt;]</p>
+<p><code>addIncome cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;amount&gt; d/&lt;date&gt; [tg/&lt;tag&gt;]</code></p>
 </li>
 <li>
-<p>edit &lt;index&gt; [c/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [a/&lt;expenditure&gt;] [t/&lt;tag&gt;]</p>
+<p><code>editIncome &lt;index&gt; [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [amt/&lt;expenditure&gt;] [tg/&lt;tag&gt;]</code></p>
 </li>
 <li>
-<p>delete &lt;index&gt;</p>
+<p><code>deleteIncome &lt;index&gt;</code></p>
 </li>
 <li>
-<p>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt; [t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
+<p><code>list</code></p>
 </li>
 <li>
-<p>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt; t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</p>
+<p><code>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt; [tg&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
 </li>
 <li>
-<p>deleteAutoExp &lt;index&gt;</p>
+<p><code>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; amt/&lt;expenditure&gt; cat/&lt;category&gt; tg/&lt;tag1&gt; tg/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
 </li>
 <li>
-<p>addBudget c/&lt;category&gt; n/&lt;description&gt; a/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [t/&lt;tag&gt;]</p>
+<p><code>deleteAutoExp &lt;index&gt;</code></p>
 </li>
 <li>
-<p>listBudget</p>
+<p><code>addBudget cat/&lt;category&gt; n/&lt;description&gt; amt/&lt;budget amount&gt; d/&lt;start date&gt; p/&lt;period&gt; [tg/&lt;tag&gt;]`</code></p>
 </li>
 <li>
-<p>editBudget &lt;index&gt; [n/&lt;description&gt;] [a/&lt;budget&gt;] [t/&lt;tag&gt;]</p>
+<p><code>listBudget</code></p>
 </li>
 <li>
-<p>deleteBudget &lt;index&gt;</p>
+<p><code>editBudget &lt;index&gt; [n/&lt;description&gt;] [amt/&lt;budget&gt;] [tg/&lt;tag&gt;]</code></p>
 </li>
 <li>
-<p>addCategory cat/&lt;category&gt; n/&lt;category name&gt;</p>
+<p><code>deleteBudget &lt;index&gt;</code></p>
 </li>
 <li>
-<p>editCategory typ/&lt;category type&gt; cat/&lt;old category name&gt; n/&lt;new category name&gt;</p>
+<p><code>addCategory cat/&lt;category&gt; n/&lt;category name&gt;</code></p>
 </li>
 <li>
-<p>listCategories</p>
+<p><code>editCategory typ/&lt;category type&gt; cat/&lt;old category name&gt; n/&lt;new category name&gt;</code></p>
 </li>
 <li>
-<p>deleteCategory cat/&lt;category type&gt; n/&lt;category name&gt;</p>
+<p><code>listCategories</code></p>
+</li>
+<li>
+<p><code>deleteCategory cat/&lt;category type&gt; n/&lt;category name&gt;</code></p>
 </li>
 </ol>
 </div>
@@ -2304,40 +2307,40 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>viewTable [p/&lt;RangeOfMonths&gt;]</p>
+<p><code>viewTable [p/&lt;RangeOfMonths&gt;]</code></p>
 </li>
 <li>
-<p>viewPie [p/&lt;RangeOfMonths&gt;]</p>
+<p><code>viewPie [p/&lt;RangeOfMonths&gt;]</code></p>
 </li>
 <li>
-<p>viewBar [p/&lt;SpecifiedMonth&gt;]</p>
+<p><code>viewBar [p/&lt;SpecifiedMonth&gt;]</code></p>
 </li>
 <li>
-<p>viewEntry</p>
+<p><code>viewEntry</code></p>
 </li>
 <li>
-<p>sortExpense typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
+<p><code>sortExpense typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
 </li>
 <li>
-<p>sortIncome typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
+<p><code>sortIncome typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
 </li>
 <li>
-<p>sortBudget typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
+<p><code>sortBudget typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
 </li>
 <li>
-<p>sortWish typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</p>
+<p><code>sortWish typ/&lt;sort type&gt; s/&lt;sort sequence&gt;</code></p>
 </li>
 <li>
-<p>findExpense [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
+<p><code>findExpense [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
 </li>
 <li>
-<p>findIncome [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
+<p><code>findIncome [cat/&lt;category&gt;] [n/&lt;description&gt;] amt/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
 </li>
 <li>
-<p>findBudget [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
+<p><code>findBudget [cat/&lt;category&gt;] [n/&lt;description&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
 </li>
 <li>
-<p>findWish [cat/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</p>
+<p><code>findWish [cat/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
 </li>
 </ol>
 </div>
@@ -2399,13 +2402,13 @@ do so.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><code>addWish n/&lt;Description&gt; c/&lt;Category&gt; a/&lt;Price&gt; d/&lt;Date&gt;</code></p>
+<p><code>addWish n/&lt;Description&gt; c/&lt;Category&gt; amt/&lt;Price&gt; d/&lt;Date&gt;</code></p>
 </li>
 <li>
 <p><code>deleteWish &lt;index&gt;</code></p>
 </li>
 <li>
-<p><code>editWishlist &lt;index&gt; [n/&lt;Description&gt;] [c/&lt;Category&gt;] [a/&lt;Price&gt;] [d/&lt;Date&gt;] [t/&lt;Tag&gt;]</code></p>
+<p><code>editWishlist &lt;index&gt; [n/&lt;Description&gt;] [c/&lt;Category&gt;] [amt/&lt;Price&gt;] [d/&lt;Date&gt;] [t/&lt;Tag&gt;]</code></p>
 </li>
 <li>
 <p><code>sortWishlistTime &lt;ascending/ descending&gt;</code></p>
@@ -2420,7 +2423,7 @@ do so.</p>
 <p><code>sortWishlistPriority &lt;ascending/descending&gt;</code></p>
 </li>
 <li>
-<p><code>findWish [c/&lt;category&gt;] [n/&lt;description&gt;] [a/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
+<p><code>findWish [c/&lt;category&gt;] [n/&lt;description&gt;] [amt/&lt;amount&gt;] [d/&lt;date&gt;] [t/&lt;tag&gt;]</code></p>
 </li>
 <li>
 <p><code>purchase &lt;index&gt;</code></p>
@@ -2458,9 +2461,6 @@ do so.</p>
 <p><code>toggle &lt;panel name&gt;</code></p>
 </li>
 <li>
-<p><code>listFont</code></p>
-</li>
-<li>
 <p><code>changeFont &lt;font name&gt;</code></p>
 </li>
 <li>
@@ -2475,4 +2475,4 @@ do so.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:14:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:27:51 UTC</div></div></div></body></html>
