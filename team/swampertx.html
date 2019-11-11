@@ -1,0 +1,586 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>John Doe - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">guitTrip()</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://ay1920s1-cs2103-t16-4.github.io/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>John Doe - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-guilttrip"><a class="link" href="#project-guilttrip">PROJECT: GuiltTrip</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>GuiltTrip is a finance tracker application written in purely Java, and inherits the general structure of AddressBook -
+Level 3. It is created for the purpose of CS2103 Software Engineering module, AY19/20 Sem 1 in the National University
+of Singapore. This is a native JavaFX application that runs cross-platform on all major computer Operating Systems.</p>
+</div>
+<div class="paragraph">
+<p>The application is a Command-Line based finance tracker, with rich integration of statistical visualization
+tools, customizable User Interface (UI), expense automation and much more. It is designed for
+youths and young adults in Singapore in the age range of 20-30 who are interested in keeping track of their spending,
+who are at the same time interested in a Command-Lined centric solution to their financial tracking needs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement 1</strong>: added <strong>AutoSuggestion for any command input</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Intelligently suggest possible commands while a user is typing. It detects user input at every single
+keystroke and suggests from the pool of commands, at a glance, unobtrusively and succinctly to the user. If a valid
+command is detected, a help messaged is displayed to prompt user input of specific, suitable arguments.</p>
+</li>
+<li>
+<p>Justification: The only feature needed for users to jump right into GuiltTrip and start using right away.
+It provides rich and relevant feedback to the user. It makes the user guide serve its purpose - as a source of
+reference should the user needs more information - otherwise the AutoSuggest feature is self-sufficient.</p>
+</li>
+<li>
+<p>Highlights: This suggester is modular and other metrics can be easily used to improve the matching algorithm.
+Currently a EditDistance metric is used to fetch the next few closest commands, and any other better metrics can be
+implemented and plugged in right away.</p>
+</li>
+<li>
+<p>Credits: <em>This feature is coded entirely from scratch. Inspired by <a href="https://en.wikipedia.org/wiki/Levenshtein_distance" class="bare">https://en.wikipedia.org/wiki/Levenshtein_distance</a></em>
+, <a href="https://github.com/junegunn/fzf">Unix Fuzzy File Finder</a> among others.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement 2</strong>: added <strong>the ability to automate Expense generation via the AutoExpense feature</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user set recurring Expense that are generated every time the application, GuiltTrip starts
+up. This provides great convenience that every targeted user would find useful as many Expenses recurred with a
+fixed frequency, eg. Bills, Meals, School Fees, Membership fees and others.</p>
+</li>
+<li>
+<p>Justification: This feature is essential for the application to be useful. Without it, manual generation of expenses
+everyday is a laborious job and having to type repeated details day after day is not just laborious, but also
+annoying. This feature provides convenience that is very practical to daily use, and is one that once a user tried
+it could never turn back to an application without.</p>
+</li>
+<li>
+<p>Highlights: This AutoExpense feature is customizable with user-set frequencies. User ergonomics is put in the first
+place - abbreviations like <code>every day</code>, <code>daily</code>, <code>day</code>, <code>every night</code> are all allowed for making an AutoExpense
+entry that recurs everyday.</p>
+</li>
+<li>
+<p>Credits: <em>This feature is coded entirely from scratch.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.2</code> - <code>v1.4</code> (3 releases) on GitHub</p>
+</li>
+<li>
+<p>Managed issues and lead team in using the issues tracker and automated PR issues resolution.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Refactored code with consistent patterns that can implement a feature across different
+command with a single method. (Eg. erroring in addcommands)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added CI/CD badges to website</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S1-CS2103-T16-4/main/pull/292">#292</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated CI/CD tools to Github</p>
+</li>
+<li>
+<p>Enforced pushing rules on github - no push/force push to master</p>
+</li>
+<li>
+<p>Enforced "build pass before merging" rule</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>{you can add/remove categories in the list above}</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="autosuggestion"><a class="link" href="#autosuggestion">AutoSuggestion</a></h3>
+<div class="paragraph">
+<p>The first thing you will notice once you start typing in the command box, is AutoSuggest.
+This is an intelligent bot that helps you navigate through your finance journey with GuiltTrip()!</p>
+</div>
+<div class="paragraph">
+<p>Simply key in anything you like to start!!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/autosuggest_startup.png" alt="autosuggest startup">
+</div>
+</div>
+<div class="paragraph">
+<p>For example, you are new and would like to get some help! But your <em>shaky</em> hands made you
+type <code>hlp</code> instead! Don&#8217;t worry, we have a Edit-Distance-based algorithm that can predict your
+command. Isn&#8217;t that cool?</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/autosuggest_hlp.png" alt="autosuggest hlp">
+</div>
+</div>
+<div class="paragraph">
+<p>Ahh okay! Seems that we can just kick start right away! How about recording that mala we ate at The Deck
+this afternoon!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/autosuggest_addExpense.png" alt="autosuggest addExpense">
+</div>
+</div>
+<div class="paragraph">
+<p>Now since <code>addExpense</code> is a valid command, your friendly AutoSuggester is showing you how to use this command!
+Isn&#8217;t this COOL?</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="autoexpense"><a class="link" href="#autoexpense">AutoExpense</a></h3>
+<div class="sect3">
+<h4 id="adding-autoexpense-code-addautoexp-code"><a class="link" href="#adding-autoexpense-code-addautoexp-code">Adding AutoExpense : <code>addAutoExp</code></a></h4>
+<div class="paragraph">
+<p>Adds an automatically recurring expense every day/week/month (frequency) with the given description and amount.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addAutoExp f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt;
+ [t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>To list all categories, you can type <code>listCategories</code>.</p>
+</div>
+<div class="paragraph">
+<p>For frequency, we accept <code>month/day/year/week</code> and also <code>monthly/daily/weekly/fortnightly/yearly/anually</code>. Type away
+and be pleased by the flexibility!</p>
+</div>
+<div class="paragraph">
+<p>For dates, only dates within 2000 and 2100 are allowed. When you put a date before the current time,
+past records will be automatically generated. At your own risk! GuiltTrip can&#8217;t trip you for too far back.</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addAutoExp f/monthly n/spotify amt/11.99 cat/Entertainment</code></p>
+</li>
+<li>
+<p><code>addAutoExp f/week n/whampoa beancurd amt/1.80 cat/Food tg/indulgence d/10/10</code></p>
+</li>
+<li>
+<p><code>addAutoExp f/every day n/mixed rice @ finefood amt/3.80 cat/Food</code> yes we have that too!</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>View after the commands above is executed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/autoexpense_add.png" alt="autoexpense add">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-autoexpense-code-editautoexp-code"><a class="link" href="#editing-autoexpense-code-editautoexp-code">Editing AutoExpense : <code>editAutoExp</code></a></h4>
+<div class="paragraph">
+<p>Edits an automatically recurring expense every day/week/month (frequency) with the given description and amount.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editAutoExp &lt;index&gt; [f/&lt;frequency&gt; n/&lt;description&gt; a/&lt;expenditure&gt; c/&lt;category&gt;
+ t/&lt;tag1&gt; t/&lt;tag2&gt; d/&lt;starting date&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Note that only future <code>Expenses</code> generated will have the new properties you set in the current
+AutoExpense object. Well, you can&#8217;t rewrite history! If you made a mistake creating an <code>AutoExpense</code>
+entry, try out the <code>undo</code> command, and then recreate it again. Use the <code>history</code> command to copy-paste-edit!</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editAutoExp 1 amt/5.99 n/spotify student</code></p>
+</li>
+<li>
+<p><code>editAutoExp 3 amt/3.30 n/mixed rice @ foodclique</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>View after the commands above is executed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/autoexpense_edit.png" alt="autoexpense edit">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-autoexpense-code-deleteautoexp-code"><a class="link" href="#deleting-autoexpense-code-deleteautoexp-code">Deleting AutoExpense : <code>deleteAutoExp</code></a></h4>
+<div class="paragraph">
+<p>Deletes a current automatically recurring expenditure at the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteAutoExp &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>This command only deletes the AutoExpense and stops future generation of such Expenses.
+A <code>--recursive</code> flag will be shipped in <code>v2.0</code>.</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteAutoExp 1</code>
+if you stopped your Spotify subscription.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>View after the command above is executed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/autoexpense_delete.png" alt="autoexpense delete">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="quality-of-life-features"><a class="link" href="#quality-of-life-features">Quality of Life features</a></h3>
+<div class="sect3">
+<h4 id="autosuggester"><a class="link" href="#autosuggester">AutoSuggester</a></h4>
+<div class="sect4">
+<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>AutoSuggester is one of the most visible and widely used UX feature in the GuiltTrip application.
+It grabs users' input from the command box using a listener,
+and returns suggetions using a <code>CommandSuggester</code> 's <code>suggest()</code> method, displayed in the <code>ResultDisplay</code> panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoSuggestClassDiagram.png" alt="AutoSuggestClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure: Class Diagram for AutoSuggest.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Terminology: <code>AutoSuggest</code> refers to the feature as a whole.
+<code>AutoSuggestion</code> is the term users see in GuiltTrip application.
+<code>CommandSuggester</code> is the functional interface in the source code.
+<code>GuiltTripCommandSuggester</code> is the class that gives suggestions based on user input.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Currently AutoSuggester carries out two functions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>suggesting full commands when halfway typing any command</p>
+</li>
+<li>
+<p>displaying help messages when a complete command is detected.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>While a user is typing out commands, AutoSuggester will provide recommendation to the
+nearest valid command. For example, typing out <code>add</code> will suggest <code>addIncome</code>, <code>addExpense</code>,
+<code>help</code> etc, based on the matching algorithm used. Currently, an edit distance metric based
+on <code>edit, delete and inserting letters</code> is used, as implemented by the <code>EditDistanceComparator</code> class.</p>
+</div>
+<div class="paragraph">
+<p>Upon typing out any valid command in full, AutoSuggester fetches the usage of the current
+command and show it in the <code>ResultDisplay</code>. This usage message is distinguished from error messages
+by prepending a line prefixed <code>[Autosuggestion]</code> above the usage message displayed.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design considerations</a></h5>
+<div class="paragraph">
+<div class="title">Aspect: How to select the closest match to commands</div>
+<p>We notice this is the well researched
+<a href="http://www.dcc.uchile.cl/~gnavarro/ps/deb01.pdf">Approximate String Matching</a> problem
+and has complicated ways to implement.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1</strong>: Use the algorithm implemented in
+<a href="https://github.com/junegunn/fzf">FZF</a>, the fuzzy file finder.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Very user friendly. especially for longer commands.
+Suitable for history searching when paired with
+Mozilla&#8217;s <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/Places/Frecency_algorithm">Frecency algorithm</a>.</p>
+</li>
+<li>
+<p>Cons: Needs time to understand and implement.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2: (currently implemented)</strong>
+Simple edit distance using a memoized dynamic programming approach.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement. Merely 10 lines with memoization.</p>
+</li>
+<li>
+<p>Cons: Takes <code>O(nm)</code> time to compare two strings, which means approximately <code>O(n^2)</code>
+time to create a priority queue of nearest commands.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">To be implemented in <code>v2.0</code>: parsing the command in real time and suggest possible choices</div>
+<p>for each for every argument.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Possible implementation</strong>: Initialize prefix objects with a list of possible <code>String</code> of values
+given that prefix, which can be displayed in autosuggestion.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="autoexpenses"><a class="link" href="#autoexpenses">AutoExpenses</a></h4>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<div class="paragraph">
+<p>AutoExpenses will create expenses automatically once created. This update is done during
+every startup, when model manager is being initialized.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoExpenseSequenceDiagram.png" alt="AutoExpenseSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p><code>AutoExpense</code> extends the Entry class, but has special attributes of its own:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>lastTime</code> which keeps track of the date of last Expense generated</p>
+</li>
+<li>
+<p>Uses <code>Date</code> attribute to keep track the creation date of this object</p>
+</li>
+<li>
+<p><code>Frequency</code> enum which keeps track of the frequency of the <code>AutoExpense</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The only state-changing, outfacing method is <code>generateNewExpenses()</code>, which will
+not only return a <code>List</code> of <code>Expenses</code> since <code>lastTime</code>, but also update the <code>lastTime</code>
+attribute to match the latest <code>Expense</code> in the list returned.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when user creates a new AutoExpense:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AutoExpenseActivityDiagram.png" alt="AutoExpenseActivityDiagram">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+<div class="ulist">
+<div class="title">Aspect: How to encode the recurring nature of AutoExpense</div>
+<ul>
+<li>
+<p><strong>Alternative 1</strong>: Embrace the good practice of immutable objects and
+create a new AutoExpense object every time a new Expense is generated</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to prevent duplicate Expense generation since state is not changed.</p>
+</li>
+<li>
+<p>Cons: Space intensive, also not necessary to recreate as only one field change (<code>lastTime</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2: (currently implemented)</strong>
+Keep track of the state using an attribute <code>lastTime</code>, and change the state of the
+<code>AutoExpense</code> object every update.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement, and more space-friendly.</p>
+</li>
+<li>
+<p>Cons: State changes are not saved or recorded in anyway.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Aspect: How to update AutoExpenses to generate new Expense objects</div>
+<ul>
+<li>
+<p><strong>Alternative 1:</strong>: Use a thread to check every now and then, preferable every minute
+for consistent updates.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reliable and more orthodox way of checking for updates.</p>
+</li>
+<li>
+<p>Cons: Hard to implement. Not sure how to debug.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2: (currently implemented)</strong>
+Update at every startup only.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Resource efficient. We take advantage of the assumption that</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Users will usually open the app for no longer than a day.</p>
+</li>
+<li>
+<p>The highest frequency an AutoExpense can be is currently <strong>daily</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons: Above assumptions have to be true.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:27:02 UTC</div></div></div></body></html>
