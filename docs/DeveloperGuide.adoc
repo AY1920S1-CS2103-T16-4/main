@@ -595,6 +595,7 @@ image::AutoExpenseActivityDiagram.png[]
 
 // end::qol[]
 
+// tag::reminders[]
 === Reminders
 
 ==== Implementation
