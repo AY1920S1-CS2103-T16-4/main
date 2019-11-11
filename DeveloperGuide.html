@@ -18,18 +18,19 @@
 <li><a href="#Design-Logic">2.4. Logic component</a></li>
 <li><a href="#Design-Model">2.5. Model component</a></li>
 <li><a href="#Design-Storage">2.6. Storage component</a></li>
-<li><a href="#Design-Statistics">2.7. Statistics component</a></li>
 </ul>
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#data-presentation-sort-command">3.1. Data Presentation: Sort Command</a></li>
-<li><a href="#viewhistory-command">3.2. ViewHistory Command</a></li>
-<li><a href="#toggle-panel-command">3.3. Toggle Panel Command</a></li>
-<li><a href="#listfont-command">3.4. ListFont Command</a></li>
-<li><a href="#changefontcommand">3.5. ChangeFontCommand</a></li>
-<li><a href="#reminders">3.6. Reminders</a></li>
-<li><a href="#undo-redo">3.7. Undo/ Redo</a></li>
+<li><a href="#data-presentation-categories">3.1. Data Presentation: Categories</a></li>
+<li><a href="#data-presentation-sort-command">3.2. Data Presentation: Sort Command</a></li>
+<li><a href="#data-presentation-find-command">3.3. Data Presentation: Find Command</a></li>
+<li><a href="#data-presentation-statistics">3.4. Data Presentation: Statistics</a></li>
+<li><a href="#toggle-panel-command">3.5. Toggle Panel Command</a></li>
+<li><a href="#listfont-command">3.6. ListFont Command</a></li>
+<li><a href="#changefontcommand">3.7. ChangeFontCommand</a></li>
+<li><a href="#reminders">3.8. Reminders</a></li>
+<li><a href="#undo-redo">3.9. Undo/ Redo</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -46,14 +47,23 @@
 <ul class="sectlevel2">
 <li><a href="#use-case-01-view-history">C.1. Use Case 01: View History</a></li>
 <li><a href="#use-case-02-add-expense">C.2. Use Case 02: Add Expense</a></li>
-<li><a href="#use-case-03-change-the-details-of-an-existing-expense-entry">C.3. Use Case 03: Change the details of an existing Expense Entry</a></li>
-<li><a href="#use-case-04-deletes-an-expenditure">C.4. Use Case 04: Deletes an expenditure</a></li>
+<li><a href="#use-case-03-change-the-details-of-an-existing-expense">C.3. Use Case 03: Change the details of an existing Expense</a></li>
+<li><a href="#use-case-04-deletes-an-expense">C.4. Use Case 04: Deletes an Expense</a></li>
 <li><a href="#use-case-05-adds-a-wish">C.5. Use Case 05: Adds a Wish</a></li>
 <li><a href="#use-case-06-converts-wish-to-expenditure">C.6. Use Case 06: Converts Wish to Expenditure</a></li>
 <li><a href="#use-case-07-add-a-recurring-expenditure">C.7. Use Case 07: Add a recurring expenditure</a></li>
 <li><a href="#use-case-08-list-recurring-expenditures">C.8. Use Case 08: List recurring expenditures</a></li>
 <li><a href="#use-case-09-set-generalreminder">C.9. Use Case 09: Set GeneralReminder</a></li>
 <li><a href="#use-case-10-set-targetedreminder">C.10. Use Case 10: Set TargetedReminder</a></li>
+<li><a href="#use-case-11-add-category">C.11. Use Case 11: Add Category</a></li>
+<li><a href="#use-case-12-change-the-details-of-an-existing-category">C.12. Use Case 12: Change the details of an existing Category</a></li>
+<li><a href="#use-case-13-deleting-an-existing-category">C.13. Use Case 13: Deleting an existing Category</a></li>
+<li><a href="#use-case-14-view-bar-chart">C.14. Use Case 14: View Bar Chart</a></li>
+<li><a href="#use-case-14-view-pie-chart">C.15. Use Case 14: View Pie Chart</a></li>
+<li><a href="#use-case-14-view-pie-chart-2">C.16. Use Case 14: View Pie Chart</a></li>
+<li><a href="#use-case-15-view-table">C.17. Use Case 15: View Table</a></li>
+<li><a href="#use-case-16-find-expense-budget-wish-income">C.18. Use Case 16: Find Expense/Budget/Wish/Income</a></li>
+<li><a href="#use-case-16-sort-expense-budget-wish-income">C.19. Use Case 16: Sort Expense/Budget/Wish/Income</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
@@ -308,34 +318,6 @@ are in the <code>src/main/resources/view</code> folder. For example, the layout 
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="Design-Statistics"><a class="link" href="#Design-Statistics">2.7. Statistics component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/StatisticsClass.png" alt="StatisticsClass">
-</div>
-<div class="title">Figure 9. Structure of the Statistics Component</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>Statistics</code> contains an ObservableMap of <code>MonthlyList</code> class.</p>
-</li>
-<li>
-<p><code>MonthlyList</code> contains an ObservableMap of <code>DailyList</code> class.</p>
-</li>
-<li>
-<p><code>DailyList</code> contains an ObservableMap of <code>CategoryList</code> class.</p>
-</li>
-<li>
-<p>These lists are populated when the guiltTrip() is started up and the content is retrieved from Storage.</p>
-</li>
-<li>
-<p>Any added entries are updated in the <code>CategoryList</code> and <code>DailyList</code> classes.</p>
-</li>
-</ol>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -345,68 +327,284 @@ are in the <code>src/main/resources/view</code> folder. For example, the layout 
 <p>This section describes some details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="data-presentation-sort-command"><a class="link" href="#data-presentation-sort-command">3.1. Data Presentation: Sort Command</a></h3>
+<h3 id="data-presentation-categories"><a class="link" href="#data-presentation-categories">3.1. Data Presentation: Categories</a></h3>
 <div class="sect3">
 <h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.1. Implementation</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/CategoryListClassDiagram.png" alt="CategoryListClassDiagram">
+</div>
+<div class="title">Figure 9. Class Diagram for Categories</div>
+</div>
 <div class="paragraph">
-<p>The sort command extends the Command class. It works on the SortedList by adding a Comparator to the List. By default, the EntryList is sorted by date.</p>
+<p>For all entries in guiltTrip, the entries should always belong to one category.
+Creation of categories are also helpful for breakdown of statistics to be complete.
+The implementation of <code>Category</code> and <code>CategoryList</code> are largely similar to <code>UniqueEntryList</code> in
+the original AddressBook. However, the slight difference lies in that <code>Category</code> is a field of
+<code>Entry</code> instead of being a child of <code>Entry</code> itself. A <code>Category</code> can only belong under Expense or Income, which
+is defined by the Enum <code>CategoryType.EXPENSE</code> or <code>CategoryType.INCOME</code>.
+When the user launches the application for the first time or if there are errors with <code>data/guiltTrip.json</code>,
+the application will load the default set of <code>Category</code> by <code>SampleDataUtil#getSampleCategories()</code>.</p>
+</div>
+<div class="paragraph">
+<p>There are 3 main checks to be carried out when interacting with <code>Category</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When adding a Category, there is a need to check that the new Category added does not
+exist in the existing guiltTrip, hence the need for <code>CategoryList#contains(Category)</code>.</p>
+</li>
+<li>
+<p>When editing a <code>Category</code>, there is a need to check that the new Category added does not
+exist in the existing guiltTrip, hence the need for <code>CategoryList#contains(Category)</code> as well as a need to check
+if there are existing entries of the original <code>Category</code> to carry out modifications on them.</p>
+</li>
+<li>
+<p>When deleting a <code>Category</code>, there is a need to check if there are any entries that have the <code>Category</code> as a field.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is an example of an activity diagram for editing a category to illustrate the point above.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditingCategory.png" alt="EditingCategory">
+</div>
+<div class="title">Figure 10. Activity Diagram for Editing Category</div>
+</div>
+<div class="paragraph">
+<p>As the rest of the implementation is similar to AB3&#8217;s CRUD, it won&#8217;t be covered.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect: Deciding whether to allow addition of Categories</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1</strong>: Having a fixed set of Categories in the <code>CategoryList</code>, users are unable to add delete or edit the existing set of Categories.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Results in less flexibility for the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Users are allowed to have any category names for their entries. There is no <code>CategoryList</code> to carry out validation checks on.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Intuitive and convenient for the user.</p>
+</li>
+<li>
+<p>Cons: Calculation of Statistics would be messy if the user adds many different categories for their entries on a whim, the breakdown of statistics by category could be huge.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3(Current)</strong>: There is a fixed set of categories, with users able to add delete or edit the existing set of Categories, but a command must be consciously called by the user to modify the categories in the <code>CategoryList</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows the flexibility for addition of additional categories as well as solving the many different categories problem if alternative 2 was taken as users have to make the conscious effort to create a new category.</p>
+</li>
+<li>
+<p>Cons: Slightly more complicated to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-presentation-sort-command"><a class="link" href="#data-presentation-sort-command">3.2. Data Presentation: Sort Command</a></h3>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The sort command extends the <code>Command</code> class. It works on the <code>ObservableList</code> by wrapping the <code>ObservableList</code> on a
+<code>SortedList</code> and adding a <code>EntryComparator</code> to the List.
+By default, the <code>Entry</code> in GuiltTrip are sorted by <code>Date</code>, followed by <code>Amount</code>,
+<code>Description</code>, <code>Category</code>, and finally <code>Tags</code>.
+In addition, after every CRUD command, the list is sorted by default for the user&#8217;s convenience.</p>
+</div>
+<div class="paragraph">
+<p>A Sort Command contains:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SortType</code> : <code>Date</code>, <code>Amount</code>, <code>Description</code>, <code>Category</code>, and <code>Tags</code>.</p>
+</li>
+<li>
+<p><code>SortSequence</code>: Ascending, Descending</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An Example of Sorting the Expense List is shown below</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The user executes the command <code>sort typ/Expense s/ascending</code></p>
+<p>The user executes the command <code>sortExpense typ/Amount s/ascending</code></p>
 </li>
 <li>
-<p><code>Logic</code> uses the <code>guiltTripParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>guiltTripParser</code> class to parse the user command</p>
 </li>
 <li>
-<p>This results in a <code>SortCommand</code> object which is executed by the <code>LogicManager</code>.</p>
+<p>This results in a <code>SortExpenseCommand</code> object which is executed by the <code>LogicManager</code></p>
 </li>
 <li>
-<p>The <code>SortCommand</code> calls the <code>Model</code> 's sortFilteredEntryList to sort the list of entries.</p>
+<p>The <code>SortExpenseCommand</code> calls the <code>Model#sortFilteredExpenseList</code> to sort the list of expenses</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code></p>
 </li>
 <li>
-<p><code>Logic</code> returns the <code>CommandResult</code> object.</p>
+<p><code>Logic</code> returns the <code>CommandResult</code> object</p>
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Model#sortFilteredExpenseList</code> creates an <code>EntryComparator</code> which takes in <code>SortType</code> and <code>SortSequence</code> to sort the list.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("sort typ/Expense s/ascending")</code> API call.</p>
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("sortExpense typ/Amount s/ascending")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/SortSequence.png" alt="SortSequence">
 </div>
-<div class="title">Figure 10. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 11. Interactions Inside the Logic Component for the <code>sortExpense typ/Amount s/ascending</code> Command</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewhistory-command"><a class="link" href="#viewhistory-command">3.2. ViewHistory Command</a></h3>
-<div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.1. Implementation</a></h4>
+<h3 id="data-presentation-find-command"><a class="link" href="#data-presentation-find-command">3.3. Data Presentation: Find Command</a></h3>
 <div class="paragraph">
-<p>The viewHistory command extends the Command class. It calls methods from the Statistics Manager which handles the calculation of the statistics and returns it to the user.</p>
+<p>Finding is similar to the implementation of AB3, hence it will not be covered in detail.
+However, the find command is expanded to include finding by multiple predicates at once.
+For Example, the user can find by both <code>Amount</code> and <code>Description</code>. These are the relevant predicates:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EntryContainsAmountPredicate</code>: Will filter the list to include those with equal or higher amounts than the amount specified.</p>
+</li>
+<li>
+<p><code>EntryContainsCategoryPredicate</code>: Will filter the list to include the category specified.</p>
+</li>
+<li>
+<p><code>EntryContainsDatePredicate</code>: Will filter the list to include the Date specified. Currently only supports searching within the month.</p>
+</li>
+<li>
+<p><code>EntryContainsTagsPredicate</code>: Will filter the list to include those with all the specified tags.</p>
+</li>
+<li>
+<p><code>EntryContainsDescriptionPredicate</code>: Will filter the list to include only those with descriptions that contain the keywords.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-presentation-statistics"><a class="link" href="#data-presentation-statistics">3.4. Data Presentation: Statistics</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/StatisticsClassDiagram.png" alt="StatisticsClassDiagram" width="40%">
+</div>
+<div class="title">Figure 12. Class Diagram for Statistics Component.</div>
+</div>
+<div class="paragraph">
+<p>The Statistics class diagram is shown above. Many of the operations are handled by StatisticsManager.
+The two main operations for calculation of Statistics are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>StatisticsManager#updateListOfStats(rangeOfDates)</code>: Calculates the statistics for categories according to the range of dates specified.
+Calls on <code>MonthList#updateListOfStats(Category)</code> to calculate the list of Stats across Categories in that <code>MonthList</code>, thus updating the list of <code>Category Statistics</code>.</p>
+</li>
+<li>
+<p><code>StatisticsManager#updateBarChart(monthToCalculate)</code>: Calculates the daily statistics according to the month specified.
+Calls on <code>MonthList#CalculateStatisticsForBarChart()</code> which will call on <code>DailyList#CalculateStatisticsForBarChart()</code> to update the
+list of <code>DailyStatistics</code>.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="implementation-statistics-viewpiechart-viewtable-command"><a class="link" href="#implementation-statistics-viewpiechart-viewtable-command">3.4.1. Implementation: (Statistics) - ViewPieChart/ViewTable Command</a></h4>
+<div class="paragraph">
+<p>The ViewPie and ViewTable commands are a unique case as they both depend on <code>CategoryStatistics</code>. StatisticsManager has two <code>ObservableList</code> of <code>CategoryStatistics</code>, one for <code>Expense</code>, <strong>listOfStatsForExpense</strong>
+and one for <code>Income</code>, <strong>listOfStatsForIncome</strong>.
+The <code>StatisticsPieChart</code> and <code>StatisticsTable</code> in guiltTrip listens to these two <code>ObservableList</code>, and will update accordingly. Hence all operations
+which involve calculation of category statistics needs to update this <code>ObservableList</code> by replacing its entries so as to
+update the relevant Pie Chart and Table in the Ui.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ViewPieActivityDiagram.png" alt="ViewPieActivityDiagram">
+</div>
+<div class="title">Figure 13. Activity Diagram when user wants to view the statistics in Pie Chart form.</div>
+</div>
+<div class="paragraph">
+<p>The overview of this process can be found in the Activity Diagram above.</p>
+</div>
+<div class="paragraph">
+<p>The details of the process is as below:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The user executes the command <code>viewHistory typ/Expense</code></p>
+<p>The user executes the command <code>viewPie p/2019-09,2019-11</code></p>
 </li>
 <li>
-<p><code>Logic</code> uses the <code>guiltTripParser</code> class to parse the user command.</p>
+<p><code>LogicManager</code> uses the <code>guiltTripParser</code> class to parse the user command.</p>
 </li>
 <li>
-<p>This results in a <code>viewHistoryCommand</code> object which is executed by the <code>LogicManager</code>.</p>
+<p>This results in a <code>viewPieChartCommand</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The <code>viewHistoryCommand</code> calls the <code>Model</code> 's generateHistory method which calls on the <code>StatisticsManager</code> generateHistory method to calculate the statistics for that type.</p>
+<p>The <code>viewPieChartCommand</code> calls the <code>Model#updateListOfStats(RangeOfDates)</code> 's method which then calls <code>StatisticsManager#updateListOfStats(RangeOfDates)</code> method to calculate the statistics for that type.</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+<p><code>StatisticsManager#updateListOfStats(RangeOfDates)</code> detects that the size of the list is 2 and calls <code>#getListOfMonths(RangeOfDates)</code> to retrieve the list of <code>MonthList</code> <strong>MonthListToCalculate</strong> from start Date to End Date from <code>yearlyRecord</code>, the <code>ObservableMap</code> inside <code>StatisticsManager</code>.</p>
+</li>
+<li>
+<p><code>StatisticsManager#updateListOfStats(RangeOfDates)</code> then calls <code>StatisticsManager#countStats(MonthListToCalculate, listOfStatistics)</code>, which will calculate the list of statistics for
+expense and income categories and create many new <code>CategoryStatistics</code> objects to save the data of the calculated Statistics for each Category.</p>
+</li>
+<li>
+<p><code>StatisticsManager#countStats(MonthListToCalculate, listOfStatistics)</code> will replace the all the <code>CategoryStatistics</code> objects in the <code>ObservableList</code> of <code>CategoryStatistics</code> with the newly calculated <code>CategoryStatistics</code> objects.</p>
+</li>
+<li>
+<p>As the <code>ObservableList</code> is updated, the PieChart and Table which uses this <code>ObservableList</code> is also updated, leading to them being updated.</p>
+</li>
+<li>
+<p>Finally, <code>StatisticsManager#countStats(MonthListToCalculate, listOfStatistics)</code> will set the new TotalExpense and TotalIncome values to the new values calculated, which will also update the <code>Ui</code> for Stats which displays the total expense and total income.</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code></p>
 </li>
 <li>
 <p><code>Logic</code> returns the <code>CommandResult</code> object.</p>
@@ -414,20 +612,172 @@ are in the <code>src/main/resources/view</code> folder. For example, the layout 
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("viewHistory typ/Expense")</code> API call.</p>
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("viewPie p/2019-09,2019-11")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/viewHistorySequenceDiagram.png" alt="viewHistorySequenceDiagram">
+<img src="images/ViewPieChartSequenceDiagram.png" alt="ViewPieChartSequenceDiagram">
 </div>
-<div class="title">Figure 11. Interactions Inside the Logic Component for the <code>viewHistory typ/Expense</code> Command</div>
+<div class="title">Figure 14. Interactions Inside the Logic Component for the <code>viewPie p/2019-09,2019-11</code> Command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-statistics-viewbarchartcommand"><a class="link" href="#implementation-statistics-viewbarchartcommand">3.4.2. Implementation: (Statistics) - ViewBarChartCommand</a></h4>
+<div class="paragraph">
+<p>Similar to <code>ViewPie</code> and <code>ViewTable</code>, the <code>StatisticsBarChart</code> class listens to the <code>ObservableList</code> of <code>DailyStatistics</code> and will update
+according to changes in it. Hence all operations which involve calculation of daily statistics needs to update this <code>ObservableList</code> by replacing its entries so as to
+update the relevant Bar Chart in <code>Ui</code>.</p>
+</div>
+<div class="paragraph">
+<p>The details of the process is as below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the command <code>viewBar p/2019-09</code></p>
+</li>
+<li>
+<p><code>LogicManager</code> uses the <code>guiltTripParser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>ViewBarChartCommand</code> object which is executed by the <code>LogicManager</code></p>
+</li>
+<li>
+<p>The <code>ViewBarChartCommand</code> calls the <code>Model#updateBarChart(MonthToShow)</code> 's method which then calls <code>StatisticsManager#updateBarChart(monthToShow)</code> method to calculate the statistics for that period.</p>
+</li>
+<li>
+<p><code>StatisticsManager#updateBarChart(MonthToShow)</code> retrieves the relavant MonthList from <code>ObservableMap</code>, yearlyRecord and calls <code>MonthList#calculateStatisticsForBarChart</code>.</p>
+</li>
+<li>
+<p>The called <code>MonthList</code> will then loop through all the DailyList in it and calls <code>DailyList#calculateStatisticsForBarChart</code>, retrieving the result and
+returning it to <code>StatisticsManager</code>.</p>
+</li>
+<li>
+<p><code>StatisticsManager#updateBarChart(MonthToShow)</code> will replace the all the <code>DailyStatistics</code> objects in the <code>ObservableList</code> of <code>DailyStatistics</code> with the newly calculated <code>DailyStatistics</code> objects.</p>
+</li>
+<li>
+<p>As the <code>ObservableList</code> is updated, the BarChart which uses this <code>ObservableList</code> is also updated, leading to them being updated.</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code></p>
+</li>
+<li>
+<p><code>Logic</code> returns the <code>CommandResult</code> object.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("viewBar p/2019-09")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ViewBarChartSequenceDiagram.png" alt="ViewBarChartSequenceDiagram">
+</div>
+<div class="title">Figure 15. Interactions Inside the Logic Component for the <code>viewBar p/2019-09</code> Command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-statistics"><a class="link" href="#design-considerations-statistics">3.4.3. Design Considerations: Statistics</a></h4>
+<div class="paragraph">
+<p><strong>Aspect: Calculation of Income and Expenses</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1</strong>: Set a predicate on the filteredlist of income and filteredlist of expense to filter out the number of income and expenses which are within the time period of the statistics query.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of runtime, as if multiple queries are carried out in a row which are the same, recalculation needs to be done every single time.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2(current choice)</strong>: Have MonthList and DailyList classes which store the specific filteredlist of expenses for that month. This is a new filteredlist which observes the changes in the original list of expenses and is updated if a new expense is added which corresponds to the month.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will be faster as initiating the expenses in the MonthList is only done at the start of the application. Any queries after that just refers to the already constructed MonthList. It is also structured as calculations of expenses now involve going to the related MonthList to carry out the calculations.</p>
+</li>
+<li>
+<p>Cons: More complicated to implement.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There isn’t a need to use YearList as most users will usually want to see their statistics breakdown over a period of a month rather than over a period of years.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Aspect: Updating of charts whenever add delete edit commands is called</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1</strong>: Disallow non-stats commands in the stats window.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May not be intuitive for the user and creates hassle.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2(current choice)</strong>: Adds a Listener to the list of filtered expenses. The listener will update the relevant charts whenever it detects that there is a change in the expenses or incomes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Intuitive for the user.</p>
+</li>
+<li>
+<p>Cons: Takes a toll on the time complexity if large bulks of data was added through AutoExpense.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-extension"><a class="link" href="#proposed-extension">3.4.4. Proposed Extension</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Currently Statistics Breakdown doesn&#8217;t show details like trends across months. A future implementation could involve
+showing the user what category of spending increases across the months. For example, it could reflect that spending for
+category Entertainment increased the most in the past months.</p>
+</li>
+<li>
+<p>Bar Chart can be further improved to show analysis of breakdown of category by day and observe trends for the user.
+For example, it could notice that the user has been spending a lot every Tuesday and alert the user about it.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="toggle-panel-command"><a class="link" href="#toggle-panel-command">3.3. Toggle Panel Command</a></h3>
+<h3 id="toggle-panel-command"><a class="link" href="#toggle-panel-command">3.5. Toggle Panel Command</a></h3>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.1. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.5.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>toggle</code> command extends from the <code>Command</code> class. <code>MainWindow</code> checks using the <code>CommandResult</code> obtained from <code>Logic</code>
 if the user wants to toggle a specified panel. If so, it toggles the <code>isVisible</code> and <code>isManaged</code> properties of the place
@@ -451,7 +801,7 @@ holder for that panel.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.5.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Current method:</strong> Toggle the panels from within MainWindow class.</p>
 </div>
@@ -464,17 +814,17 @@ holder for that panel.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listfont-command"><a class="link" href="#listfont-command">3.4. ListFont Command</a></h3>
+<h3 id="listfont-command"><a class="link" href="#listfont-command">3.6. ListFont Command</a></h3>
 
 </div>
 <div class="sect2">
-<h3 id="changefontcommand"><a class="link" href="#changefontcommand">3.5. ChangeFontCommand</a></h3>
+<h3 id="changefontcommand"><a class="link" href="#changefontcommand">3.7. ChangeFontCommand</a></h3>
 
 </div>
 <div class="sect2">
-<h3 id="reminders"><a class="link" href="#reminders">3.6. Reminders</a></h3>
+<h3 id="reminders"><a class="link" href="#reminders">3.8. Reminders</a></h3>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">3.6.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.8.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The Reminder mechanism is facilitated by the Reminder class. Each Reminder object consists of a Condition class object which represents a set of conditions to be met. When all conditions are met, the reminder is activated and its message is displayed under the Reminder Pannel. The following class diagram helps to show how the classes are related.</p>
 </div>
@@ -499,7 +849,7 @@ the ConditionList object is updated to see if any conditions have been met.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.8.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Current method:</strong> Instance specific reminders are made known to the instance object, and the object is made known to the reminder. (i.e Such reminders trigger conditions are entirely based on a single Entry class object)</p>
 </div>
@@ -510,9 +860,9 @@ Cons: Might not be as OOP as other designs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo"><a class="link" href="#undo-redo">3.7. Undo/ Redo</a></h3>
+<h3 id="undo-redo"><a class="link" href="#undo-redo">3.9. Undo/ Redo</a></h3>
 <div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">3.7.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">3.9.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedGuiltTrip</code>.
 It extends <code>GuiltTrip</code> with an undo/redo history, stored internally as an <code>guiltTripStateList</code> and <code>currentStatePointer</code>.
@@ -654,7 +1004,7 @@ If the <code>currentStatePointer</code> is at index <code>guiltTripStateList.siz
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.7.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.9.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -871,6 +1221,12 @@ If the <code>currentStatePointer</code> is at index <code>guiltTripStateList.siz
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a student trying to improve my spending habits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to be able to be able to see the daily break down of my spending</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can see the trend of my spending across the months.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a college student with monthly spending on entertainment sites such as Netflix and Spotify</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I want to have these expenses recorded automatically</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">so that I do not have to record a recurring expense every month.</p></td>
@@ -920,8 +1276,8 @@ If the <code>currentStatePointer</code> is at index <code>guiltTripStateList.siz
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a student who has difficulty planning his finances</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I want the app to help me calculate what to prioritize and how heavily I should prioritize to best meet my needs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">so I can prioritise what I should be spending my money on.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want the app to show me the break down of my spending for me</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so I can know which areas that I have overspent.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
@@ -1051,9 +1407,25 @@ Use case resumes at step 2</p>
 </ol>
 </div>
 </div>
+<div class="sect3">
+<h4 id="extensions-2"><a class="link" href="#extensions-2">C.2.2. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.
+Use case resumes from step 2.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="use-case-03-change-the-details-of-an-existing-expense-entry"><a class="link" href="#use-case-03-change-the-details-of-an-existing-expense-entry">C.3. Use Case 03: Change the details of an existing Expense Entry</a></h3>
+<h3 id="use-case-03-change-the-details-of-an-existing-expense"><a class="link" href="#use-case-03-change-the-details-of-an-existing-expense">C.3. Use Case 03: Change the details of an existing Expense</a></h3>
 <div class="sect3">
 <h4 id="mss-3"><a class="link" href="#mss-3">C.3.1. MSS</a></h4>
 <div class="olist arabic">
@@ -1062,7 +1434,7 @@ Use case resumes at step 2</p>
 <p>Guilt Trip displays list of expenses.</p>
 </li>
 <li>
-<p>User decides to edit the description/ tag/ amount of an expense.</p>
+<p>User decides to edit the category/date/description/ tag/ amount of an expense.</p>
 </li>
 <li>
 <p>GuiltTrip makes the requested modifications to expenditure entry.</p>
@@ -1073,9 +1445,25 @@ Use case resumes at step 2</p>
 </ol>
 </div>
 </div>
+<div class="sect3">
+<h4 id="extensions-3"><a class="link" href="#extensions-3">C.3.2. Extensions</a></h4>
+<div class="paragraph">
+<p>2a. GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>2a1. GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>2a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 2a1-2a2 are repeated until the data entered are correct.
+Use case resumes from step 3.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="use-case-04-deletes-an-expenditure"><a class="link" href="#use-case-04-deletes-an-expenditure">C.4. Use Case 04: Deletes an expenditure</a></h3>
+<h3 id="use-case-04-deletes-an-expense"><a class="link" href="#use-case-04-deletes-an-expense">C.4. Use Case 04: Deletes an Expense</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1088,6 +1476,22 @@ Use case resumes at step 2</p>
 <p>GuiltTrip informs user that the expense has been deleted.</p>
 </li>
 </ol>
+</div>
+<div class="sect3">
+<h4 id="extensions-4"><a class="link" href="#extensions-4">C.4.1. Extensions</a></h4>
+<div class="paragraph">
+<p>1a. GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1. GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.
+Use case resumes from step 2.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1173,7 +1577,7 @@ Use case resumes at step 2</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="extensions-2"><a class="link" href="#extensions-2">C.9.2. Extensions</a></h4>
+<h4 id="extensions-5"><a class="link" href="#extensions-5">C.9.2. Extensions</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1203,7 +1607,7 @@ Reminder tracks all entries.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="extensions-3"><a class="link" href="#extensions-3">C.10.2. Extensions</a></h4>
+<h4 id="extensions-6"><a class="link" href="#extensions-6">C.10.2. Extensions</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1211,6 +1615,335 @@ Reminder tracks all entries.</p>
 Use case ends</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-11-add-category"><a class="link" href="#use-case-11-add-category">C.11. Use Case 11: Add Category</a></h3>
+<div class="sect3">
+<h4 id="mss-6"><a class="link" href="#mss-6">C.11.1. MSS</a></h4>
+<div class="paragraph">
+<p>Use Case: user adds an category</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User adds an category.</p>
+</li>
+<li>
+<p>GuiltTrip creates an category entry.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that the expense have been created.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extensions-7"><a class="link" href="#extensions-7">C.11.2. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.
+Use case resumes from step 2.</p>
+</div>
+<div class="paragraph">
+<p>1b GuiltTrip detects that the new category is a duplicate.</p>
+</div>
+<div class="paragraph">
+<p>1b1 GuiltTrip informs user that the category is a duplicate.</p>
+</div>
+<div class="paragraph">
+<p>1b2. User keys in new data.
+Steps 1b1-1b2 are repeated until the data entered are correct.
+Use case resumes from step 2</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-12-change-the-details-of-an-existing-category"><a class="link" href="#use-case-12-change-the-details-of-an-existing-category">C.12. Use Case 12: Change the details of an existing Category</a></h3>
+<div class="sect3">
+<h4 id="mss-7"><a class="link" href="#mss-7">C.12.1. MSS</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User decides to edit the category Name of a category.</p>
+</li>
+<li>
+<p>GuiltTrip makes the requested modifications to category entry.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that changes have been made.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extensions-8"><a class="link" href="#extensions-8">C.12.2. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.
+Use case resumes from step 2.</p>
+</div>
+<div class="paragraph">
+<p>1b GuiltTrip detects that the new edited category is a duplicate.</p>
+</div>
+<div class="paragraph">
+<p>1b1 GuiltTrip informs user that the edited category is a duplicate.</p>
+</div>
+<div class="paragraph">
+<p>1b2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1b1-1b2 are repeated until the data entered are correct.
+Use case resumes from step 2.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-13-deleting-an-existing-category"><a class="link" href="#use-case-13-deleting-an-existing-category">C.13. Use Case 13: Deleting an existing Category</a></h3>
+<div class="sect3">
+<h4 id="mss-8"><a class="link" href="#mss-8">C.13.1. MSS</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User decides to delete an existing category.</p>
+</li>
+<li>
+<p>GuiltTrip deletes the specified category from the list.</p>
+</li>
+<li>
+<p>GuiltTrip informs user that the category has been deleted.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extensions-9"><a class="link" href="#extensions-9">C.13.2. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
+<div class="paragraph">
+<p>1b GuiltTrip detects that the to be deleted category has existing entries with the category.</p>
+</div>
+<div class="paragraph">
+<p>1b1 GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-14-view-bar-chart"><a class="link" href="#use-case-14-view-bar-chart">C.14. Use Case 14: View Bar Chart</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user types in the command to view bar chart.</p>
+</li>
+<li>
+<p>GuiltTrip shows the user the relevant bar chart.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="extensions-10"><a class="link" href="#extensions-10">C.14.1. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-14-view-pie-chart"><a class="link" href="#use-case-14-view-pie-chart">C.15. Use Case 14: View Pie Chart</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user types in the command to view pie chart.</p>
+</li>
+<li>
+<p>GuiltTrip shows the user the relevant pie chart.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="extensions-11"><a class="link" href="#extensions-11">C.15.1. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-14-view-pie-chart-2"><a class="link" href="#use-case-14-view-pie-chart-2">C.16. Use Case 14: View Pie Chart</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user types in the command to view pie chart.</p>
+</li>
+<li>
+<p>GuiltTrip shows the user the relevant pie chart.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="extensions-12"><a class="link" href="#extensions-12">C.16.1. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-15-view-table"><a class="link" href="#use-case-15-view-table">C.17. Use Case 15: View Table</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user types in the command to view table.</p>
+</li>
+<li>
+<p>GuiltTrip shows the user the relevant table.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="extensions-13"><a class="link" href="#extensions-13">C.17.1. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-16-find-expense-budget-wish-income"><a class="link" href="#use-case-16-find-expense-budget-wish-income">C.18. Use Case 16: Find Expense/Budget/Wish/Income</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user types in the command to find the relevant entry.</p>
+</li>
+<li>
+<p>GuiltTrip shows the user the relevant entries after filtering according to the users&#8217;s input.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="extensions-14"><a class="link" href="#extensions-14">C.18.1. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-16-sort-expense-budget-wish-income"><a class="link" href="#use-case-16-sort-expense-budget-wish-income">C.19. Use Case 16: Sort Expense/Budget/Wish/Income</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user types in the command to sort the list according to his liking.</p>
+</li>
+<li>
+<p>GuiltTrip shows the user the relevant entries after sorting according to the users&#8217;s input.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="extensions-15"><a class="link" href="#extensions-15">C.19.1. Extensions</a></h4>
+<div class="paragraph">
+<p>1a GuiltTrip detects errors in the entered details.</p>
+</div>
+<div class="paragraph">
+<p>1a1.GuiltTrip informs the user about the error.</p>
+</div>
+<div class="paragraph">
+<p>1a2. User keys in new data.</p>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
 </div>
 </div>
 </div>
@@ -1355,4 +2088,4 @@ Use case ends</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 08:08:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 10:29:48 UTC</div></div></div></body></html>
