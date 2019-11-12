@@ -62,6 +62,9 @@ public class AddGeneralReminderCommandParser implements Parser<AddGeneralReminde
             command.setEnd(ParserUtil.parseDate(argMultimap.getValue(PREFIX_END_DATE).get()));
         }
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
+        if (!tagList.isEmpty()) {
+            command.setTagList(tagList);
+        }
         return command;
     }
 

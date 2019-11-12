@@ -58,6 +58,8 @@ public class ReminderPanel extends UiPart<Region> {
                 reminderListView2.setItems(reminderList);
                 reminderListView2.setCellFactory(listView -> new ReminderDetailsListViewCell());
             }
+        } else {
+            reminderListView2.getItems().clear();
         }
     }
 

@@ -75,9 +75,6 @@ public class JsonAdaptedCondition {
                 this.isStart = false;
                 this.end = ((DateCondition) condition).getDate().toString();
             }
-        } else if (condition instanceof KeyWordsCondition) {
-            this.conditionType = "keyWordsCondition";
-            this.keywords.addAll(((KeyWordsCondition) condition).getKeywords());
         } else if (condition instanceof QuotaCondition) {
             this.conditionType = "quotaCondition";
             QuotaCondition quotaCondition = (QuotaCondition) condition;

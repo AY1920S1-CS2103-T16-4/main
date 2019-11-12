@@ -66,6 +66,8 @@ public class EditReminderCommand extends Command {
     public static final String REMINDER_TYPE_NOT_SUPPORTED = "This reminder cannot be edited. \n";
     public static final String INVALID_PERIOD = "Invalid period. (Cannot set reminder to notify before today!)";
     public static final String INVALID_FREQ = "Frequency must be smaller than period.";
+    public static final String INVALID_BOUND = "Upper bound must be greater than lower bound.";
+    public static final String INVALID_DATE = "Start Date must be before End Date";
     private static final Logger logger = LogsCenter.getLogger(EditReminderCommand.class);
 
     private EditReminderDescriptor editReminderDescriptor;
@@ -139,6 +141,10 @@ public class EditReminderCommand extends Command {
         if (!(model.getReminderSelected() instanceof GeneralReminder)) {
             throw new CommandException(MISMATCHING_REMINDER_TYPES);
         }
+        double lowerBound = -1;
+        double upperBound = -1;
+        Date start = null;
+        Date end = null;
         HashMap<String, Condition> oldConditions = new HashMap<>();
         for (Condition condition : generalReminderToEdit.getConditions()) {
             if (condition instanceof TypeCondition) {
@@ -178,40 +184,54 @@ public class EditReminderCommand extends Command {
         Condition typeCondition = oldConditions.get("TypeCondition");
         newConditions.add(typeCondition);
         if (editGeneralReminderDescriptor.getLowerBound().isPresent()) {
-            double lowerBound = editGeneralReminderDescriptor.getLowerBound().get();
+            lowerBound = editGeneralReminderDescriptor.getLowerBound().get();
             QuotaCondition lowerBoundCondition = new QuotaCondition(lowerBound, true);
             logger.info("newLowerBound set");
             newConditions.add(lowerBoundCondition);
         } else if (oldConditions.containsKey("LowerBound")) {
             newConditions.add(oldConditions.get("LowerBound"));
+            lowerBound = ((QuotaCondition) oldConditions.get("LowerBound")).getQuota();
             logger.info("oldLowerBound set");
         }
         if (editGeneralReminderDescriptor.getUpperBound().isPresent()) {
-            double upperBound = editGeneralReminderDescriptor.getUpperBound().get();
+            upperBound = editGeneralReminderDescriptor.getUpperBound().get();
             QuotaCondition upperBoundCondition = new QuotaCondition(upperBound, false);
             newConditions.add(upperBoundCondition);
             logger.info("newUpperBound set");
         } else if (oldConditions.containsKey("UpperBound")) {
             newConditions.add(oldConditions.get("UpperBound"));
+            upperBound = ((QuotaCondition) oldConditions.get("UpperBound")).getQuota();
             logger.info("oldUpperBound set");
         }
+        if (upperBound != -1 && lowerBound != -1) {
+            if (upperBound < lowerBound) {
+                throw new CommandException(INVALID_BOUND);
+            }
+        }
         if (editGeneralReminderDescriptor.getStart().isPresent()) {
-            Date start = editGeneralReminderDescriptor.getStart().get();
+            start = editGeneralReminderDescriptor.getStart().get();
             DateCondition newStartCondition = new DateCondition(start, true);
             logger.info("newStart set");
             newConditions.add(newStartCondition);
         } else if (oldConditions.containsKey("Start")) {
             logger.info("old start set");
+            start = ((DateCondition) oldConditions.get("Start")).getDate();
             newConditions.add(oldConditions.get("Start"));
         }
         if (editGeneralReminderDescriptor.getEnd().isPresent()) {
-            Date end = editGeneralReminderDescriptor.getEnd().get();
+            end = editGeneralReminderDescriptor.getEnd().get();
             DateCondition newEndCondition = new DateCondition(end, false);
             logger.info("newEnd set");
             newConditions.add(newEndCondition);
         } else if (oldConditions.containsKey("End")) {
             logger.info("old end set");
+            end = ((DateCondition) oldConditions.get("End")).getDate();
             newConditions.add(oldConditions.get("End"));
+        }
+        if (start != null && end != null) {
+            if (end.isBefore(start)) {
+                throw new CommandException(INVALID_DATE);
+            }
         }
         if (editGeneralReminderDescriptor.getTags().isPresent()) {
             logger.info("newtags set");

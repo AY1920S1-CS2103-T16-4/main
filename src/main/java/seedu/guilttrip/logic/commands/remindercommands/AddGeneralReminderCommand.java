@@ -55,11 +55,12 @@ public class AddGeneralReminderCommand extends Command {
     public static final String MESSAGE_SUCCESS = "New GeneralReminder added: %1$s";
     public static final String INVALID_DATE = "Start date must be before end date";
     public static final String INVALID_BOUNDS = "Lower Bounds must be below Upper Bound";
+    public static final String INVALID_QUOTA = "Lower Bound/ Upper Bound must be greated than 0.";
 
     private Description message;
     private String type = "expense";
-    private Double lowerBound;
-    private Double upperBound;
+    private double lowerBound;
+    private double upperBound;
     private Date start;
     private Date end;
     private Set<Tag> tagList;
@@ -109,10 +110,15 @@ public class AddGeneralReminderCommand extends Command {
     @Override
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
-        if (lowerBound > upperBound) {
-            throw new CommandException(INVALID_BOUNDS);
-        } else if (start.isAfter(end)) {
-            throw new CommandException(INVALID_DATE);
+        if (lowerBound != 0 && upperBound != 0) {
+            if (lowerBound > upperBound) {
+                throw new CommandException(INVALID_BOUNDS);
+            }
+        }
+        if (start != null && end != null) {
+            if (start.isAfter(end)) {
+                throw new CommandException(INVALID_DATE);
+            }
         }
         this.reminder = new GeneralReminder(message, conditions);
         for (Condition condition : conditions) {

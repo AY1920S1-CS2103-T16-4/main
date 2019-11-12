@@ -8,10 +8,11 @@ import javafx.scene.layout.Region;
 
 import seedu.guilttrip.model.reminders.conditions.Condition;
 import seedu.guilttrip.model.reminders.conditions.DateCondition;
-import seedu.guilttrip.model.reminders.conditions.KeyWordsCondition;
 import seedu.guilttrip.model.reminders.conditions.QuotaCondition;
+import seedu.guilttrip.model.reminders.conditions.TagsCondition;
 import seedu.guilttrip.model.reminders.conditions.TypeCondition;
 
+import seedu.guilttrip.model.tag.Tag;
 import seedu.guilttrip.ui.UiPart;
 
 /**
@@ -61,12 +62,14 @@ public class ConditionCard extends UiPart<Region> {
                 params.getChildren().add(new Label("End: " + ((DateCondition) condition).getDate().toString()));
             }
             break;
-        case "Tags Condition":
-            descWithType += "[ Tags: ] ";
-            KeyWordsCondition keyWordsCondition = (KeyWordsCondition) condition;
-            keyWordsCondition.getKeywords().stream()
-                    .sorted()
-                    .forEach(keyword -> params.getChildren().add(new Label(keyword)));
+        case "tags condition":
+            descWithType += "[ Include Tags: ]";
+            TagsCondition tagsCondition = (TagsCondition) condition;
+            String tags = "";
+            for (Tag tag: tagsCondition.getTagList()) {
+                tags += tag.tagName + ", ";
+            }
+            params.getChildren().add(new Label(tags.substring(0, tags.length() - 2)));
             break;
         case "quota condition":
             QuotaCondition quotaCondition = (QuotaCondition) condition;
