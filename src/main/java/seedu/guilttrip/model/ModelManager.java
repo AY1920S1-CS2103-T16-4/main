@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
+import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -105,7 +106,6 @@ public class ModelManager implements Model, ListenerSupport {
         sortedAutoExpenseList = new SortedList<>(versionedGuiltTrip.getAutoExpenseList());
         sortedAutoExpenseList.setComparator(new EntryComparator(sortByTime, sortByAsc));
         filteredAutoExpenses = new FilteredList<>(sortedAutoExpenseList);
-
 
         //Reminders
         filteredReminders = new FilteredList<>(versionedGuiltTrip.getReminderList());
@@ -500,8 +500,7 @@ public class ModelManager implements Model, ListenerSupport {
                     .observableArrayList(((GeneralReminder) reminder).getConditions());
             return conditions;
         } else {
-            return FXCollections
-                    .observableArrayList(new ArrayList<>());
+            return FXCollections.observableArrayList(new ArrayList<>());
         }
     }
 
@@ -645,7 +644,8 @@ public class ModelManager implements Model, ListenerSupport {
      */
     public void createExpensesFromAutoExpenses() {
         AutoExpenseUpdater autoExpenseUpdater = new AutoExpenseUpdater(this);
-        new Thread(autoExpenseUpdater).start();
+        // new Thread(autoExpenseUpdater).start();
+        Platform.runLater(autoExpenseUpdater);
     }
 
     // =========== TrackTime =============================================================
