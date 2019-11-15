@@ -160,7 +160,7 @@ public class EntryReminder implements Reminder, ListenerSupport {
             if (!currDate.isBefore(nextActive)) {
                 newStatus = Status.met;
             }
-            if (currDate.isAfter(entry.getDate())) {
+            if (currDate.isEqual(entry.getDate()) || currDate.isAfter(entry.getDate())) {
                 newStatus = Status.exceeded;
                 entry.setHasReminder(false);
                 entry.setUniqueId(null);
@@ -183,6 +183,9 @@ public class EntryReminder implements Reminder, ListenerSupport {
     @Override
     public Status getStatus() {
         return this.status;
+    }
+    public void setStatus(Status status) {
+        this.status = status;
     }
     public boolean willDisplayPopUp() {
         return displayPopUp;

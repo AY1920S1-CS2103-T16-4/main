@@ -11,6 +11,7 @@ import static seedu.guilttrip.testutil.TypicalIndexes.INDEX_SECOND_ENTRY;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.guilttrip.commons.util.TimeUtil;
 import seedu.guilttrip.logic.CommandHistory;
 import seedu.guilttrip.logic.CommandHistoryStub;
 import seedu.guilttrip.logic.commands.editcommands.EditCategoryCommand;
@@ -29,6 +30,7 @@ public class EditCategoryCommandTest {
 
     @Test
     public void execute_allFieldsSpecifiedAndNotInList_success() {
+        TimeUtil.startTimer();
         //non existent-category leisure
         Category editedCategory = new CategoryBuilder().withCatName("Leisure").build();
         EditCategoryCommand.EditCategoryDescriptor descriptor =

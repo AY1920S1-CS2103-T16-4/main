@@ -57,7 +57,7 @@ public class IncomeReminderCard extends UiPart<Region> {
 
         String descWithType = entryReminder.getHeader().toString() + " ~ " + income.getDesc().fullDesc;
         desc.setText(descWithType);
-        date.setText(income.getDate().toString() + "period: " + period + " freq: " + freq.toString());
+        date.setText(income.getDate().toString() + " period: " + period + " freq: " + freq.toString());
         amt.setText("$" + income.getAmount().value);
         category.setText(income.getCategory().getCategoryName());
 

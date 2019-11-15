@@ -481,7 +481,6 @@ public class GuiltTrip implements ReadOnlyGuiltTrip {
     public void setBudget(Budget target, Budget editedEntry) {
         requireNonNull(editedEntry);
         budgets.setBudget(target, editedEntry);
-        reminders.setEntryUpdate(target, editedEntry);
         conditions.setEntryUpdate(target, editedEntry);
         indicateModified();
     }

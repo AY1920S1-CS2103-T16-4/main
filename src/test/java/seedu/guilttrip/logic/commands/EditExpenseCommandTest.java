@@ -21,6 +21,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.guilttrip.commons.core.Messages;
 import seedu.guilttrip.commons.core.index.Index;
+import seedu.guilttrip.commons.util.TimeUtil;
 import seedu.guilttrip.logic.CommandHistory;
 import seedu.guilttrip.logic.CommandHistoryStub;
 import seedu.guilttrip.logic.commands.editcommands.EditExpenseCommand;
@@ -49,7 +50,7 @@ public class EditExpenseCommandTest {
         EditExpenseCommand editCommand = new EditExpenseCommand(INDEX_FIRST_ENTRY, descriptor);
 
         String expectedMessage = String.format(EditExpenseCommand.MESSAGE_EDIT_ENTRY_SUCCESS, editedExpense);
-
+        TimeUtil.startTimer();
         Model expectedModel = new ModelManager(new GuiltTrip(model.getGuiltTrip()), new UserPrefs());
         expectedModel.setExpense(model.getFilteredExpenses().get(0), editedExpense);
         expectedModel.commitGuiltTrip();
@@ -74,7 +75,7 @@ public class EditExpenseCommandTest {
         EditExpenseCommand editCommand = new EditExpenseCommand(indexLastExpense, descriptor);
 
         String expectedMessage = String.format(EditExpenseCommand.MESSAGE_EDIT_ENTRY_SUCCESS, editedExpense);
-
+        TimeUtil.startTimer();
         Model expectedModel = new ModelManager(new GuiltTrip(model.getGuiltTrip()), new UserPrefs());
         expectedModel.setExpense(lastExpense, editedExpense);
         expectedModel.commitGuiltTrip();
@@ -106,7 +107,7 @@ public class EditExpenseCommandTest {
                 new EditExpenseDescriptorBuilder().withDescription(VALID_DESC_FOOD_EXPENSE).build());
 
         String expectedMessage = String.format(EditExpenseCommand.MESSAGE_EDIT_ENTRY_SUCCESS, editedExpense);
-
+        TimeUtil.startTimer();
         Model expectedModel = new ModelManager(new GuiltTrip(model.getGuiltTrip()), new UserPrefs());
         expectedModel.setExpense(model.getFilteredExpenses().get(INDEX_FIRST_ENTRY.getZeroBased()), editedExpense);
         expectedModel.commitGuiltTrip();
@@ -121,6 +122,7 @@ public class EditExpenseCommandTest {
         EditExpenseDescriptor descriptor = new EditExpenseDescriptorBuilder(firstExpense).build();
         //set the second expense as a duplicate
         EditExpenseCommand editCommand = new EditExpenseCommand(INDEX_SECOND_ENTRY, descriptor);
+        TimeUtil.startTimer();
         Model expectedModel = new ModelManager(new GuiltTrip(model.getGuiltTrip()), new UserPrefs());
         expectedModel.setExpense(model.getFilteredExpenses().get(INDEX_SECOND_ENTRY.getZeroBased()), firstExpense);
         expectedModel.commitGuiltTrip();

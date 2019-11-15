@@ -153,10 +153,8 @@ public class ReminderList implements Iterable<Reminder>, ListenerSupport {
      * Transfers entry reminder from beingRemove to beingAdded.
      */
     public void setEntryUpdate(Entry beingRemove, Entry beingAdded) {
-        TimeUtil.startTimer();
-        TimeUtil.forceSetDate(new Date("11/11/2019"));
         if (beingAdded.getDate().isAfter(new Date(TimeUtil.getLastRecordedDate())) && beingRemove.hasReminder()) {
-            Optional<Reminder> optReminder = findReminderFOrEntry(beingRemove);
+            Optional<Reminder> optReminder = findReminderForEntry(beingRemove);
             if (optReminder.isPresent()) {
                 Reminder reminder = optReminder.get();
                 logger.info("transferring reminder to new entry");
@@ -170,22 +168,20 @@ public class ReminderList implements Iterable<Reminder>, ListenerSupport {
      */
     public void deleteEntryUpdate(Entry beingRemoved) {
         if (beingRemoved.hasReminder()) {
-            for (Reminder reminder : internalList.filtered(isEntryReminder)) {
-                if (reminder.getUniqueId().equals(beingRemoved.getUniqueId())) {
-                    internalList.remove(reminder);
-                }
-            }
+            Optional<Reminder> reminder = findReminderForEntry(beingRemoved);
+            EntryReminder entryReminder = (EntryReminder) reminder.get();
+            entryReminder.setStatus(Reminder.Status.exceeded);
         }
     }
 
     /**
      * Finds the entry reminder in the list.
-     * @param beingAdded entry being added.
+     * @param beingRemoved entry being removed.
      * @return
      */
-    private Optional<Reminder> findReminderFOrEntry(Entry beingAdded) {
+    private Optional<Reminder> findReminderForEntry(Entry beingRemoved) {
         for (Reminder reminder : internalList.filtered(isEntryReminder)) {
-            if (reminder.getUniqueId().equals(beingAdded.getUniqueId())) {
+            if (reminder.getUniqueId().equals(beingRemoved.getUniqueId())) {
                 return Optional.of(reminder);
             }
         }
@@ -197,31 +193,27 @@ public class ReminderList implements Iterable<Reminder>, ListenerSupport {
      */
     private void transferReminder(Reminder reminder, Entry beingAdded) {
         if (reminder instanceof EntryReminder) {
-            transferIewReminder((EntryReminder) reminder, beingAdded);
+            transferEntryReminder((EntryReminder) reminder, beingAdded).setStatus(Reminder.Status.exceeded);
         }
     }
 
 
     /**
-     * transferIewReminder from beingRemoved to beingAdded.
+     * transferEntryReminder from beingRemoved to beingAdded.
      */
-    private void transferIewReminder(EntryReminder reminder, Entry beingAdded) {
+    private EntryReminder transferEntryReminder(EntryReminder reminder, Entry beingAdded) {
         Description header = reminder.getHeader();
         Period period = reminder.getPeriod();
         Frequency freq = reminder.getFrequency();
-        internalList.remove(reminder);
         EntryReminder newReminder = new EntryReminder(header, beingAdded, period, freq);
         newReminder.setMessage(reminder.getMessage());
         newReminder.togglePopUpDisplay(reminder.willDisplayPopUp());
         add(newReminder);
         newReminder.update();
-        if (!newReminder.getStatus().equals(Reminder.Status.unmet)) {
+        if (!reminder.getStatus().equals(Reminder.Status.unmet)) {
             notificationList.add(reminder.genNotification());
-            if (newReminder.getStatus().equals(Reminder.Status.met)) {
-                reminder.reset();
-                reminder.setNextActive();
-            }
         }
+        return reminder;
     }
 
 

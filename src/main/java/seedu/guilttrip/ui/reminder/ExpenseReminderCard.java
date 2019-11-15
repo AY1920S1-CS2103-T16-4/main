@@ -59,7 +59,7 @@ public class ExpenseReminderCard extends UiPart<Region> {
 
         String descWithType = entryReminder.getHeader().toString() + " ~ " + expense.getDesc().fullDesc;
         desc.setText(descWithType);
-        date.setText(expense.getDate().toString() + "period: " + period + " freq: " + freq.toString());
+        date.setText(expense.getDate().toString() + " period: " + period + " freq: " + freq.toString());
         amt.setText("$" + expense.getAmount().value);
         category.setText(expense.getCategory().getCategoryName());
 

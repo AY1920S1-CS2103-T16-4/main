@@ -59,7 +59,7 @@ public class WishReminderCard extends UiPart<Region> {
 
         String descWithType = entryReminder.getHeader().toString() + " ~ " + wish.getDesc().fullDesc;
         desc.setText(descWithType);
-        date.setText(wish.getDate().toString() + "period: " + period + " freq: " + freq.toString());
+        date.setText(wish.getDate().toString() + " period: " + period + " freq: " + freq.toString());
         amt.setText("$" + wish.getAmount().value);
         category.setText(wish.getCategory().toString());
 
