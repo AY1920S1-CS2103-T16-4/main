@@ -37,9 +37,13 @@ History:
 *** Updated the User Guide (Pull requests https://github.com/AY1920S1-CS2103-T16-4/main/pull/47[#47], https://github.com/AY1920S1-CS2103-T16-4/main/pull/303[#303])
 ** Community:
 *** Reported bugs and suggestions for other teams (https://github.com/rongrongrr/ped/issues[PE dry run])
-*** Set up the basic structure for the project. (Creation of budget classes, pull request https://github.com/AY1920S1-CS2103-T16-4/main/pull/67[#75])
+*** Set up the basic structure for the project. (Creation of budget classes, pull request https://github.com/AY1920S1-CS2103-T16-4/main/pull/75[#75])
 
 === Contributions to the User Guide
+
+|===
+|_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
+|===
 
 === Undo/ Redo
 ==== Undo previous command : `undo`
@@ -55,11 +59,7 @@ Format: `undo` `undo <step>`
 Example Usage:
 [start = 1]
 . If you would like to delete a budget, whereby the budget is located at index 1 as shown below,
-key in the command  `deleteBudget 1`.
-+
-image::undo-1.png[]
-
-. You should see the budget being deleted in the list of budgets as displayed below.
+key in the command  `deleteBudget 1`. You should see the budget being deleted in the list of budgets as displayed below.
 +
 image::undo-2.png[]
 
@@ -88,22 +88,6 @@ Format: `redo` `redo <step>`
 
 Example Usage:
 [start = 1]
-. If you would like to delete a budget, whereby the budget is located at index 1 as shown below,
-key in the command  `deleteBudget 1`.
-+
-image::undo-1.png[]
-
-. You should see the budget being deleted in the list of budgets as displayed below.
-+
-image::undo-2.png[]
-
-. If you would like to undo your deletion, key in the command `undo`.
-+
-image::undo-3.png[]
-
-. You should see the previously deleted budget back in the list of budgets as displayed below.
-+
-image::undo-4.png[]
 
 . If you would like to redo your undone command, key in the command `redo'.
 +
@@ -146,15 +130,16 @@ image::history-1.png[]
 +
 image::history-2.png[]
 
-. If you would like to return the panel display to its original state, key in the command `list`.
-+
-image::history-3.png[]
-
-. You should see that the income and expense panels are now back to their original positions.
+. If you would like to return the panel display to its original state, key in the command `list`. You should see that the income and expense panels are now back to their original positions.
 +
 image::history-4.png[]
 
 == Contributions to the Developer Guide
+
+|===
+|_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
+|===
+
 === Undo/ Redo
 
 ==== Implementation
@@ -172,22 +157,14 @@ Given below is an example usage scenario and how the undo/redo mechanism behaves
 
 Step 1. The user launches the application for the first time. The `VersionedGuiltTrip` will be initialized with the initial finance tracker state, and the `currentStatePointer` pointing to that single finance tracker state.
 
-image::UndoRedoState0.png[]
+Step 2. The user executes `deleteExpense 5` command to delete the 5th entry in the finance tracker. The `deleteExpense` command calls `Model#commitGuiltTrip()`, causing the modified state of the finance tracker after the `deleteExpense 5` command executes to be saved in the `guiltTripStateList`, and the `currentStatePointer` is shifted to the newly inserted finance tracker state.
 
-Step 2. The user executes `delete 5` command to delete the 5th entry in the finance tracker. The `delete` command calls `Model#commitGuiltTrip()`, causing the modified state of the finance tracker after the `delete 5` command executes to be saved in the `guiltTripStateList`, and the `currentStatePointer` is shifted to the newly inserted finance tracker state.
-
-image::UndoRedoState1.png[]
-
-Step 3. The user executes `add typ/Expense...` to add a new expense. The `add` command also calls `Model#commitGuiltTrip()`, causing another modified finance tracker state to be saved into the `guiltTripStateList`.
-
-image::UndoRedoState2.png[]
+Step 3. The user executes `addExpense...` to add a new expense. The `add` command also calls `Model#commitGuiltTrip()`, causing another modified finance tracker state to be saved into the `guiltTripStateList`.
 
 [NOTE]
 If a command fails its execution, it will not call `Model#commitGuiltTrip()`, so the finance tracker state will not be saved into the `guiltTripStateList`.
 
 Step 4. The user now decides that adding the expense was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoGuiltTrip()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous finance tracker state, and restores the finance tracker to that state.
-
-image::UndoRedoState3.png[]
 
 [NOTE]
 If the `currentStatePointer` is at index 0, pointing to the initial finance tracker state, then there are no previous finance tracker states to restore. The `undo` command uses `Model#canUndoGuiltTrip()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
@@ -205,15 +182,7 @@ If the `currentStatePointer` is at index `guiltTripStateList.size() - 1`, pointi
 
 Step 5. The user then decides to execute the command `list`. Commands that do not modify the finance tracker, such as `list`, will usually not call `Model#commitGuiltTrip()`, `Model#undoGuiltTrip()` or `Model#redoGuiltTrip()`. Thus, the `guiltTripStateList` remains unchanged.
 
-image::UndoRedoState4.png[]
-
 Step 6. The user executes `clear`, which calls `Model#commitGuiltTrip()`. Since the `currentStatePointer` is not pointing at the end of the `guiltTripStateList`, all finance tracker states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add typ/Expense ...` command. This is the behavior that most modern desktop applications follow.
-
-image::UndoRedoState5.png[]
-
-The following activity diagram summarizes what happens when a user executes a new command:
-
-image::CommitActivityDiagram.png[]
 
 ==== Design Considerations
 

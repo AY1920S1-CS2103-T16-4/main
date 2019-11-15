@@ -192,7 +192,7 @@ Adds a new expenditure to your total spending. Some things to take note:
 
 Format: `addExpense cat/<category> n/<description> amt/<amount> d/<date> [tg/<tag>]`
 
-* `<category name>`: The `category` that the expense falls under to.
+* `<category>`: The `category` that the expense falls under to.
 * `<description>`: The name of this expense.
 * `<amount>`: The amount spent for this expense. It can contain at most 2 decimal points.
 * `<date>`: The date of this expense.
@@ -366,8 +366,8 @@ image::AddIncomeAfter.png[]
 
 Other examples:
 
-* `add cat/Gifts n/Durian amt/200.00 d/2019 09 09 tg/food`
-* `add cat/Business n/business Trip To Mars amt/20000.00 d/2019 09 09`
+* `addIncome cat/Gifts n/Durian amt/200.00 d/2019 09 09 tg/food`
+* `addIncome cat/Business n/business Trip To Mars amt/20000.00 d/2019 09 09`
 
 ==== Listing Incomes: `list`
 
@@ -423,8 +423,8 @@ image::DeleteIncomeAfter.png[]
 
 Other examples:
 
-* `add cat/Gifts n/Durian amt/200.00 d/2019 09 09 tg/food`
-* `add cat/Business n/business Trip To Mars amt/20000.00 d/2019 09 09`
+* `deleteIncome 2`
+* `deleteIncome 4`
 
 === Budget
 ==== Adding Budget : `addBudget`
@@ -436,17 +436,17 @@ Format: `addBudget cat/<category name> n/<description> amt/<budget amount> d/<st
 Note: format for inputting period is <number><d/m/y> where d/m/y stands for days / months / years respectively
 e.g. for a period input of 10 days, use 10d
 
-<category name>: The category that this budget belongs to.
+* `<category name>`: The category that this budget belongs to.
 
-<description>: The name of this budget.
+* `<description>`: The name of this budget.
 
-<budget amount>: The amount set for this budget. It can contain at most 2 decimal points.
+* `<budget amount>`: The amount set for this budget. It can contain at most 2 decimal points.
 
-<start date>: The starting date of this budget.
+* `<start date>`: The starting date of this budget.
 
-<period>: The time period for which the budget is valid for. It can be in the form of either days, months, or years. Refer to example given in format.
+* `<period>`: The time period for which the budget is valid for. It can be in the form of either days, months, or years. Refer to example given in format.
 
-<tag>: Optional tags for this expense. The tag must not have spaces and most only be alphanumeric.
+* `<tag>`: Optional tags for this expense. The tag must not have spaces and most only be alphanumeric.
 
 Example Usage:
 [start = 1]
@@ -542,30 +542,33 @@ Other Examples:
 // tag::wishlist[]
 === WishList
 
-==== Add Wish : `addWishlist`
+==== Add Wish : `addWish`
 Adds a new item to your current wishlist
 
-Format: `addWish n/<Description> cat/<Category> amt/<Price> d/<Date>`
+Format: `addWish n/<Description> cat/<Category> amt/<Price> d/<Date> [tg/<tag>]`
 
 Examples:
 
-* `add typ/Wish n/deck mala cat/food amt/5.60 d/2019 10 28`
-* `add typ/Wish n/deck mala cat/food amt/5.60 d/01/01/2020`
+* `addWish n/deck mala cat/food amt/5.60 d/2019 10 28 tg/foodddddddd`
+* `addWish n/deck mala cat/food amt/5.60 d/01/01/2020`
 
 ==== List Wish : `listWish`
 Lists all the wishes on the main panel.
 
 Format: `listWish`
 
+[NOTE]
+If you would like to return the panel display to its original state with incomes and expenses, key in the command `list`.
+
 ==== Edit Wish : `editWish`
 edit the description, date, or tags of your wishes.
 
-Format: `editWishlist <index> [n/<Description>] [cat/<Category>] [amt/<Price>] [d/<Date>] [tag/<Tag>]`
+Format: `editWish <index> [n/<Description>] [cat/<Category>] [amt/<Price>] [d/<Date>] [tg/<Tag>]`
 
 Examples:
 
-* `editWishlist 1 n/1 try the chinatown ri ri hong mala!`
-* `editWishlist 1 amt/20 tag/mala tag/expensive`
+* `editWish 1 n/1 try the chinatown ri ri hong mala!`
+* `editWish 1 amt/20 tg/mala tg/expensive`
 
 ==== Delete Wish : `deleteWish`
 Deletes the item at the stated index from your current wishlist
@@ -574,7 +577,7 @@ Format: `deleteWish <index>`
 
 Examples:
 
-* `deleteWishlist 3`
+* `deleteWish 3`
 // end::wishlist[]
 
 === Loan [coming in v2.0]
@@ -658,7 +661,7 @@ The statistics by percentage will be rounded to the nearest 1 decimal place so a
 
 Format: `viewPie [p/<RangeOfMonths>]`
 
-* `<RangeOfMonths>`: The dates that you would like to display the statistics by. If you are interested in a range of months, you have to make sure that the *startMonth* and *endMonth* is separated by a comma, `,`.
+* `<RangeOfMonths>`: The dates that you would like to display the statistics by. If you are interested in a range of months, you have to make sure that the *startMonth* and *endMonth* is separated by a comma, `,`. If you're only interested in one month, specify the month in the format `yyyy/MM`
 
 Example Usage:
 [start = 1]
@@ -764,6 +767,11 @@ finding `mala food` will show entries with either mala or food or both in their 
 Finding by `Tag` will show all entries with all the tags in them. For example, finding by `tg/eat tg/entertainment` will show entries with only
 both tags. The reason for this is that tags should be more specific that entry Description.
 
+[NOTE]
+For `findIncome` and `findExpense`, user is allowed to find only by months, reasoning being that there are a lot of entries hence finding by day narrows down the user's choices.
+For `findBudget`, `findWish` and `findAutoExp`, only the specific days are allowed as there are fewer entries available.
+
+
 Format: `findExpense [cat/<category>] [n/<description>] [amt/<amount>] [d/<date>] [tg/<tag>]`
 
 [start = 1]
@@ -777,9 +785,9 @@ image::find-2.png[]
 
 Other Examples:
 
-* `findExpense cat/food n/mala`: lists each entry in expenditure and income with title containing keyword “mala” and category of Food.
-* `findIncome cat/business d/2019-09-09`: lists each entry in expenditure and income with date of "2019-09-09" and category of business.
-* `findWish d/2019-09-09 tg/a tg/b`: lists each entry in expenditure and income with date of "2019-09-09" and tags of a and b.
+* `findExpense cat/food n/mala`: lists each entry in expenditure with title containing keyword “mala” and category of Food.
+* `findIncome cat/business d/2019-09`: lists each entry in income with month of "2019-09" and category of business.
+* `findWish d/2019-09-09 tg/a tg/b`: lists each entry in wishlist with date of "2019-09-09" and tags of a and b.
 
 // tag::reminders[]
 === Reminders
@@ -858,16 +866,21 @@ Deletes the selected Reminder.
 
 Format: `deleteReminder`
 // end::reminders[]
+
 === Undo/Redo
 ==== Undo previous command : `undo`
 Restores the finance tracker to the state before the previous undoable command was executed or
 before the specified number of undoable commands were executed.
 
+[NOTE]
+`undo` is not executable for Statistics and UI commands.
+
 Format: `undo` `undo <step>`
 
 * `<step>`: The number of commands to undo. Additionally the step must be greater than zero and positive.
 * `undo <step>` is only executed if the number of undoable commands is more than or equal to `<step>`.
-* [NOTE] `undo 1` has the same function as `undo`.
+[NOTE]
+`undo 1` has the same function as `undo`.
 
 Example Usage:
 [start = 1]
@@ -897,11 +910,16 @@ Other examples:
 ==== Redo previously undone command : `redo`
 Reverses the most recent undone command or the specified number of most recent undone commands.
 
+[NOTE]
+As `undo` is not executable for Statistics and UI commands, `redo` is not executable
+for those commands as well.
+
 Format: `redo` `redo <step>`
 
 * `<step>`: The number of undone commands to redo. Additionally the step must be greater than zero and positive.
 * `redo <step>` is only executed if the number of redoable commands is more than or equal to `<step>`.
-* [NOTE] `redo 1` has the same function as `redo`.
+[NOTE]
+`redo 1` has the same function as `redo`.
 
 Example Usage:
 [start = 1]
@@ -950,7 +968,8 @@ Displays the list of commands entered, from most recent to earliest.
 
 Format: `history`
 
-* [NOTE] `history` can only be executed if there were commands already entered before trying to use `history`.
+[NOTE]
+`history` can only be executed if there were commands already entered before trying to use `history`.
 
 Example Usage:
 [start = 1]
@@ -1096,7 +1115,7 @@ do so.
 .. `sortBudget typ/<sort type> s/<sort sequence>`
 .. `sortWish typ/<sort type> s/<sort sequence>`
 .. `findExpense [cat/<category>] [n/<description>] [amt/<amount>] [d/<date>] [t/<tag>]`
-.. `findIncome [cat/<category>] [n/<description>] amt/<amount>] [d/<date>] [tg/<tag>]`
+.. `findIncome [cat/<category>] [n/<description>] [amt/<amount>] [d/<date>] [tg/<tag>]`
 .. `findBudget [cat/<category>] [n/<description>] [d/<date>] [tg/<tag>]`
 .. `findWish [cat/<category>] [n/<description>] [amt/<amount>] [d/<date>] [tg/<tag>]`
 
